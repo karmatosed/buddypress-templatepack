@@ -62,6 +62,7 @@
 		<?php wp_nonce_field( 'directory_members', '_wpnonce-member-filter' ); ?>
 
 		<?php do_action( 'bp_after_directory_members_content' ); ?>
+	<?php endif ?>
 
 	</form>
 <?php do_action( 'bp_after_directory_members' ); ?>
