@@ -19,13 +19,14 @@
 		<?php endif; ?>
 	</div>
 	<div class="activity-body">
-		<?php if ( bp_activity_has_content() ) : ?>
+		
 			<div class="activity-content">
 				<?php bp_activity_action(); ?>
-				<?php bp_activity_content_body(); ?>
+				<?php if ( bp_activity_has_content() ) : ?>
+					<?php bp_activity_content_body(); ?>
+				<?php endif; ?>
 				<?php do_action( 'bp_activity_entry_content' ); ?>
 			</div>
-		<?php endif; ?>
 		<div class="activity-meta">
 			<?php if ( is_user_logged_in() ) : ?>
 				<ul class="activity-actions">

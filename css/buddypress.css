@@ -61,6 +61,8 @@
 	margin: 3% 0 0 0;
 }
 #buddypress .directory-list li{
+	float: left;
+	list-style: none;
 	padding: 0 0 3% 0;
 }
 /* 02:  Activity
@@ -103,20 +105,25 @@
 }
 /* 02b:  Activity > Post form
 -------------------------------------------------------------- */
-#buddypress .update-avatar{
-
+#buddypress #update-avatar{
+	float: left;
 }
-#buddypress .update-content{
-
+#buddypress #update-content{
+	margin-left: 60px;
+	padding: 0 0 20px 20px;
 }
-#buddypress .update-textarea{
-
+#buddypress #update-textarea textarea{
+	padding: 5px;
+	width: 100%;
 }
-#buddypress .update-submit{
-
+#buddypress #update-submit{
+	float: right;
 }
-#buddypress .update-box{
-
+#buddypress #update-box{
+	float: left;
+}
+#buddypress #update-form p.message-update{
+	margin: 0 0 20px 80px;
 }
 #buddypress .update-in{
 
@@ -129,6 +136,9 @@
 }
 #buddypress .update-hidden-in{
 
+}
+#buddypress #update-form{
+	padding: 0 0 20px 0;
 }
 /* 02c:  Activity > Entry
 -------------------------------------------------------------- */
