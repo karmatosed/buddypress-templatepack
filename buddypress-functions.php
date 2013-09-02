@@ -67,8 +67,8 @@ class BP_Templatepack extends BP_Theme_Compat {
 		$this->id      = 'templatepack';
 		$this->name    = __( 'BuddyPress Template Pack', 'buddypress' );
 		$this->version = bp_get_version();
-		$this->dir     = trailingslashit( $bp->themes_dir . '/buddypress-templatepack' );
-		$this->url     = trailingslashit( $bp->themes_url . '/buddypress-templatepack' );
+		$this->dir     = plugin_dir_path( __FILE__ );
+		$this->url     = plugin_dir_url( __FILE__ );
 	}
 
 	/**

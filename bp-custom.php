@@ -6,8 +6,8 @@ function templatepack_work() {
 		'version' => bp_get_version(),
 
 		// Adjust these to point to your dev server if necessary
-		'dir'     => trailingslashit( BP_PLUGIN_DIR . 'bp-templates/buddypress-templatepack' ),
-		'url'     => trailingslashit( BP_PLUGIN_URL . 'bp-templates/buddypress-templatepack' )
+		'dir'     => plugin_dir_path( __FILE__ ),
+		'url'     => plugin_dir_url( __FILE__ ),
 	) );
 }
 add_action( 'bp_register_theme_packages', 'templatepack_work' );
