@@ -12,20 +12,12 @@
 
 	<?php do_action( 'bp_before_group_home_content' ); ?>
 
+	<?php bp_get_template_part( 'groups/single/group-panel' ) ?>
+
+	<div id="group-profile" class="primary-column">
 		<?php bp_get_template_part( 'groups/single/group-header' ); ?>
 
-
-		<nav id="group-nav" class="nav-list no-ajax" role="navigation">
-			<ul>
-
-				<?php bp_get_options_nav(); ?>
-
-				<?php do_action( 'bp_group_options_nav' ); ?>
-
-			</ul>
-		</nav>
-
-	<div id="group-body">
+		<div id="group-body">
 
 		<?php do_action( 'bp_before_group_body' );
 
@@ -101,10 +93,10 @@
 
 		do_action( 'bp_after_group_body' ); ?>
 
-	</div><!-- #item-body -->
+	</div>
 
 	<?php do_action( 'bp_after_group_home_content' ); ?>
 
 	<?php endwhile; endif; ?>
-
+	</div>
 </div><!-- #buddypress -->

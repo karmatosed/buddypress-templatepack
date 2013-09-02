@@ -65,6 +65,14 @@
 	list-style: none;
 	padding: 0 0 3% 0;
 }
+#buddypress .secondary-column{
+	float:left;
+	width:30%;
+}
+#buddypress .primary-column{
+	float:left;
+	width:70%;
+}
 /* 02:  Activity
 -------------------------------------------------------------- */
 #buddypress #buddypress-activity{
@@ -236,8 +244,6 @@
 
 }
 #buddypress #member-panel{
-	float:left;
-	width:30%;
 }
 #buddypress #member-profile{
 	float:left;
@@ -390,7 +396,15 @@
 
 }
 #buddypress #admins-list{
-
+}
+#buddypress #group-admins{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#buddypress #group-admins li{
+	margin: 0;
+	padding: 0;
 }
 #buddypress #mods-list{
 
@@ -413,6 +427,9 @@
 #buddypress #group-meta{
 
 }
+#buddypress #group-panel{
+
+}
 #buddypress #group-nav{
 
 }
@@ -425,12 +442,6 @@
 
 }
 #buddypress #create-body{
-
-}
-#buddypress .secondary-column{
-
-}
-#buddypress .primary-column{
 
 }
 #buddypress #avatar-crop-pane{

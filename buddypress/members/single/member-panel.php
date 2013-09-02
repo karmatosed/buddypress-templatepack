@@ -6,7 +6,7 @@
  * @subpackage Templatepack
  */
 ?>
-<div id="member-panel">
+<div id="member-panel" class="secondary-column">
 	<nav id="member-navigation" class="nav-list">
 		<ul>
 			<!-- probably want to see about using new nav menu here -->

@@ -8,7 +8,7 @@
 ?>
 <div id="buddypress">
 	<?php bp_get_template_part( 'members/single/member-panel' ) ?>
-	<div id="member-profile">
+	<div id="member-profile" class="primary-column">
 		<?php 
 		if ( bp_is_user_activity() || !bp_current_component() ) :
 			bp_get_template_part( 'members/single/activity' );
