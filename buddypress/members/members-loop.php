@@ -8,15 +8,15 @@
 ?>
 <?php do_action( 'bp_before_members_loop' ); ?>
 <?php if ( bp_has_members( bp_ajax_querystring( 'members' ) ) ) : ?>
-	<div id="buddypress-pagination-top" class="buddypress-pagination">
+	<div id="pagination-top" class="pagination">
 
-		<div class="buddypress-pagination-count">
+		<div class="pagination-count">
 
 			<?php bp_members_pagination_count(); ?>
 
 		</div>
 
-		<div class="buddypress-pagination-member buddypress-pagination-links">
+		<div class="pagination-links">
 
 			<?php bp_members_pagination_links(); ?>
 
