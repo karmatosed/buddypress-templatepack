@@ -80,8 +80,8 @@ class BP_Templatepack extends BP_Theme_Compat {
 		add_action( 'bp_enqueue_scripts',    array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
 		add_action( 'bp_enqueue_scripts',    array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
 		add_action( 'widgets_init',          array( $this, 'widgets_init'           ) ); // Widgets          
-		add_filter( 'bp_get_the_body_class', array( $this, 'add_nojs_body_class'    ) ); // JS helper
-		add_action( 'bp_before_header',      array( $this, 'remove_nojs_body_class' ) ); // JS helper
+		//add_filter( 'bp_get_the_body_class', array( $this, 'add_nojs_body_class'    ) ); // JS helper
+		//add_action( 'bp_before_header',      array( $this, 'remove_nojs_body_class' ) ); // JS helper
 
 		// Run an action for for third-party plugins to affect the template pack
 		do_action_ref_array( 'bp_theme_compat_actions', array( &$this ) );
