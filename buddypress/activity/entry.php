@@ -14,9 +14,6 @@
 				<?php bp_activity_avatar( 'type=thumb' ); ?>
 			</a>
 		</div>
-		<?php if ( bp_activity_can_comment() ) : ?>
-			<a href="<?php bp_activity_comment_link(); ?>" class="button has-count"><?php printf( __( '<span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
-		<?php endif; ?>
 	</div>
 	<div class="activity-body">
 		
@@ -29,9 +26,11 @@
 			</div>
 		<div class="activity-meta">
 			<?php if ( is_user_logged_in() ) : ?>
-				<ul class="activity-actions">
+				<ul class="activity-actions">	
 					<?php if ( bp_activity_can_comment() ) : ?>
-						<li><a href="<?php bp_activity_comment_link(); ?>" class="button has-count"><?php printf( __( 'Reply', 'buddypress' )); ?></a></li>
+						<li>
+							<a href="<?php bp_activity_comment_link(); ?>" class="button has-count"><?php printf( __( '<span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
+						</li>
 					<?php endif; ?>
 					<?php if ( bp_activity_can_favorite() ) : ?>
 						<li>
