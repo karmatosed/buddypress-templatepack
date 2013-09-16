@@ -7,12 +7,6 @@
  */
 ?>
 
-<nav class="nav-list no-ajax" id="nav-secondary" role="navigation">
-	<ul>
-		<?php bp_get_options_nav(); ?>
-	</ul>
-</nav>
-
 <?php do_action( 'bp_before_profile_content' ); ?>
 
 <div id="member-profile">
