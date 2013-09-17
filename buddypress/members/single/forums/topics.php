@@ -1,9 +1,8 @@
 <?php
-/**
- * Member forum topics
- *
- * @package BuddyPress
- * @subpackage Templatepack
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
+
 ?>
-<!-- to come -->
+
