@@ -32,6 +32,13 @@
 			
 			<a href="<?php bp_message_thread_view_link(); ?>"><?php bp_message_thread_subject(); ?></a>
 		
+		<?php //message excerpt ?>
+		<div>
+			
+			<?php bp_message_thread_excerpt(); ?>
+		
+		</div>		
+		
 		</li>
 
 	<?php endwhile; ?>	
