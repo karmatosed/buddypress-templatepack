@@ -18,16 +18,24 @@
 		
 		<li id="m-<?php bp_message_thread_id(); ?>" class="<?php bp_message_css_class(); ?><?php if ( bp_message_thread_has_unread() ) : ?> unread<?php else: ?> read<?php endif; ?>">
 			
+			<?php if( bp_message_thread_has_unread() ) : ?>			
 			<span class="unread-num">
+				
 				<?php bp_message_thread_unread_count(); ?>
+			
 			</span>
+			<?php endif; ?>
 			
 			<span>
 			
 			<?php  if('sentbox' !== bp_current_action()): ?>
+				
 				<a href=""><?php _e( 'From', 'buddypress' ); ?> <?php bp_message_thread_from() ?></a>
+			
 			<?php else: ?>
+				
 				<a href=""><?php _e( 'To', 'buddypress' ); ?> <?php bp_message_thread_to() ;?></a>
+			
 			<?php endif; ?>
 			
 			</span>
