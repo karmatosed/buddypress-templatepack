@@ -18,7 +18,7 @@
 		
 		<li id="m-<?php bp_message_thread_id(); ?>" class="<?php bp_message_css_class(); ?><?php if ( bp_message_thread_has_unread() ) : ?> unread<?php else: ?> read<?php endif; ?>">
 			
-			<span><?php bp_message_thread_avatar(); ?></span>
+			<?php bp_message_thread_avatar(); ?>
 			
 			<?php if( bp_message_thread_has_unread() ) : ?>			
 			<span class="unread-num">
