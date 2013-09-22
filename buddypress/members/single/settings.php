@@ -7,16 +7,6 @@
  */
 ?>
 
-<nav class="nav-list no-ajax" id="nav-secondary" role="navigation">
-	<ul>
-		<?php if ( bp_core_can_edit_settings() ) : ?>
-
-			<?php bp_get_options_nav(); ?>
-
-		<?php endif; ?>
-	</ul>
-</nav>
-
 <?php
 
 switch ( bp_current_action() ) :
