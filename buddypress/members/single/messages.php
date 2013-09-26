@@ -47,6 +47,17 @@ switch ( bp_current_action() ) :
 		 					
 		break;
 
+	// Compose
+	case 'compose' :
+		do_action( 'bp_before_member_messages_content' ); ?>
+
+		<div class="messages" role="main">
+			<?php bp_get_template_part( 'members/single/messages/compose' );; ?>
+		</div><!-- .messages -->
+
+		<?php do_action( 'bp_after_member_messages_content' );
+		break;		
+		
 	// Sitewide Notices
 	case 'notices' :
 		do_action( 'bp_before_member_messages_content' ); ?>
