@@ -16,22 +16,16 @@
 		</a>
 	</div>
 	
-	<div id="whats-new-content" class="update-content">
-		
-		<div id="whats-new-textarea" class="update-textarea">
-			
-			<label for="update-new" class="message-update">
-			<?php 
-			if ( bp_is_group() )
-				printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
-			else
-				printf( __( "What's new, %s?", 'buddypress' ), bp_get_user_firstname() );
-			?>
-			</label>
-			
-			<textarea name="whats-new" id="update-new" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_attr( $_GET['r'] ); ?> <?php endif; ?></textarea>
-		
-		</div><!-- / #whats-new-textarea -->
+	<p class="message-update"><?php if ( bp_is_group() )
+		printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
+	else
+		printf( __( "What's new, %s?", 'buddypress' ), bp_get_user_firstname() );
+	?></p>
+
+	<div id="update-content">
+		<div id="update-textarea">
+			<textarea name="update" id="update-new" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_attr( $_GET['r'] ); ?> <?php endif; ?></textarea>
+		</div>
 
 		<div id="update-options">
 			<input type="submit" name="update-submit" id="update-submit" value="<?php _e( 'Post Update', 'buddypress' ); ?>" />
@@ -54,9 +48,7 @@
 						endif; ?>
 
 					</select>
-				
-				</div><!-- / #update-box -->
-				
+				</div>
 				<input type="hidden" id="update-object" name="update-object" value="groups" />
 
 			<?php elseif ( bp_is_group_home() ) : ?>
@@ -68,9 +60,8 @@
 
 			<?php do_action( 'bp_activity_post_form_options' ); ?>
 
-		</div><!-- / #update-options -->
-	
-	</div><!-- / #whats-new-content -->
+		</div>
+	</div>
 
 	<?php wp_nonce_field( 'post_update', '_wpnonce_post_update' ); ?>
 	<?php do_action( 'bp_after_activity_post_form' ); ?>
