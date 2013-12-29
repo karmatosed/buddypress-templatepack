@@ -7,9 +7,11 @@
  */
 ?>
 <div id="buddypress">
+	<?php do_action( 'bp_before_member_home_content' ); ?>
 	<?php bp_get_template_part( 'members/single/member-panel' ) ?>
 	<div id="member-profile" class="primary-column">
-		<?php 
+		<?php do_action( 'bp_before_member_body' );
+
 		if ( bp_is_user_activity() || !bp_current_component() ) :
 			bp_get_template_part( 'members/single/activity' );
 
@@ -31,6 +33,9 @@
 		elseif ( bp_is_user_forums() ) :
 			bp_get_template_part( 'members/single/forums'   );
 
+		elseif ( bp_is_user_notifications() ) :
+			bp_get_template_part( 'members/single/notifications' );
+
 		elseif ( bp_is_user_settings() ) :
 			bp_get_template_part( 'members/single/settings' );
 
@@ -39,6 +44,10 @@
 			bp_get_template_part( 'members/single/plugins'  );
 
 		endif;
- ?>
+
+		do_action( 'bp_after_member_body' ); ?>
+
 	</div><!-- end #member-profile -->
+
+	<?php do_action( 'bp_after_member_home_content' ); ?>
 </div><!-- end #buddypress -->
