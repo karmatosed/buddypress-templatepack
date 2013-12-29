@@ -29,7 +29,7 @@
 		 */
 
 		// Group is visible
-		if ( bp_group_is_visible() ) : 
+		if ( bp_group_is_visible() ) :
 
 			// Looking at home location
 			if ( bp_is_group_home() ) :
@@ -45,7 +45,7 @@
 				elseif ( bp_is_active( 'members'  ) ) : bp_get_template_part( 'groups/single/members'  );
 
 				endif;
-				
+
 			// Not looking at home
 			else :
 

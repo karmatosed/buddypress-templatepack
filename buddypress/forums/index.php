@@ -7,17 +7,14 @@
  */
 ?>
 <div id="buddypress">
-	
+
 	<?php do_action( 'bp_before_directory_forums' ); ?>
 
 	<form action="" method="post" id="form-forums" class="form-directory">
-
 		<?php do_action( 'bp_before_directory_forums_content' ); ?>
 
 		<div id="search-forum" class="search-directory" role="search">
-
 			<?php bp_directory_forums_search_form(); ?>
-
 		</div>
 	</form>
 
@@ -28,11 +25,8 @@
 		<nav class="nav-list" role="navigation">
 			<ul>
 				<li class="selected" id="forums-all"><a href="<?php echo trailingslashit( bp_get_root_domain() . '/' . bp_get_forums_root_slug() ); ?>"><?php printf( __( 'All Topics <span>%s</span>', 'buddypress' ), bp_get_forum_topic_count() ); ?></a></li>
-
 				<?php if ( is_user_logged_in() && bp_get_forum_topic_count_for_user( bp_loggedin_user_id() ) ) : ?>
-
 					<li id="forums-personal"><a href="<?php echo trailingslashit( bp_loggedin_user_domain() . bp_get_forums_slug() . '/topics' ); ?>"><?php printf( __( 'My Topics <span>%s</span>', 'buddypress' ), bp_get_forum_topic_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
-
 				<?php endif; ?>
 
 				<?php do_action( 'bp_forums_directory_group_types' ); ?>
@@ -61,19 +55,15 @@
 		</div>
 
 		<div id="forums-directory" class="directory-list">
-
 			<?php bp_get_template_part( 'forums/forums-loop' ); ?>
-
 		</div>
 
 		<?php do_action( 'bp_directory_forums_content' ); ?>
-
 		<?php wp_nonce_field( 'directory_forums', '_wpnonce-forums-filter' ); ?>
 
 	</form>
 
 	<?php do_action( 'bp_after_directory_forums' ); ?>
-
 	<?php do_action( 'bp_before_new_topic_form' ); ?>
 
 	<div id="new-topic-post">
@@ -121,7 +111,7 @@
 
 					<input type="submit" name="submit_topic" id="submit" value="<?php _e( 'Post Topic', 'buddypress' ); ?>" />
 					<input type="button" name="submit_topic_cancel" id="submit-cancel" value="<?php _e( 'Cancel', 'buddypress' ); ?>" />
-					
+
 					<?php wp_nonce_field( 'bp_forums_new_topic' ); ?>
 
 				</form><!-- #forum-topic-form -->
@@ -140,7 +130,6 @@
 	</div><!-- #new-topic-post -->
 
 	<?php do_action( 'bp_after_new_topic_form' ); ?>
-
 	<?php do_action( 'bp_after_directory_forums_content' ); ?>
-	
+
 </div>

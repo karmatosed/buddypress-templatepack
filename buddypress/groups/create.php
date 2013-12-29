@@ -18,9 +18,7 @@
 
 		<nav id="nav-create" class="nav-list no-ajax" role="navigation">
 			<ul>
-
 				<?php bp_group_creation_tabs(); ?>
-
 			</ul>
 		</nav>
 
