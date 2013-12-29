@@ -79,6 +79,9 @@
 #buddypress .filter{
 
 }
+#buddypress .emphasis{
+	font-weight: bold;
+}
 /* 02:  Activity
 -------------------------------------------------------------- */
 #buddypress #buddypress-activity{

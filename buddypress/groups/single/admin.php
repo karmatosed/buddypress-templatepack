@@ -66,7 +66,7 @@
 	<div class="bloack-radio">
 		<label>
 			<input type="radio" name="group-status" value="public"<?php bp_group_show_status_setting( 'public' ); ?> />
-			<strong><?php _e( 'This is a public group', 'buddypress' ); ?></strong>
+			<span class="emphasis"><?php _e( 'This is a public group', 'buddypress' ); ?></span>
 			<ul>
 				<li><?php _e( 'Any site member can join this group.', 'buddypress' ); ?></li>
 				<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
@@ -76,7 +76,7 @@
 
 		<label>
 			<input type="radio" name="group-status" value="private"<?php bp_group_show_status_setting( 'private' ); ?> />
-			<strong><?php _e( 'This is a private group', 'buddypress' ); ?></strong>
+			<span class="emphasis"><?php _e( 'This is a private group', 'buddypress' ); ?></span>
 			<ul>
 				<li><?php _e( 'Only users who request membership and are accepted can join the group.', 'buddypress' ); ?></li>
 				<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
@@ -86,7 +86,7 @@
 
 		<label>
 			<input type="radio" name="group-status" value="hidden"<?php bp_group_show_status_setting( 'hidden' ); ?> />
-			<strong><?php _e( 'This is a hidden group', 'buddypress' ); ?></strong>
+			<span class="emphasis"><?php _e( 'This is a hidden group', 'buddypress' ); ?></span>
 			<ul>
 				<li><?php _e( 'Only users who are invited can join the group.', 'buddypress' ); ?></li>
 				<li><?php _e( 'This group will not be listed in the groups directory or search results.', 'buddypress' ); ?></li>
@@ -104,17 +104,17 @@
 	<div class="block-radio">
 		<label>
 			<input type="radio" name="group-invite-status" value="members"<?php bp_group_show_invite_status_setting( 'members' ); ?> />
-			<strong><?php _e( 'All group members', 'buddypress' ); ?></strong>
+			<span class="emphasis"><?php _e( 'All group members', 'buddypress' ); ?></span>
 		</label>
 
 		<label>
 			<input type="radio" name="group-invite-status" value="mods"<?php bp_group_show_invite_status_setting( 'mods' ); ?> />
-			<strong><?php _e( 'Group admins and mods only', 'buddypress' ); ?></strong>
+			<span class="emphasis"><?php _e( 'Group admins and mods only', 'buddypress' ); ?></span>
 		</label>
 
 		<label>
 			<input type="radio" name="group-invite-status" value="admins"<?php bp_group_show_invite_status_setting( 'admins' ); ?> />
-			<strong><?php _e( 'Group admins only', 'buddypress' ); ?></strong>
+			<span class="emphasis"><?php _e( 'Group admins only', 'buddypress' ); ?></span>
 		</label>
  	</div>
 
@@ -218,10 +218,10 @@
 						<?php echo bp_core_fetch_avatar( array( 'item_id' => bp_get_member_user_id(), 'type' => 'thumb', 'width' => 30, 'height' => 30, 'alt' => sprintf( __( 'Profile picture of %s', 'buddypress' ), bp_get_member_name() ) ) ); ?>
 						<h5>
 							<a href="<?php bp_member_permalink(); ?>"> <?php bp_member_name(); ?></a>
-							
+
 							<a href="<?php bp_group_member_promote_admin_link( array( 'user_id' => bp_get_member_user_id() ) ); ?>" class="button confirm mod-promote-to-admin" title="<?php _e( 'Promote to Admin', 'buddypress' ); ?>"><?php _e( 'Promote to Admin', 'buddypress' ); ?></a>
 							<a class="button confirm mod-demote-to-member" href="<?php bp_group_member_demote_link( bp_get_member_user_id() ); ?>"><?php _e( 'Demote to Member', 'buddypress' ); ?></a>
-		
+
 						</h5>
 					</li>
 					<?php endwhile; ?>
