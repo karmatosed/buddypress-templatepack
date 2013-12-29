@@ -73,6 +73,12 @@
 	float:left;
 	width:70%;
 }
+#buddypress .last{
+
+}
+#buddypress .filter{
+
+}
 /* 02:  Activity
 -------------------------------------------------------------- */
 #buddypress #buddypress-activity{
@@ -259,7 +265,7 @@
 
 }
 #buddypress #member-header{
-	
+
 }
 #buddypress #member-activity{
 
@@ -298,7 +304,7 @@
 	    -webkit-column-gap: 10px;
 	    column-count: 2;
 	    column-gap: 10px;
-	    width: 100%; 
+	    width: 100%;
 	}
 }
 @media only screen and (max-width : 480px) {
@@ -309,7 +315,7 @@
 	    -webkit-column-gap: 10px;
 	    column-count: 1;
 	    column-gap: 10px;
-	    width: 100%; 
+	    width: 100%;
 	}
 }
 #buddypress #members-list li{
@@ -353,7 +359,7 @@
 
 }
 #buddypress .field-visibility-settings{
-	
+
 }
 #buddypress .field-visibility-settings-toggle{
 
@@ -610,7 +616,7 @@
 
 }
 #buddypress .form-buddypress{
-	
+
 }
 #buddypress .selected{
 
