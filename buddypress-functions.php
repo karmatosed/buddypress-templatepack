@@ -79,16 +79,7 @@ class BP_Templatepack extends BP_Theme_Compat {
 	protected function setup_actions() {
 		add_action( 'bp_enqueue_scripts',    array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
 		add_action( 'bp_enqueue_scripts',    array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
-<<<<<<< HEAD
 		add_action( 'widgets_init',          array( $this, 'widgets_init'           ) ); // Widgets
-		//add_filter( 'bp_get_the_body_class', array( $this, 'add_nojs_body_class'    ) ); // JS helper
-=======
-		add_action( 'widgets_init',          array( $this, 'widgets_init'           ) ); // Widgets          
-		add_filter( 'bp_get_the_body_class', array( $this, 'add_nojs_body_class'    ) ); // JS helper
-		add_action( 'bp_head',               array( $this, 'head_scripts'     ) ); // Output some extra JS in the <head>
->>>>>>> beta
-		//add_action( 'bp_before_header',      array( $this, 'remove_nojs_body_class' ) ); // JS helper
-
 		// Run an action for for third-party plugins to affect the template pack
 		do_action_ref_array( 'bp_theme_compat_actions', array( &$this ) );
 	}
@@ -103,12 +94,12 @@ class BP_Templatepack extends BP_Theme_Compat {
 		$file = is_rtl() ? 'css/buddypress-rtl.css' : 'css/buddypress.css';
 		$shamefile = 'css/shame.css';
 		$shamehandle = 'shame-css';
-		
+
 		// Additional styles for new bp_nav_menu vert styles
-		// Enqueued here just as proof of concept - for moving to main styles?		
+		// Enqueued here just as proof of concept - for moving to main styles?
 		$vertmenu = 'css/vert-menu.css';
 		$vertmenu_handle = 'vert-menu';
-		
+
 		// Check child theme
 		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $file ) ) {
 			$location = trailingslashit( get_stylesheet_directory_uri() );
@@ -128,10 +119,9 @@ class BP_Templatepack extends BP_Theme_Compat {
 		wp_enqueue_style( $handle, $location . $file, array(), $this->version, 'screen' );
 		// add in shame.css
 		wp_enqueue_style( $shamehandle, $location . $shamefile, array(), $this->version, 'screen');
-		
+
 		// Temp vert menu styles - modify & remove to main style file when ready
 		wp_enqueue_style( $vertmenu_handle, $location . $vertmenu, array(), $this->version, 'screen');
-	
 	}
 
 	/**
@@ -190,8 +180,8 @@ class BP_Templatepack extends BP_Theme_Compat {
 		</script>
 
 	<?php
-	}	
-	
+	}
+
 	/**
 	 * Adds the no-js class to the body tag.
 	 *
