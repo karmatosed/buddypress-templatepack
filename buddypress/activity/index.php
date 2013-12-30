@@ -11,9 +11,7 @@
 	<?php do_action( 'bp_before_directory_activity_content' ); ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
-
 		<?php bp_get_template_part( 'activity/post-form' ); ?>
-
 	<?php endif; ?>
 
 	<?php do_action( 'template_notices' ); ?>
@@ -29,41 +27,28 @@
 				<?php do_action( 'bp_before_activity_type_tab_friends' ); ?>
 
 				<?php if ( bp_is_active( 'friends' ) ) : ?>
-
 					<?php if ( bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
-
 						<li id="activity-friends"><a href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/' . bp_get_friends_slug() . '/'; ?>" title="<?php _e( 'The activity of my friends only.', 'buddypress' ); ?>"><?php printf( __( 'My Friends <span>%s</span>', 'buddypress' ), number_format_i18n( bp_get_total_friend_count( bp_loggedin_user_id() ) ) ); ?></a></li>
-
 					<?php endif; ?>
-
 				<?php endif; ?>
 
 				<?php do_action( 'bp_before_activity_type_tab_groups' ); ?>
 
 				<?php if ( bp_is_active( 'groups' ) ) : ?>
-
 					<?php if ( bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
-
 						<li id="activity-groups"><a href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/' . bp_get_groups_slug() . '/'; ?>" title="<?php _e( 'The activity of groups I am a member of.', 'buddypress' ); ?>"><?php printf( __( 'My Groups <span>%s</span>', 'buddypress' ), number_format_i18n( bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) ); ?></a></li>
-
 					<?php endif; ?>
-
 				<?php endif; ?>
 
 				<?php do_action( 'bp_before_activity_type_tab_favorites' ); ?>
 
 				<?php if ( bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) ) : ?>
-
 					<li id="activity-favorites"><a href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/favorites/'; ?>" title="<?php _e( "The activity I've marked as a favorite.", 'buddypress' ); ?>"><?php printf( __( 'My Favorites <span>%s</span>', 'buddypress' ), number_format_i18n( bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) ) ); ?></a></li>
-
 				<?php endif; ?>
 
 				<?php if ( bp_activity_do_mentions() ) : ?>
-
 					<?php do_action( 'bp_before_activity_type_tab_mentions' ); ?>
-
-					<li id="activity-mentions"><a href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/mentions/'; ?>" title="<?php _e( 'Activity that I have been mentioned in.', 'buddypress' ); ?>"><?php _e( 'Mentions', 'buddypress' ); ?><?php if ( bp_get_total_mention_count_for_user( bp_loggedin_user_id() ) ) : ?> <strong><span><?php printf( _nx( '%s new', '%s new', bp_get_total_mention_count_for_user( bp_loggedin_user_id() ), 'Number of new activity mentions', 'buddypress' ), number_format_i18n( bp_get_total_mention_count_for_user( bp_loggedin_user_id()  )) ); ?></span></strong><?php endif; ?></a></li>
-
+					<li id="activity-mentions"><a href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/mentions/'; ?>" title="<?php _e( 'Activity that I have been mentioned in.', 'buddypress' ); ?>"><?php _e( 'Mentions', 'buddypress' ); ?><?php if ( bp_get_total_mention_count_for_user( bp_loggedin_user_id() ) ) : ?> <span class="emphasis"><?php printf( _nx( '%s new', '%s new', bp_get_total_mention_count_for_user( bp_loggedin_user_id() ), 'Number of new activity mentions', 'buddypress' ), number_format_i18n( bp_get_total_mention_count_for_user( bp_loggedin_user_id()  )) ); ?></span><?php endif; ?></a></li>
 				<?php endif; ?>
 
 			<?php endif; ?>
@@ -73,7 +58,7 @@
 	</nav>
 
 	<nav class="nav-list" id="nav-secondary" role="navigation">
-	<ul>
+		<ul>
 			<li class="feed"><a href="<?php bp_sitewide_activity_feed_link(); ?>" title="<?php _e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
 
 			<?php do_action( 'bp_activity_syndication_options' ); ?>
@@ -114,21 +99,19 @@
 					<option value="new_member"><?php _e( 'New Members', 'buddypress' ); ?></option>
 
 					<?php do_action( 'bp_activity_filter_options' ); ?>
-
 				</select>
 			</li>
 		</ul>
 	</nav>
 	<?php do_action( 'bp_before_directory_activity_list' ); ?>
+
 	<div id="buddypress-activity">
 		<?php bp_get_template_part( 'activity/activity-loop' ); ?>
 	</div>
+
 	<?php do_action( 'bp_after_directory_activity_list' ); ?>
-
 	<?php do_action( 'bp_directory_activity_content' ); ?>
-
 	<?php do_action( 'bp_after_directory_activity_content' ); ?>
-
 	<?php do_action( 'bp_after_directory_activity' ); ?>
 
 </div><!-- end #buddypress -->

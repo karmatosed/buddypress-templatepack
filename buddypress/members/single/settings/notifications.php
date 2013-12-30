@@ -16,7 +16,7 @@
 	<?php do_action( 'bp_members_notification_settings_before_submit' ); ?>
 
 	<input type="submit" name="submit" value="<?php _e( 'Save Changes', 'buddypress' ); ?>" id="submit" class="auto" />
-	
+
 	<?php do_action( 'bp_members_notification_settings_after_submit' ); ?>
 
 	<?php wp_nonce_field('bp_settings_notifications' ); ?>

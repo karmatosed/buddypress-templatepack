@@ -10,24 +10,19 @@
 
 <?php if ( bp_has_members( 'type=alphabetical&include=' . bp_get_friendship_requests() ) ) : ?>
 
-	
+
 	<div id="pagination-top" class="pagination">
-
 		<div class="pagination-count">
-
 			<?php bp_members_pagination_count(); ?>
-
 		</div>
 
 		<div class="pagination-links">
-
 			<?php bp_members_pagination_links(); ?>
-
 		</div>
-
 	</div>
 
 	<ul id="friend-list" class="directory-list">
+
 		<?php while ( bp_members() ) : bp_the_member(); ?>
 
 			<li id="friendship-<?php bp_friend_friendship_id(); ?>">
@@ -51,24 +46,19 @@
 			</li>
 
 		<?php endwhile; ?>
+
 	</ul>
 
 	<?php do_action( 'bp_friend_requests_content' ); ?>
 
 	<div id="pagination-bottom" class="pagination">
-
 		<div class="pagination-count">
-
 			<?php bp_members_pagination_count(); ?>
-
 		</div>
 
 		<div class="pagination-links">
-
 			<?php bp_members_pagination_links(); ?>
-
 		</div>
-
 	</div>
 
 <?php else: ?>

@@ -14,16 +14,12 @@
 
 		<nav class="nav-list" id="nav-secondary" role="navigation">
 			<ul>
-				<li>
-					<a href="#post-topic-reply"><?php _e( 'Reply', 'buddypress' ); ?></a>
-				</li>
+				<li><a href="#post-topic-reply"><?php _e( 'Reply', 'buddypress' ); ?></a></li>
 
 				<?php if ( bp_forums_has_directory() ) : ?>
-
 					<li>
 						<a href="<?php bp_forums_directory_permalink(); ?>"><?php _e( 'Forum Directory', 'buddypress' ); ?></a>
 					</li>
-
 				<?php endif; ?>
 
 			</ul>
@@ -33,13 +29,9 @@
 			<h3><?php _e( 'Edit:', 'buddypress' ); ?> <?php bp_the_topic_title(); ?> (<?php bp_the_topic_total_post_count(); ?>)</h3>
 
 			<?php if ( bp_group_is_admin() || bp_group_is_mod() || bp_get_the_topic_is_mine() ) : ?>
-
 				<div class="last admin-links">
-
 					<?php bp_the_topic_admin_links(); ?>
-
 				</div>
-
 			<?php endif; ?>
 
 			<?php do_action( 'bp_group_forum_topic_meta' ); ?>
@@ -87,7 +79,7 @@
 
 		<?php endif; ?>
 
-	</form><!-- #forum-topic-form -->
+	</form>
 
 <?php else: ?>
 

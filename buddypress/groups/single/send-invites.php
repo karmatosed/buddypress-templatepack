@@ -28,33 +28,30 @@
 
 			<?php /* The ID 'friend-list' is important for AJAX support. */ ?>
 			<ul id="friend-list" class="directory-list">
-			<?php if ( bp_group_has_invites() ) : ?>
+				<?php if ( bp_group_has_invites() ) : ?>
 
-				<?php while ( bp_group_invites() ) : bp_group_the_invite(); ?>
+					<?php while ( bp_group_invites() ) : bp_group_the_invite(); ?>
+						<li id="<?php bp_group_invite_item_id(); ?>">
+							<?php bp_group_invite_user_avatar(); ?>
 
-					<li id="<?php bp_group_invite_item_id(); ?>">
-						<?php bp_group_invite_user_avatar(); ?>
+							<h4><?php bp_group_invite_user_link(); ?></h4>
+							<span class="group-activity"><?php bp_group_invite_user_last_active(); ?></span>
 
-						<h4><?php bp_group_invite_user_link(); ?></h4>
-						<span class="group-activity"><?php bp_group_invite_user_last_active(); ?></span>
+							<?php do_action( 'bp_group_send_invites_item' ); ?>
 
-						<?php do_action( 'bp_group_send_invites_item' ); ?>
+							<a class="button remove" href="<?php bp_group_invite_user_remove_invite_url(); ?>" id="<?php bp_group_invite_item_id(); ?>"><?php _e( 'Remove Invite', 'buddypress' ); ?></a>
 
-						<a class="button remove" href="<?php bp_group_invite_user_remove_invite_url(); ?>" id="<?php bp_group_invite_item_id(); ?>"><?php _e( 'Remove Invite', 'buddypress' ); ?></a>
+							<?php do_action( 'bp_group_send_invites_item_action' ); ?>
+						</li>
+					<?php endwhile; ?>
 
-						<?php do_action( 'bp_group_send_invites_item_action' ); ?>
-
-					</li>
-
-				<?php endwhile; ?>
-
-			<?php endif; ?>
+				<?php endif; ?>
 			</ul><!-- #friend-list -->
 
-			<?php do_action( 'bp_after_group_send_invites_list' ); ?>
-	
+		<?php do_action( 'bp_after_group_send_invites_list' ); ?>
+
 		<input type="submit" name="submit" id="submit" value="<?php _e( 'Send Invites', 'buddypress' ); ?>" />
-		
+
 		<?php wp_nonce_field( 'groups_send_invites', '_wpnonce_send_invites' ); ?>
 
 		<?php /* This is important, don't forget it */ ?>

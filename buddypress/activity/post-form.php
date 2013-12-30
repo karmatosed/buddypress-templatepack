@@ -15,7 +15,7 @@
 			<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?>
 		</a>
 	</div>
-	
+
 	<p class="message-update"><?php if ( bp_is_group() )
 		printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
 	else
@@ -29,7 +29,7 @@
 
 		<div id="update-options">
 			<input type="submit" name="update-submit" id="update-submit" value="<?php _e( 'Post Update', 'buddypress' ); ?>" />
-			
+
 			<?php if ( bp_is_active( 'groups' ) && !bp_is_my_profile() && !bp_is_group() ) : ?>
 
 				<div id="update-box">
