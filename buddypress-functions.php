@@ -95,7 +95,6 @@ class BP_Templatepack extends BP_Theme_Compat {
 		$shamefile = 'css/shame.css';
 		$shamehandle = 'shame-css';
 
-
 		// Check child theme
 		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $file ) ) {
 			$location = trailingslashit( get_stylesheet_directory_uri() );
@@ -116,8 +115,6 @@ class BP_Templatepack extends BP_Theme_Compat {
 		// add in shame.css
 		wp_enqueue_style( $shamehandle, $location . $shamefile, array(), $this->version, 'screen');
 
-		// Temp vert menu styles - modify & remove to main style file when ready
-		wp_enqueue_style( $vertmenu_handle, $location . $vertmenu, array(), $this->version, 'screen');
 	}
 
 	/**

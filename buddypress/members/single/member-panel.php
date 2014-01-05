@@ -10,7 +10,6 @@
 	
 	<nav id="member-navigation" class="nav-list">
 		
-			<!-- probably want to see about using new nav menu here -->
 			<?php bp_nav_menu(); ?>
 		
 	</nav><!-- end #member-navigation -->
