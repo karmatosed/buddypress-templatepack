@@ -7,6 +7,7 @@
  */
 ?>
 <div id="buddypress">
+
 	<?php do_action( 'bp_before_member_home_content' ); ?>
 	<?php bp_get_template_part( 'members/single/member-panel' ) ?>
 	<div id="member-profile" class="primary-column">

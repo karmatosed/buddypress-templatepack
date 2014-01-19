@@ -1,6 +1,6 @@
 <?php
 /**
-* Provides sorted search filter markup for members navigation 
+* Provides sorted search filter markup for members navigation
 * @package BuddyPress
 * @version ...
 */
@@ -12,42 +12,42 @@
 
 	if( !bp_is_user() )
 		return;
-	
+
 	$bp_page_component = bp_current_component();
 	$bp_page_action = bp_current_action();
-	
+
 	switch($bp_page_component){
-		
+
 		case 'activity' :
-		
+
 			echo tpl_member_activity_filter();
-	
+
 		break;
-		
+
 		case 'messages' :
-		
+
 			echo tpl_messages_search();
-	
+
 		break;
-		
+
 		case 'blogs' :
-		
+
 			echo tpl_blogs_sort();
-		
+
 		break;
-		
+
 		case 'forums' :
-		
+
 			echo tpl_forums_filter();
-		
+
 		break;
 
 		case 'friends' :
-		
+
 			echo tpl_friends_filter();
-			
+
 		break;
-			
+
 		default:
 			echo  '';
 	}
@@ -149,12 +149,12 @@ function tpl_forums_filter() {
 
 			</select>
 		</div>
-		
+
 <?php
 }
 // friends filter
 function tpl_friends_filter() {
-?>		
+?>
 		<?php if ( !bp_is_current_action( 'requests' ) ) : ?>
 
 			<div id="members-order-select" class="last filter">

@@ -14,7 +14,7 @@
 04b: Group > Directory
 04c: Group > Profile
 04d: Group > Create
-05:  Forum
+05: Forum
 05b: Forum > Directory
 06:  Blogs
 06b: Blog > Directory
@@ -22,8 +22,8 @@
 08:  Notifications and notices
 09:  Core widgets (do we still need?)
 10:  Forms
-11:  Buttons and clicks
-12:  Actions
+11: Buttons and clicks
+12: Actions
 13:  Navigation
 13b: Navigation > Pagination
 13c: Navigation > Loading
@@ -558,23 +558,6 @@
 	float:left;
 	width:70%;
 }
-#buddypress div#message.error p {
-	background-color: #fdc;
-	border: 1px solid #a00;
-	color: #800;
-}
-#buddypress div#message.updated p {
-	background-color: #efc;
-	border: 1px solid #591;
-	color: #250;
-}
-#buddypress div#message p,
-#sitewide-notice p {
-	background-color: #ffd;
-	border: 1px solid #cb2;
-	color: #440;
-	padding: 10px;
-}
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
 #buddypress #message{
@@ -740,6 +723,7 @@ ul#menu-bp {
 }
 #buddypress #menu-bp li a:focus,
 #buddypress #menu-bp li a:hover {
+	
 }
 #buddypress #menu-bp li.current-menu-parent > a,
 #buddypress #menu-bp li.current-menu-item a {
@@ -752,7 +736,7 @@ ul#menu-bp {
 	visibility: hidden;
 	position: absolute;
 	top: 0;
-	left: 100%;
+	left: 100%;	
 	height: 0;
 	width: 100%;
 }
