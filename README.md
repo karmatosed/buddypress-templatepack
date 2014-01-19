@@ -1,7 +1,7 @@
-buddypress-templatepack
+buddypress-templates
 =======================
 
-BuddyPress Template Pack
+BuddyPress Templates
 Requires at least: 1.8 BuddyPress
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
