@@ -32,7 +32,7 @@
 	</label>
 
 	<input type="submit" disabled="disabled" value="<?php _e( 'Delete Account', 'buddypress' ); ?>" id="delete-account-button" name="delete-account-button" />
-	
+
 	<?php do_action( 'bp_members_delete_account_after_submit' ); ?>
 
 	<?php wp_nonce_field( 'delete-account' ); ?>
