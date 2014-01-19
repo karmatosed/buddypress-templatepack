@@ -1,8 +1,8 @@
 <?php
 function templatepack_work() {
 	bp_register_theme_package( array(
-		'id'      => 'templatepack',
-		'name'    => __( 'Template Pack', 'buddypress' ),
+		'id'      => 'templates',
+		'name'    => __( 'BuddyPress Templates', 'buddypress' ),
 		'version' => bp_get_version(),
 
 		// Adjust these to point to your dev server if necessary
@@ -13,7 +13,7 @@ function templatepack_work() {
 add_action( 'bp_register_theme_packages', 'templatepack_work' );
 
 function templatepack_package_id( $package_id ) {
-	return 'templatepack';
+	return 'templates';
 }
 add_filter( 'pre_option__bp_theme_package_id', 'templatepack_package_id' );
 

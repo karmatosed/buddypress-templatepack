@@ -3,7 +3,7 @@
  * The new template pack for BuddyPress.
  *
  * @package BuddyPress
- * @subpackage Templatepack
+ * @subpackage BuddyPress Templates
  * @since BuddyPress (1.7)
  *
  * Code and format borrowed from Turtleshell : props @djPaul, @r-a-y
@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Temporary: add a version number to footer so people can find out what release they're using
 function templatepack_version_number() {
-	echo "\n\n<!-- templatepack: alpha 1 -->\n\n";
+	echo "\n\n<!-- templates: alpha 1 -->\n\n";
 }
 add_action( 'wp_footer', 'templatepack_version_number' );
 
-if ( ! class_exists( 'BP_Templatepack' ) ) :
+if ( ! class_exists( 'BP_Templates' ) ) :
 
 /**
  * Loads the BuddyPress template pack
@@ -34,7 +34,7 @@ if ( ! class_exists( 'BP_Templatepack' ) ) :
  *
  * @since BuddyPress (1.7)
  */
-class BP_Templatepack extends BP_Theme_Compat {
+class BP_Templates extends BP_Theme_Compat {
 
 	/**
 	 * Constructor
@@ -65,7 +65,7 @@ class BP_Templatepack extends BP_Theme_Compat {
 	protected function setup_globals() {
 		$bp            = buddypress();
 		$this->id      = 'templatepack';
-		$this->name    = __( 'BuddyPress Template Pack', 'buddypress' );
+		$this->name    = __( 'BuddyPress Templates', 'buddypress' );
 		$this->version = bp_get_version();
 		$this->dir     = plugin_dir_path( __FILE__ );
 		$this->url     = plugin_dir_url( __FILE__ );
@@ -194,7 +194,7 @@ class BP_Templatepack extends BP_Theme_Compat {
 	}
 
 }
-new BP_Templatepack();
+new BP_Templates();
 endif;
 
 /**

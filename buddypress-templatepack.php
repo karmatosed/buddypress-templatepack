@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: BuddyPress Template Pack
+Plugin Name: BuddyPress Templates
 Version: 1.0
 */
 
-function templatepack_init() {
+function templates_init() {
 	include( plugin_dir_path(__FILE__) . 'bp-custom.php' );
 }
-add_action( 'bp_include', 'templatepack_init' );
+add_action( 'bp_include', 'templates_init' );
