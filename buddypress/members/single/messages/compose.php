@@ -6,10 +6,10 @@
  * @subpackage Templatepack
  */
 ?>
-<?php 
+<?php
 /**
 * This is a basic copy over of compose markup, with adjustments for autofocus input/removal of jq script
-* ToDo: markup for autocomplete needs reviewing e.g input not necessarilly making accessible/semantic sense 
+* ToDo: markup for autocomplete needs reviewing e.g input not necessarilly making accessible/semantic sense
 * in that ul construct.
 */
 ?>

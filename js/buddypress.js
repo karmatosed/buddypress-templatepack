@@ -14,7 +14,7 @@ jq(document).ready( function() {
 */
 if ( !( "autofocus" in document.createElement("input") ) ) {
 	jq('.add-focus').focus();
-}	
+}
 	/**** Page Load Actions *******************************************************/
 
 	/* Hide Forums Post Form */
@@ -58,10 +58,10 @@ if ( !( "autofocus" in document.createElement("input") ) ) {
 			height:'50px'
 		});
 		jq("#aw-whats-new-submit").prop("disabled", false);
-		
+
 		var $whats_new_form = jq("form#whats-new-form");
 		if ( $whats_new_form.hasClass("submitted") ) {
-			$whats_new_form.removeClass("submitted");	
+			$whats_new_form.removeClass("submitted");
 		}
 	});
 
@@ -337,7 +337,7 @@ if ( !( "autofocus" in document.createElement("input") ) ) {
 			var oldest_page = ( jq.cookie('bp-activity-oldestpage') * 1 ) + 1;
 
 			var just_posted = [];
-			
+
 			jq('.activity-list li.just-posted').each( function(){
 				just_posted.push( jq(this).attr('id').replace( 'activity-','' ) );
 			});
@@ -565,7 +565,7 @@ if ( !( "autofocus" in document.createElement("input") ) ) {
 					var count_span = jq('#' + comment_li.parents('#activity-stream > li').attr('id') + ' a.acomment-reply span');
 					var new_count = count_span.html() - ( 1 + child_count );
 					count_span.html(new_count);
-					
+
 					// Change the 'Show all x comments' text
 					var show_all_a = comment_li.siblings('.show-all').find('a');
 					if ( show_all_a ) {
@@ -639,7 +639,7 @@ if ( !( "autofocus" in document.createElement("input") ) ) {
 			return false;
 		}
 
-		// Canceling an activity comment	
+		// Canceling an activity comment
 		if ( target.hasClass( 'ac-reply-cancel' ) ) {
 			jq(target).closest('.ac-form').slideUp( 200 );
 			return false;
@@ -905,7 +905,7 @@ if ( !( "autofocus" in document.createElement("input") ) ) {
 		jq('#profile-edit-form input:submit, #signup_form input:submit').on( 'click', function() {
 			shouldconfirm = false;
 		});
-		
+
 		window.onbeforeunload = function(e) {
 			if ( shouldconfirm ) {
 				return BP_DTheme.unsaved_changes;
@@ -1297,11 +1297,11 @@ if ( !( "autofocus" in document.createElement("input") ) ) {
 			} );
 		});
 	});
-	
+
 	/* if js is enabled then replace the no-js class by a js one */
 	if( jq('body').hasClass('no-js') )
 		jq('body').attr('class', jq('body').attr('class').replace( /no-js/,'js' ) );
-		
+
 });
 
 /* Setup activity scope and filter based on the current cookie settings. */
@@ -1474,7 +1474,7 @@ function bp_legacy_theme_hide_comments() {
 				jq(this).addClass('hidden');
 				jq(this).toggle();
 
-				if ( !i ) 
+				if ( !i )
 					jq(this).before( '<li class="show-all"><a href="#' + parent_li.attr('id') + '/show-all/" title="' + BP_DTheme.show_all_comments + '">' + BP_DTheme.show_x_comments.replace( '%d', comment_count ) + '</a></li>' );
 			}
 		});

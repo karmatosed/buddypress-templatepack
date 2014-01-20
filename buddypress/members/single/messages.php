@@ -15,36 +15,36 @@ switch ( bp_current_action() ) :
 	case 'view'    :
  ?>
 
-		
+
 			<?php bp_get_template_part( 'members/single/messages/messages-loop' ); ?>
-		
+
 			<?php switch ( bp_current_action() ) :
-				
+
 				// View full message
-				case 'view' :				
-					
+				case 'view' :
+
 					do_action( 'bp_before_member_messages_content' );
-					
+
 					bp_get_template_part( 'members/single/messages/single' );
-					
+
 					do_action( 'bp_after_member_messages_content' );
-					
+
 				break;
-			
+
 			// Compose new mesage or reply to
 			case 'compose' :
-				
+
 				bp_get_template_part( 'members/single/messages/compose' );
-			
-			break;				
-			
-			default:
-			
-				bp_get_template_part( 'members/single/messages/compose' );
-			
+
 			break;
-			endswitch;	
-		 					
+
+			default:
+
+				bp_get_template_part( 'members/single/messages/compose' );
+
+			break;
+			endswitch;
+
 		break;
 
 	// Compose
@@ -56,8 +56,8 @@ switch ( bp_current_action() ) :
 		</div><!-- .messages -->
 
 		<?php do_action( 'bp_after_member_messages_content' );
-		break;		
-		
+		break;
+
 	// Sitewide Notices
 	case 'notices' :
 		do_action( 'bp_before_member_messages_content' ); ?>
