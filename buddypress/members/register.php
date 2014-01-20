@@ -242,7 +242,7 @@
 			<?php do_action( 'bp_before_registration_submit_buttons' ); ?>
 
 			<input type="submit" name="signup_submit" id="signup_submit" value="<?php _e( 'Complete Sign Up', 'buddypress' ); ?>" />
-			
+
 			<?php do_action( 'bp_after_registration_submit_buttons' ); ?>
 
 			<?php wp_nonce_field( 'bp_new_signup' ); ?>

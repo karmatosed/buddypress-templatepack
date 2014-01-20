@@ -13,7 +13,7 @@
 		<?php do_action( 'bp_group_activity_syndication_options' ); ?>
 
 		<li id="activity-filter" class="last">
-			<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label> 
+			<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
 			<select id="activity-filter-by">
 				<option value="-1"><?php _e( 'Everything', 'buddypress' ); ?></option>
 				<option value="activity_update"><?php _e( 'Updates', 'buddypress' ); ?></option>
