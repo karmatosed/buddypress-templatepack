@@ -1,6 +1,6 @@
 <?php
 /**
- * Member messages
+ * Member notifications
  *
  * @package BuddyPress
  * @subpackage Templatepack
