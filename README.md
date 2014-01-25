@@ -18,4 +18,4 @@ This wiki page shows all the wireframes: https://github.com/karmatosed/buddypres
 
 Plan of attack
 
-Please see: http://karmatosed.github.io/buddypress-templatepack/ for how to contribute to this project
+Please see: http://karmatosed.github.io/buddypress-templates/ for how to contribute to this project
