@@ -66,12 +66,14 @@
 	padding: 0 0 3% 0;
 }
 #buddypress .secondary-column{
-	float:left;
-	width:30%;
+	/*float:left;
+	width:30%;*/
 }
 #buddypress .primary-column{
-	float:left;
-	width:70%;
+	/*float:left;
+	width:70%;*/
+	overflow: hidden;
+	padding-top: 1em;
 }
 #buddypress .last{
 
@@ -538,24 +540,28 @@
 /* 07:  Messages
 -------------------------------------------------------------- */
 #buddypress .messages-wrap{
-	overflow:auto;
+	overflow: auto;
 }
 #buddypress .messages-list {
-	float:left;
-	width:28%;
-	margin-right:2%;
+	float: left;
+	margin-right: 2%;
+	width: 28%;	
 }
-#buddypress .messages-list ul li{
-	margin:0;
-	padding:0;
-	list-style:none;
+#buddypress .messages-list ul {
+	padding-left:0;
 }
-#buddypress .messages-list ul li a{
-	font-size:75%;
+#buddypress .messages-list ul li {
+	list-style: none;	
+	margin: 0;
+	padding: 0;
+}
+#buddypress .messages-list ul li a {
+	font-size: 75%;
 }
 #buddypress .messages-content-wrap {
-	float:left;
-	width:70%;
+	float: left;
+	padding-left: 1%;
+	width: 69%;
 }
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
@@ -702,16 +708,16 @@ a.bp-title-button {
 
 /*__ BP User Account Navigation __*/
 
-ul#menu-bp {
+#buddypress #menu-bp {
+	margin-bottom: 2em;
 	position: relative;
-	display: table;
-	width: 50%;
 }
 #buddypress #menu-bp li {
+	display: inline-block;
 	float: none;
+	margin: 0 .5em 0 0;
 	padding: .2em 0;
 	position: static; /* reset inherited values */
-	width: 100%;
 }
 #buddypress #menu-bp li span {
 	/* item counts 'Friends 1'*/
@@ -734,8 +740,8 @@ ul#menu-bp {
 #menu-bp li ul.sub-menu {
 	visibility: hidden;
 	position: absolute;
-	top: 0;
-	left: 100%;
+	top: 100%;
+	left: 0;
 	height: 0;
 	width: 100%;
 }

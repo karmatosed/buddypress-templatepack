@@ -9,9 +9,12 @@
 <div id="buddypress">
 
 	<?php do_action( 'bp_before_member_home_content' ); ?>
-	<?php bp_get_template_part( 'members/single/member-panel' ) ?>
+	
+	<?php bp_get_template_part( 'members/single/member-panel' ); ?>
+	
 	<div id="member-profile" class="primary-column">
-		<?php do_action( 'bp_before_member_body' );
+		
+	<?php do_action( 'bp_before_member_body' );
 
 		if ( bp_is_user_activity() || !bp_current_component() ) :
 			bp_get_template_part( 'members/single/activity' );

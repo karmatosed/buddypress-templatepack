@@ -9,9 +9,11 @@
 <?php
 /**
 * This is a basic copy over of compose markup, with adjustments for autofocus input/removal of jq script
+* ToDo: markup for autocomplete needs reviewing e.g input not necessarilly making accessible/semantic sense
+* in that ul construct.
 */
 ?>
-<div style="overflow: hidden;">
+<div class="messages-content-wrap">
 
 <form action="<?php bp_messages_form_action('compose' ); ?>" method="post" id="send_message_form" class="standard-form" role="main" enctype="multipart/form-data">
 
@@ -21,9 +23,9 @@
 	<ul class="first acfb-holder">
 		<li>
 			<?php bp_message_get_recipient_tabs(); ?>
+			<input type="text" name="send-to-input" class="send-to-input add-focus" id="send-to-input" autofocus />
 		</li>
 	</ul>
-	<input type="text" name="send-to-input" class="send-to-input add-focus" id="send-to-input" autofocus />
 
 	<?php if ( bp_current_user_can( 'bp_moderate' ) ) : ?>
 		<input type="checkbox" id="send-notice" name="send-notice" value="1" /> <?php _e( "This is a notice to all users.", "buddypress" ); ?>
