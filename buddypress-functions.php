@@ -22,29 +22,18 @@ if ( ! class_exists( 'BP_Templates' ) ) :
 
 /**
  * Loads the BuddyPress template pack
- *
- * This is not a real theme by WordPress standards, and is instead used as the
- * fallback for any WordPress theme that does not have BuddyPress templates in it.
- *
- * To make your custom theme BuddyPress compatible and customize the templates, you
- * can copy these files into your theme without needing to merge anything
- * together; BuddyPress should safely handle the rest.
- *
  * See @link BP_Theme_Compat() for more.
  *
- * @since BuddyPress (1.7)
+ * @since buddypress  (1.7)
  */
 class BP_Templates extends BP_Theme_Compat {
 
 	/**
 	 * Constructor
 	 *
-	 * @since BuddyPress (1.7)
+	 * @since BuddyPress templates (1.0)
 	 */
 	public function __construct() {
-		// Bail if parent/child themes are bp-default
-		if ( in_array( 'bp-default', array( get_template(), get_stylesheet() ) ) )
-			return;
 
 		$this->setup_globals();
 		$this->setup_actions();
@@ -52,10 +41,6 @@ class BP_Templates extends BP_Theme_Compat {
 
 	/**
 	 * Component global variables
-	 *
-	 * Note that this function is currently commented out in the constructor.
-	 * It will only be used if you copy this file into your current theme and
-	 * uncomment the line above.
 	 *
 	 * You'll want to customize the values in here, so they match whatever your
 	 * needs are.
