@@ -168,4 +168,4 @@ class BP_Templates extends BP_Theme_Compat {
 new BP_Templates();
 endif;
 
-include( plugin_dir_path(__FILE__) . 'buddypress-ajax.php' );
+//include( plugin_dir_path(__FILE__) . 'buddypress-ajax.php' );

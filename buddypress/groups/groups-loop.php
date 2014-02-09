@@ -23,7 +23,7 @@
 	<ul id="groups-list" class="item-list">
 
 		<?php while ( bp_groups() ) : bp_the_group(); ?>
-			<li>
+			<li <?php bp_group_class(); ?>>
 				<div class="group-avatar">
 					<a href="<?php bp_group_permalink(); ?>"><?php bp_group_avatar( 'type=thumb&width=124&height=124' ); ?></a>
 				</div>
