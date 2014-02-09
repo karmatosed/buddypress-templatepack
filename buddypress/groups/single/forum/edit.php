@@ -12,7 +12,7 @@
 
 	<form action="<?php bp_forum_topic_action(); ?>" method="post" id="forum-topic-form" class="standard-form">
 
-		<nav class="nav-list" id="nav-secondary" role="navigation">
+		<nav id="subnav" class="item-list-tabs" role="navigation">
 			<ul>
 				<li><a href="#post-topic-reply"><?php _e( 'Reply', 'buddypress' ); ?></a></li>
 
@@ -83,7 +83,7 @@
 
 <?php else: ?>
 
-	<div id="message" class="message-info">
+	<div id="message" class="info">
 		<p><?php _e( 'This topic does not exist.', 'buddypress' ); ?></p>
 	</div>
 

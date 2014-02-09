@@ -6,7 +6,7 @@
  * @subpackage Templatepack
  */
 ?>
-<div class="nav-list no-ajax" id="nav-secondary" role="navigation">
+<nav id="nav-secondary" class="nav-list no-ajax" role="navigation">
 	<ul>
 		<?php bp_get_options_nav(); ?>
 
@@ -14,7 +14,7 @@
 			<?php bp_notifications_sort_order_form(); ?>
 		</li>
 	</ul>
-</div>
+</nav>
 
 <?php
 switch ( bp_current_action() ) :

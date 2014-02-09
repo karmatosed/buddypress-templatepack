@@ -21,7 +21,7 @@
 		</div>
 	</div>
 
-	<ul id="friend-list" class="directory-list">
+	<ul id="friend-list" class="item-list">
 
 		<?php while ( bp_members() ) : bp_the_member(); ?>
 

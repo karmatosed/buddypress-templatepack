@@ -23,7 +23,7 @@
 
 	<?php do_action( 'bp_before_directory_forums_list' ); ?>
 
-	<table class="forum-table">
+	<table class="forum">
 		<thead>
 			<tr>
 				<th id="th-title"><?php _e( 'Topic', 'buddypress' ); ?></th>
@@ -98,7 +98,7 @@
 
 <?php else: ?>
 
-	<div id="message" class="message-info">
+	<div id="message" class="info">
 		<p><?php _e( 'Sorry, there were no forum topics found.', 'buddypress' ); ?></p>
 	</div>
 
