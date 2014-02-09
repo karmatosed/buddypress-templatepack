@@ -15,7 +15,7 @@
 			<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?>
 		</a>
 	</div>
-
+	
 	<p class="activity-greeting"><?php if ( bp_is_group() )
 		printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
 	else
@@ -24,11 +24,13 @@
 
 	<div id="whats-new-content">
 		<div id="whats-new-textarea">
-			<textarea name="update" id="whats-new" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_attr( $_GET['r'] ); ?> <?php endif; ?></textarea>
+			<textarea name="whats-new" id="whats-new" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_attr( $_GET['r'] ); ?> <?php endif; ?></textarea>
 		</div>
 
 		<div id="whats-new-options">
-			<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php _e( 'Post Update', 'buddypress' ); ?>" />
+			<div id="whats-new-submit">
+				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php _e( 'Post Update', 'buddypress' ); ?>" />
+			</div>
 
 			<?php if ( bp_is_active( 'groups' ) && !bp_is_my_profile() && !bp_is_group() ) : ?>
 
@@ -54,16 +56,16 @@
 			<?php elseif ( bp_is_group_home() ) : ?>
 
 				<input type="hidden" id="whats-new-post-object" name="whats-new-post-object" value="groups" />
-				<input type="hidden" id="update-hidden-in" name="whats-new-post-in" value="<?php bp_group_id(); ?>" />
+				<input type="hidden" id="whats-new-post-in" name="whats-new-post-in" value="<?php bp_group_id(); ?>" />
 
 			<?php endif; ?>
 
 			<?php do_action( 'bp_activity_post_form_options' ); ?>
 
-		</div>
-	</div>
+		</div><!-- #whats-new-options -->
+	</div><!-- #whats-new-content -->
 
 	<?php wp_nonce_field( 'post_update', '_wpnonce_post_update' ); ?>
 	<?php do_action( 'bp_after_activity_post_form' ); ?>
 
-</form>
+</form><!-- #whats-new-form -->
