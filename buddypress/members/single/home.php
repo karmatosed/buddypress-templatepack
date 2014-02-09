@@ -10,7 +10,7 @@
 
 	<?php do_action( 'bp_before_member_home_content' ); ?>
 
-	<?php bp_get_template_part( 'members/single/member-panel' ); ?>
+	<?php bp_get_template_part( 'members/single/member-header' ); ?>
 
 	<div id="item-nav">
 		<nav id="object-nav" class="item-list-tabs no-ajax" role="navigation">

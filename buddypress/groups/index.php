@@ -16,11 +16,11 @@
 		<?php bp_directory_groups_search_form(); ?>
 	</div>
 
-	<form action="" method="post" id="groups-directory" class="form-directory">
+	<form action="" method="post" id="groups-directory-form" class="dir-form">
 
 		<?php do_action( 'template_notices' ); ?>
 
-		<nav class="nav-list" role="navigation">
+		<nav class="item-list-tabs" role="navigation">
 			<ul>
 				<li class="selected" id="groups-all"><a href="<?php bp_groups_directory_permalink(); ?>"><?php printf( __( 'All Groups <span>%s</span>', 'buddypress' ), bp_get_total_group_count() ); ?></a></li>
 				<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
@@ -30,7 +30,7 @@
 			</ul>
 		</nav>
 
-		<nav class="nav-list" id="nav-secondary" role="navigation">
+		<nav id="subnav" class="item-list-tabs" role="navigation">
 			<ul>
 				<?php do_action( 'bp_groups_directory_group_types' ); ?>
 				<li id="groups-order-select" class="last filter">
