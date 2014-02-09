@@ -30,7 +30,7 @@
 				<ul class="activity-actions">
 					<?php if ( bp_activity_can_comment() ) : ?>
 						<li>
-							<a href="<?php bp_activity_comment_link(); ?>" class="button has-count"><?php printf( __( '<span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
+							<a href="<?php bp_activity_comment_link(); ?>" id="acomment-comment-<?php bp_activity_id(); ?>" class="button acomment-reply has-count"><?php printf( __( '<span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
 						</li>
 					<?php endif; ?>
 					<?php if ( bp_activity_can_favorite() ) : ?>
