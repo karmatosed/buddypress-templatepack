@@ -34,7 +34,7 @@
 
 		<?php if ( bp_activity_user_can_delete() ) : ?>
 
-			<a href="<?php bp_activity_comment_delete_link(); ?>" class="comment-delete confirm bp-secondary-action" rel="nofollow"><?php _e( 'Delete', 'buddypress' ); ?></a>
+			<a href="<?php bp_activity_comment_delete_link(); ?>" class="acomment-delete confirm bp-secondary-action" rel="nofollow"><?php _e( 'Delete', 'buddypress' ); ?></a>
 
 		<?php endif; ?>
 
