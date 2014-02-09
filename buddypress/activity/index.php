@@ -105,7 +105,7 @@
 	</nav>
 	<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
-	<div id="activity">
+	<div class="activity" id="activity">
 		<?php bp_get_template_part( 'activity/activity-loop' ); ?>
 	</div>
 
