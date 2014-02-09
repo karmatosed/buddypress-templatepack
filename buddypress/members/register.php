@@ -10,7 +10,7 @@
 
 	<?php do_action( 'bp_before_register_page' ); ?>
 
-	<div id="register">
+	<div id="register-page" class="page">
 
 		<form action="" name="signup_form" id="signup_form" class="form-buddypress" method="post" enctype="multipart/form-data">
 

@@ -138,23 +138,18 @@
 
 				<?php if ( 'upload-image' == bp_get_avatar_admin_step() ) : ?>
 
-					<div class="secondary-column">
+					<?php bp_new_group_avatar(); ?>
 
-						<?php bp_new_group_avatar(); ?>
 
-					</div><!-- .left-menu -->
+					<p><?php _e( "Upload an image to use as an avatar for this group. The image will be shown on the main group page, and in search results.", 'buddypress' ); ?></p>
 
-					<div class="primary-column">
-						<p><?php _e( "Upload an image to use as an avatar for this group. The image will be shown on the main group page, and in search results.", 'buddypress' ); ?></p>
+					<p>
+						<input type="file" name="file" id="file" />
+						<input type="submit" name="upload" id="upload" value="<?php _e( 'Upload Image', 'buddypress' ); ?>" />
+						<input type="hidden" name="action" id="action" value="bp_avatar_upload" />
+					</p>
 
-						<p>
-							<input type="file" name="file" id="file" />
-							<input type="submit" name="upload" id="upload" value="<?php _e( 'Upload Image', 'buddypress' ); ?>" />
-							<input type="hidden" name="action" id="action" value="bp_avatar_upload" />
-						</p>
-
-						<p><?php _e( 'To skip the avatar upload process, hit the "Next Step" button.', 'buddypress' ); ?></p>
-					</div><!-- .main-column -->
+					<p><?php _e( 'To skip the avatar upload process, hit the "Next Step" button.', 'buddypress' ); ?></p>
 
 				<?php endif; ?>
 
@@ -192,26 +187,21 @@
 
 				<?php if ( bp_is_active( 'friends' ) && bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
 
-					<div class="secondary-column">
-
-						<div id="invite-list">
+					<div id="invite-list">
 							<ul>
 								<?php bp_new_group_invite_friend_list(); ?>
 							</ul>
 
 							<?php wp_nonce_field( 'groups_invite_uninvite_user', '_wpnonce_invite_uninvite_user' ); ?>
-						</div>
 
 					</div><!-- .left-menu -->
-
-					<div class="primary-column">
 
 						<div id="message" class="message-info">
 							<p><?php _e('Select people to invite from your friends list.', 'buddypress' ); ?></p>
 						</div>
 
 						<?php /* The ID 'friend-list' is important for AJAX support. */ ?>
-						<ul id="friend-list" class="directory-list">
+						<ul id="friend-list" class="item-list">
 
 						<?php if ( bp_group_has_invites() ) : ?>
 
@@ -236,7 +226,6 @@
 
 						</ul>
 
-					</div><!-- .main-column -->
 
 				<?php else : ?>
 

@@ -6,7 +6,7 @@
  * @subpackage Templatepack
  */
 ?>
-<nav id="group-activity-nav" class="nav-list no-ajax" role="navigation">
+<nav id="sub-nav" class="item-list-tabs no-ajax" role="navigation">
 	<ul>
 		<li class="feed"><a href="<?php bp_group_activity_feed_link(); ?>" title="<?php _e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
 
@@ -42,7 +42,7 @@
 <?php do_action( 'bp_after_group_activity_post_form' ); ?>
 <?php do_action( 'bp_before_group_activity_content' ); ?>
 
-<div id="group-activity">
+<div id="group-activity" class="activity single-group">
 
 	<?php bp_get_template_part( 'activity/activity-loop' ); ?>
 

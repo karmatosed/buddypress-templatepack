@@ -1,10 +1,10 @@
 /* = Hacks, oopsies and omgs
 =======================================================
 */
-#buddypress .directory-list li{
+#buddypress .item-list li{
 	clear: both;
 }
-#buddypress .directory-list li li{
+#buddypress .item-list li li{
 	clear: none;
 }
 #buddypress .buddypress-pagination{

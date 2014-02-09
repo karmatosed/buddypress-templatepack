@@ -6,6 +6,21 @@
  * @subpackage Templatepack
  */
 ?>
+<nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
+	<ul>
+
+		<?php bp_get_options_nav(); ?>
+
+	</ul>
+
+	<?php if ( bp_is_messages_inbox() || bp_is_messages_sentbox() ) : ?>
+
+		<div class="message-search"><?php bp_message_search_form(); ?></div>
+
+	<?php endif; ?>
+
+</nav><!-- .item-list-tabs -->
+
 <?php
 switch ( bp_current_action() ) :
 
@@ -51,7 +66,7 @@ switch ( bp_current_action() ) :
 	case 'compose' :
 		do_action( 'bp_before_member_messages_content' ); ?>
 
-		<div class="messages" role="main">
+		<div class="messages">
 			<?php bp_get_template_part( 'members/single/messages/compose' );; ?>
 		</div><!-- .messages -->
 
@@ -62,7 +77,7 @@ switch ( bp_current_action() ) :
 	case 'notices' :
 		do_action( 'bp_before_member_messages_content' ); ?>
 
-		<div class="messages" role="main">
+		<div class="messages">
 			<?php bp_get_template_part( 'members/single/messages/notices-loop' );; ?>
 		</div><!-- .messages -->
 

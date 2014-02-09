@@ -6,7 +6,7 @@
  * @subpackage Templatepack
  */
 ?>
-<nav id="admin-nav" class="nav-list no-ajax" role="navigation">
+<nav id="sub-nav" class="item-list-tabs no-ajax" role="navigation">
 	<ul>
 		<?php bp_group_admin_tabs(); ?>
 	</ul>
@@ -211,7 +211,7 @@
 			<h4><?php _e( 'Moderators', 'buddypress' ); ?></h4>
 
 			<?php if ( bp_has_members( '&include=' . bp_group_mod_ids() ) ) : ?>
-				<ul id="mods-list" class="directory-list">
+				<ul id="mods-list" class="item-list">
 
 					<?php while ( bp_members() ) : bp_the_member(); ?>
 					<li>
@@ -254,7 +254,7 @@
 
 			<?php endif; ?>
 
-			<ul id="members-list" class="directory-list">
+			<ul id="members-list" class="item-list">
 				<?php while ( bp_group_members() ) : bp_group_the_member(); ?>
 
 					<li class="<?php bp_group_member_css_class(); ?>">
@@ -308,7 +308,7 @@
 
 	<?php if ( bp_group_has_membership_requests() ) : ?>
 
-		<ul id="request-list" class="directory-list">
+		<ul id="request-list" class="item-list">
 			<?php while ( bp_group_membership_requests() ) : bp_group_the_membership_request(); ?>
 
 				<li>
@@ -351,7 +351,7 @@
 
 	<?php do_action( 'bp_before_group_delete_admin' ); ?>
 
-	<div id="message" class="message-info">
+	<div id="message" class="info">
 		<p><?php _e( 'WARNING: Deleting this group will completely remove ALL content associated with it. There is no way back, please be careful with this option.', 'buddypress' ); ?></p>
 	</div>
 

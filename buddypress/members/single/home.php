@@ -9,11 +9,23 @@
 <div id="buddypress">
 
 	<?php do_action( 'bp_before_member_home_content' ); ?>
-	
+
 	<?php bp_get_template_part( 'members/single/member-panel' ); ?>
-	
-	<div id="member-profile" class="primary-column">
-		
+
+	<div id="item-nav">
+		<nav id="object-nav" class="item-list-tabs no-ajax" role="navigation">
+			<ul>
+
+				<?php bp_get_displayed_user_nav(); ?>
+
+				<?php do_action( 'bp_member_options_nav' ); ?>
+
+			</ul>
+		</nav>
+	</div><!-- #item-nav -->
+
+	<div id="item-body">
+
 	<?php do_action( 'bp_before_member_body' );
 
 		if ( bp_is_user_activity() || !bp_current_component() ) :

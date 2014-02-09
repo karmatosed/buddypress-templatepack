@@ -18,7 +18,7 @@ elseif ( bp_is_group_forum_topic() ) :
 
 else : ?>
 
-	<nav id="forum-nav" class="nav-list no-ajax" role="navigation">
+	<nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
 		<ul>
 
 			<?php if ( is_user_logged_in() ) : ?>

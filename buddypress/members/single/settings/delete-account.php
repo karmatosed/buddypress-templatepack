@@ -8,7 +8,7 @@
 ?>
 <?php do_action( 'bp_before_member_settings_template' ); ?>
 
-<div id="message" class="info-message">
+<div id="message" class="info">
 
 	<?php if ( bp_is_my_profile() ) : ?>
 

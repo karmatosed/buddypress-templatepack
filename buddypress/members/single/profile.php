@@ -7,9 +7,15 @@
  */
 ?>
 
+<nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
+	<ul>
+		<?php bp_get_options_nav(); ?>
+	</ul>
+</nav><!-- .item-list-tabs -->
+
 <?php do_action( 'bp_before_profile_content' ); ?>
 
-<div id="member-profile">
+<div id="profile">
 
 <?php switch ( bp_current_action() ) :
 

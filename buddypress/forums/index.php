@@ -10,19 +10,19 @@
 
 	<?php do_action( 'bp_before_directory_forums' ); ?>
 
-	<form action="" method="post" id="form-forums" class="form-directory">
+	<form action="" method="post" id="formum-search-form" class="form-directory">
 		<?php do_action( 'bp_before_directory_forums_content' ); ?>
 
-		<div id="search-forum" class="search-directory" role="search">
+		<div id="forums-dir-search" class="dir-search" role="search">
 			<?php bp_directory_forums_search_form(); ?>
 		</div>
 	</form>
 
 	<?php do_action( 'bp_before_topics' ); ?>
 
-	<form action="" method="post" id="forums-form-directory" class="form-directory">
+	<form action="" method="post" id="forums-directory-form" class="form-directory">
 
-		<nav class="nav-list" role="navigation">
+		<nav class="item-list-tabs" role="navigation">
 			<ul>
 				<li class="selected" id="forums-all"><a href="<?php echo trailingslashit( bp_get_root_domain() . '/' . bp_get_forums_root_slug() ); ?>"><?php printf( __( 'All Topics <span>%s</span>', 'buddypress' ), bp_get_forum_topic_count() ); ?></a></li>
 				<?php if ( is_user_logged_in() && bp_get_forum_topic_count_for_user( bp_loggedin_user_id() ) ) : ?>
@@ -34,7 +34,7 @@
 			</ul>
 		</nav>
 
-		<nav class="list-nav" id="nav-secondary" role="navigation">
+		<nav id="subnav" class="item-list-tabs" role="navigation">
 			<ul>
 
 				<?php do_action( 'bp_forums_directory_group_sub_types' ); ?>
@@ -54,7 +54,7 @@
 			</ul>
 		</div>
 
-		<div id="forums-directory" class="directory-list">
+		<div id="forums-dir-list" class="forums dir-list">
 			<?php bp_get_template_part( 'forums/forums-loop' ); ?>
 		</div>
 

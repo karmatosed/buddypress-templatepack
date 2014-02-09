@@ -17,7 +17,7 @@
 			<?php bp_directory_blogs_search_form(); ?>
 		</div>
 
-		<nav class="nav-list" id="nav-filter" role="navigation">
+		<nav id="nav-filter" class="item-list-tabs" role="navigation">
 			<ul>
 				<li class="selected" id="blogs-all"><a href="<?php bp_root_domain(); ?>/<?php bp_blogs_root_slug(); ?>"><?php printf( __( 'All Sites <span>%s</span>', 'buddypress' ), bp_get_total_blog_count() ); ?></a></li>
 				<?php if ( is_user_logged_in() && bp_get_total_blog_count_for_user( bp_loggedin_user_id() ) ) : ?>
@@ -27,7 +27,7 @@
 			</ul>
 		</nav>
 
-		<nav class="nav-list" id="nav-secondary" role="navigation">
+		<nav id="subnav" class="item-list-tabs" role="navigation">
 			<ul>
 				<?php do_action( 'bp_blogs_directory_blog_sub_types' ); ?>
 				<li id="blogs-order-select" class="last filter">
@@ -42,7 +42,7 @@
 			</ul>
 		</nav>
 
-		<div id="blogs-directory">
+		<div id="blogs-dir-list" class="blogs dir-list">
 			<?php bp_get_template_part( 'blogs/blogs-loop' ); ?>
 		</div>
 

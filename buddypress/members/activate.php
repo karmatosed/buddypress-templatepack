@@ -10,7 +10,7 @@
 
 	<?php do_action( 'bp_before_activation_page' ); ?>
 
-	<div id="member-activate">
+	<div id="activate-page" class="page">
 
 		<?php do_action( 'template_notices' ); ?>
 
@@ -28,7 +28,7 @@
 
 			<p><?php _e( 'Please provide a valid activation key.', 'buddypress' ); ?></p>
 
-			<form action="" method="get" class="form-buddypress" id="activation-form">
+			<form action="" method="get" class="standard-form" id="activation-form">
 
 				<label for="key"><?php _e( 'Activation Key:', 'buddypress' ); ?></label>
 				<input type="text" name="key" id="key" value="" />

@@ -9,7 +9,7 @@
 <?php do_action( 'bp_before_group_forum_topic' ); ?>
 
 <form action="<?php bp_forum_topic_action(); ?>" method="post" id="forum-topic-form" class="standard-form">
-	<nav class="nav-list" id="nav-secondary" role="navigation">
+	<nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
 		<ul>
 			<?php if ( is_user_logged_in() ) : ?>
 
@@ -62,7 +62,7 @@
 
 		<?php do_action( 'bp_before_group_forum_topic_posts' ); ?>
 
-		<ul id="topic-post-list" class="item-list" role="main">
+		<ul id="topic-post-list" class="item-list">
 			<?php while ( bp_forum_topic_posts() ) : bp_the_forum_topic_post(); ?>
 
 				<li id="post-<?php bp_the_topic_post_id(); ?>" class="<?php bp_the_topic_post_css_class(); ?>">
