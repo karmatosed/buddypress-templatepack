@@ -129,6 +129,27 @@ class BP_Templates extends BP_Theme_Compat {
 		}
 
 		wp_enqueue_script( $handle, $location . $file, array( 'jquery', 'hoverIntent', ), $this->version );
+
+		// Add words that we need to use in JS to the end of the page
+		// so they can be translated and still used.
+		$params = array(
+			'accepted'            => __( 'Accepted', 'buddypress' ),
+			'close'               => __( 'Close', 'buddypress' ),
+			'comments'            => __( 'comments', 'buddypress' ),
+			'leave_group_confirm' => __( 'Are you sure you want to leave this group?', 'buddypress' ),
+			'mark_as_fav'	      => __( 'Favorite', 'buddypress' ),
+			'my_favs'             => __( 'My Favorites', 'buddypress' ),
+			'rejected'            => __( 'Rejected', 'buddypress' ),
+			'remove_fav'	      => __( 'Remove Favorite', 'buddypress' ),
+			'show_all'            => __( 'Show all', 'buddypress' ),
+			'show_all_comments'   => __( 'Show all comments for this thread', 'buddypress' ),
+			'show_x_comments'     => __( 'Show all %d comments', 'buddypress' ),
+			'unsaved_changes'     => __( 'Your profile has unsaved changes. If you leave the page, the changes will be lost.', 'buddypress' ),
+			'view'                => __( 'View', 'buddypress' ),
+		);
+		wp_localize_script( $handle, 'BP_DTheme', $params );
+
+
 	}
 
 	/**
