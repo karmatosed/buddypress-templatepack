@@ -32,12 +32,19 @@
 
 /* 01:  Globals
 -------------------------------------------------------------- */
-#buddypress .link-list, #buddypress .directory-list, #buddypress .nav-list ul{
+#buddypress .link-list,
+#buddypress .dir-list,
+#buddypress .item-list,
+#buddypress .button-nav,
+#buddypress .item-list-tabs ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-#buddypress .directory-list li, #buddypress .nav-list li{
+#buddypress .item-list li,
+#buddypress .item-list-tabs li,
+#buddypress .dir-list li,
+#buddypress .button-nav li{
 	margin: 0;
 	padding: 0;
 }
@@ -57,23 +64,13 @@
 	margin: 0 !important;
 	padding: 0 !important;
 }
-#buddypress .directory-list{
+#buddypress .item-list{
 	margin: 3% 0 0 0;
 }
-#buddypress .directory-list li{
+#buddypress .item-list li{
 	float: left;
 	list-style: none;
 	padding: 0 0 3% 0;
-}
-#buddypress .secondary-column{
-	/*float:left;
-	width:30%;*/
-}
-#buddypress .primary-column{
-	/*float:left;
-	width:70%;*/
-	overflow: hidden;
-	padding-top: 1em;
 }
 #buddypress .last{
 
@@ -84,9 +81,33 @@
 #buddypress .emphasis{
 	font-weight: bold;
 }
+#buddypress .item-avatar{
+
+}
+#buddypress .item{
+
+}
+#buddypress .item-title{
+
+}
+#buddypress .item-meta{
+
+}
+#buddypress .action{
+
+}
+#buddypress .meta{
+
+}
+#buddypress .dir-list{
+
+}
+#buddypress .dir-search{
+
+}
 /* 02:  Activity
 -------------------------------------------------------------- */
-#buddypress #buddypress-activity{
+#buddypress #activity{
 
 }
 #buddypress #activity-stream{
@@ -124,39 +145,33 @@
 }
 /* 02b:  Activity > Post form
 -------------------------------------------------------------- */
-#buddypress #update-avatar{
+#buddypress #whats-new-avatar{
 	float: left;
 }
-#buddypress #update-content{
+#buddypress #whats-new-content{
 	margin-left: 60px;
 	padding: 0 0 20px 20px;
 }
-#buddypress #update-textarea textarea{
+#buddypress #whats-new-textarea textarea{
 	padding: 5px;
 	width: 100%;
 }
-#buddypress #update-submit{
+#buddypress #aw-whats-new-submit{
 	float: right;
 }
-#buddypress #update-box{
+#buddypress #whats-new-post-in-box{
 	float: left;
 }
-#buddypress #update-form p.message-update{
+#buddypress #whats-new-form p.message-update{
 	margin: 0 0 20px 80px;
 }
-#buddypress .update-in{
+#buddypress .whats-new-post-in{
 
 }
-#buddypress .update-object{
+#buddypress .whats-new-post-object{
 
 }
-#buddypress .update-hidden-object{
-
-}
-#buddypress .update-hidden-in{
-
-}
-#buddypress #update-form{
+#buddypress #whats-new-form{
 	padding: 0 0 20px 0;
 }
 /* 02c:  Activity > Entry
@@ -182,15 +197,15 @@
 #buddypress .activity-actions{
 
 }
-#buddypress .directory-list .activity-actions li{
+#buddypress .item-list .activity-actions li{
 	display: inline;
 	margin: 0;
 }
-#buddypress .directory-list .activity-actions li:after {
+#buddypress .item-list .activity-actions li:after {
   content: ' | ';
 }
 
-#buddypress .directory-list .activity-actions li:last-child:after {
+#buddypress .item-list .activity-actions li:last-child:after {
   content: '';
 }
 #buddypress .activity-delete{
@@ -238,6 +253,18 @@
 #buddypress .comment-delete{
 
 }
+#buddypress .acomment-avatar{
+
+}
+#buddypress .acommet-meta{
+
+}
+#buddypress .acomment-content{
+
+}
+#buddypress .acomment-options{
+
+}
 /* 03:  Members
 -------------------------------------------------------------- */
 #buddypress #member-navigaiton{
@@ -262,7 +289,7 @@
 }
 #buddypress #member-panel{
 }
-#buddypress #member-profile{
+#buddypress #profile{
 
 }
 #buddypress nav#member-navigation{
@@ -465,7 +492,7 @@
 }
 /* 05:  Forum
 -------------------------------------------------------------- */
-#buddypress .forum-table{
+#buddypress .forum{
 
 }
 #buddypress #th-title{
@@ -503,13 +530,13 @@
 #buddypress #form-forums{
 
 }
-#buddypress #search-forum{
+#buddypress #forums-dir-search{
 
 }
-#buddypress .search-directory{
+#buddypress .forums-search-form{
 
 }
-#buddypress #forum-form-directory{
+#buddypress #forums-directory-form{
 
 }
 #buddypress li#forums-all{
@@ -521,7 +548,7 @@
 #buddypress li#forums-order-select{
 
 }
-#buddypress #forums-directory{
+#buddypress #forums-dir-list{
 
 }
 #buddypress #new-topic-post{
@@ -568,19 +595,19 @@
 #buddypress #message{
 
 }
-#buddypress .message-info{
+#buddypress .info{
 
 }
-#buddypress .message-warning{
+#buddypress .warning{
 
 }
-#buddypress .message-notice{
+#buddypress .notice{
 
 }
-#buddypress .message-success{
+#buddypress .success{
 
 }
-#buddypress .message-update{
+#buddypress .activity-greeting{
 
 }
 /* 09:  Core widgets
@@ -689,7 +716,7 @@ a.bp-title-button {
 }
 /* 13:  Navigation
 -------------------------------------------------------------- */
-#buddypress .nav-list li{
+#buddypress .item-list-tabs li{
 	float: left;
 	margin: 0 3% 3% 0;
 }
@@ -702,54 +729,6 @@ a.bp-title-button {
 #buddypress li.last{
 
 }
-/* should we merge all filters into one navigation elements? - TL*/
-/* NOTE: this all needs refactoring we're adding a lot of bloat so need to reconsider - TL */
-
-
-/*__ BP User Account Navigation __*/
-
-#buddypress #menu-bp {
-	margin-bottom: 2em;
-	position: relative;
-}
-#buddypress #menu-bp li {
-	display: inline-block;
-	float: none;
-	margin: 0 .5em 0 0;
-	padding: .2em 0;
-	position: static; /* reset inherited values */
-}
-#buddypress #menu-bp li span {
-	/* item counts 'Friends 1'*/
-	padding-left: 3px;
-}
-#buddypress #menu-bp li a {
-
-}
-#buddypress #menu-bp li a:focus,
-#buddypress #menu-bp li a:hover {
-
-}
-#buddypress #menu-bp li.current-menu-parent > a,
-#buddypress #menu-bp li.current-menu-item a {
-	font-weight: bold;
-}
-#buddypress #menu-bp li li a {
-	word-wrap: normal;
-}
-#menu-bp li ul.sub-menu {
-	visibility: hidden;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	height: 0;
-	width: 100%;
-}
-#menu-bp li.current-menu-parent ul.sub-menu {
-	visibility: visible;
-	height: auto;
-}
-
 /* 13b: Navigation > Pagination
 -------------------------------------------------------------- */
 #buddypress .pagination{

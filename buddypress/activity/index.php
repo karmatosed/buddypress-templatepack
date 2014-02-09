@@ -16,7 +16,7 @@
 
 	<?php do_action( 'template_notices' ); ?>
 
-	<nav class="nav-list" id="nav-activity-filter" role="navigation">
+	<nav id="nav-activity-filter" class="item-list-tabs activity-type-tabs" role="navigation">
 		<ul>
 			<?php do_action( 'bp_before_activity_type_tab_all' ); ?>
 
@@ -57,7 +57,7 @@
 		</ul>
 	</nav>
 
-	<nav class="nav-list" id="nav-secondary" role="navigation">
+	<nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
 		<ul>
 			<li class="feed"><a href="<?php bp_sitewide_activity_feed_link(); ?>" title="<?php _e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
 
@@ -105,7 +105,7 @@
 	</nav>
 	<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
-	<div id="buddypress-activity">
+	<div id="activity">
 		<?php bp_get_template_part( 'activity/activity-loop' ); ?>
 	</div>
 

@@ -7,7 +7,7 @@
  */
 ?>
 <?php do_action( 'bp_before_activity_entry' ); ?>
-<li id="bp-activity-<?php bp_activity_id(); ?>">
+<li id="bp-activity-<?php bp_activity_id(); ?>" class="<?php bp_activity_css_class(); ?>">
 	<div class="activity-header">
 		<div class="activity-avatar">
 			<a href="<?php bp_activity_user_link(); ?>">

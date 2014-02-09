@@ -6,8 +6,8 @@
  * @subpackage Templatepack
  */
 ?>
-<div id="group-panel" class="secondary-column">
-	<div id="group-header-avatar">
+<div id="group-panel">
+	<div id="item-header-avatar">
 	<a href="<?php bp_group_permalink(); ?>" title="<?php bp_group_name(); ?>">
 		<?php bp_group_avatar(); ?>
 	</a>

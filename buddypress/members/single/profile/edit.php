@@ -17,7 +17,7 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 
 		<h4><?php printf( __( "Editing '%s' Profile Group", "buddypress" ), bp_get_the_profile_group_name() ); ?></h4>
 
-		<ul class="nav-list">
+		<ul class="button-nav">
 			<?php bp_profile_group_tabs(); ?>
 		</ul>
 

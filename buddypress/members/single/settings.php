@@ -7,6 +7,16 @@
  */
 ?>
 
+<nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
+	<ul>
+		<?php if ( bp_core_can_edit_settings() ) : ?>
+
+			<?php bp_get_options_nav(); ?>
+
+		<?php endif; ?>
+	</ul>
+</nav>
+
 <?php
 
 switch ( bp_current_action() ) :

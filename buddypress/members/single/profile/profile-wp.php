@@ -12,7 +12,7 @@
 
 <?php do_action( 'bp_before_profile_field_content' ); ?>
 
-	<div class="buddypress-block wp-profile">
+	<div class="buddypress-widget wp-profile">
 		<h4><?php bp_is_my_profile() ? _e( 'My Profile', 'buddypress' ) : printf( __( "%s's Profile", 'buddypress' ), bp_get_displayed_user_fullname() ); ?></h4>
 
 		<table class="wp-profile-fields">

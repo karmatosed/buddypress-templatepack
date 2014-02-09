@@ -27,7 +27,7 @@
 			<?php do_action( 'bp_before_group_send_invites_list' ); ?>
 
 			<?php /* The ID 'friend-list' is important for AJAX support. */ ?>
-			<ul id="friend-list" class="directory-list">
+			<ul id="friend-list" class="item-list">
 				<?php if ( bp_group_has_invites() ) : ?>
 
 					<?php while ( bp_group_invites() ) : bp_group_the_invite(); ?>
