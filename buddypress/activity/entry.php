@@ -36,9 +36,9 @@
 					<?php if ( bp_activity_can_favorite() ) : ?>
 						<li>
 							<?php if ( ! bp_get_activity_is_favorite() ) : ?>
-								<a href="<?php bp_activity_favorite_link(); ?>" class="button"><?php _e( 'Favorite', 'buddypress' ); ?></a>
+								<a href="<?php bp_activity_favorite_link(); ?>" class="button fav"><?php _e( 'Favorite', 'buddypress' ); ?></a>
 							<?php else : ?>
-								<a href="<?php bp_activity_unfavorite_link(); ?>" class="button confirm"><?php _e( 'Remove Favorite', 'buddypress' ); ?></a>
+								<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav confirm"><?php _e( 'Remove Favorite', 'buddypress' ); ?></a>
 							<?php endif; ?>
 						</li>
 					<?php endif; ?>
