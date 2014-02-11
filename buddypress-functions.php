@@ -66,8 +66,65 @@ class BP_Templates extends BP_Theme_Compat {
 		add_action( 'bp_enqueue_scripts',   array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
 		add_action( 'widgets_init',         array( $this, 'widgets_init'           ) ); // Widgets		
 		add_filter( 'body_class',           array( $this, 'add_nojs_body_class'    ), 20, 1 );
-		// Run an action for for third-party plugins to affect the template pack
+
+		// Run an action for third-party plugins to affect the template pack
 		do_action_ref_array( 'bp_theme_compat_actions', array( &$this ) );
+
+	/** Ajax ************************************************************* */
+
+	$actions = array(
+
+		// Directory filters
+		'blogs_filter'    => 'bp_template_pack_object_template_loader',
+		'forums_filter'   => 'bp_template_pack_object_template_loader',
+		'groups_filter'   => 'bp_template_pack_object_template_loader',
+		'members_filter'  => 'bp_template_pack_object_template_loader',
+		'messages_filter' => 'bp_template_pack_messages_template_loader',
+
+		// Friends
+		'accept_friendship' => 'bp_template_pack_ajax_accept_friendship',
+		'addremove_friend'  => 'bp_template_pack_ajax_addremove_friend',
+		'reject_friendship' => 'bp_template_pack_ajax_reject_friendship',
+
+		// Activity
+		'activity_get_older_updates'  => 'bp_template_pack_activity_template_loader',
+		'activity_mark_fav'           => 'bp_template_pack_mark_activity_favorite',
+		'activity_mark_unfav'         => 'bp_template_pack_unmark_activity_favorite',
+		'activity_widget_filter'      => 'bp_template_pack_activity_template_loader',
+		'delete_activity'             => 'bp_template_pack_delete_activity',
+		'delete_activity_comment'     => 'bp_template_pack_delete_activity_comment',
+		'get_single_activity_content' => 'bp_template_pack_get_single_activity_content',
+		'new_activity_comment'        => 'bp_template_pack_new_activity_comment',
+		'post_update'                 => 'bp_template_pack_post_update',
+		'bp_spam_activity'            => 'bp_template_pack_spam_activity',
+		'bp_spam_activity_comment'    => 'bp_template_pack_spam_activity',
+
+		// Groups
+		'groups_invite_user' => 'bp_template_pack_ajax_invite_user',
+		'joinleave_group'    => 'bp_template_pack_ajax_joinleave_group',
+
+		// Messages
+		'messages_autocomplete_results' => 'bp_template_pack_ajax_messages_autocomplete_results',
+		'messages_close_notice'         => 'bp_template_pack_ajax_close_notice',
+		'messages_delete'               => 'bp_template_pack_ajax_messages_delete',
+		'messages_markread'             => 'bp_template_pack_ajax_message_markread',
+		'messages_markunread'           => 'bp_template_pack_ajax_message_markunread',
+		'messages_send_reply'           => 'bp_template_pack_ajax_messages_send_reply',
+		);
+
+		/**
+		 * Register all of these AJAX handlers
+		 *
+		 * The "wp_ajax_" action is used for logged in users, and "wp_ajax_nopriv_"
+		 * executes for users that aren't logged in. This is for backpat with BP <1.6.
+		 */
+		foreach( $actions as $name => $function ) {
+			add_action( 'wp_ajax_'        . $name, $function );
+			add_action( 'wp_ajax_nopriv_' . $name, $function );
+		}
+
+		add_filter( 'bp_ajax_querystring', 'bp_template_pack_ajax_querystring', 10, 2 );
+
 	}
 
 	/**
@@ -165,8 +222,6 @@ class BP_Templates extends BP_Theme_Compat {
 		) );
 	}
 
-
-
 	/**
 	 * Adds the no-js class to the body tag.
 	 *
@@ -181,7 +236,6 @@ class BP_Templates extends BP_Theme_Compat {
 	public function add_nojs_body_class( $classes ) {
 		if ( ! in_array( 'no-js', $classes ) )
 			$classes[] = 'no-js';
-
 		return array_unique( $classes );
 	}
 
@@ -189,4 +243,4 @@ class BP_Templates extends BP_Theme_Compat {
 new BP_Templates();
 endif;
 
-//include( plugin_dir_path(__FILE__) . 'buddypress-ajax.php' );
+include( plugin_dir_path(__FILE__) . 'buddypress-ajax.php' );

@@ -15,7 +15,7 @@
  * @return string Query string for the component loops
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_querystring( $query_string, $object ) {
+function bp_template_pack_ajax_querystring( $query_string, $object ) {
 	if ( empty( $object ) )
 		return '';
 
@@ -87,7 +87,7 @@ function bp_legacy_theme_ajax_querystring( $query_string, $object ) {
 	if ( isset( $_BP_COOKIE['bp-' . $object . '-extras'] ) )
 		$object_extras = $_BP_COOKIE['bp-' . $object . '-extras'];
 
-	return apply_filters( 'bp_legacy_theme_ajax_querystring', $query_string, $object, $object_filter, $object_scope, $object_page, $object_search_terms, $object_extras );
+	return apply_filters( 'bp_template_pack_ajax_querystring', $query_string, $object, $object_filter, $object_scope, $object_page, $object_search_terms, $object_extras );
 }
 
 /**
@@ -96,7 +96,7 @@ function bp_legacy_theme_ajax_querystring( $query_string, $object ) {
  * @return string Prints template loop for the specified object
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_object_template_loader() {
+function bp_template_pack_object_template_loader() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -132,7 +132,7 @@ function bp_legacy_theme_object_template_loader() {
  * @return string Prints template loop for the Messages component
  * @since BuddyPress (1.6)
  */
-function bp_legacy_theme_messages_template_loader() {
+function bp_template_pack_messages_template_loader() {
 	bp_get_template_part( 'members/single/messages/messages-loop' );
 	exit();
 }
@@ -145,7 +145,7 @@ function bp_legacy_theme_messages_template_loader() {
  *
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_activity_template_loader() {
+function bp_template_pack_activity_template_loader() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -178,7 +178,7 @@ function bp_legacy_theme_activity_template_loader() {
 	ob_start();
 	bp_get_template_part( 'activity/activity-loop' );
 	$result['contents'] = ob_get_contents();
-	$result['feed_url'] = apply_filters( 'bp_legacy_theme_activity_feed_url', $feed_url, $scope );
+	$result['feed_url'] = apply_filters( 'bp_template_pack_activity_feed_url', $feed_url, $scope );
 	ob_end_clean();
 
 	exit( json_encode( $result ) );
@@ -190,7 +190,7 @@ function bp_legacy_theme_activity_template_loader() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_post_update() {
+function bp_template_pack_post_update() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -236,7 +236,7 @@ function bp_legacy_theme_post_update() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_new_activity_comment() {
+function bp_template_pack_new_activity_comment() {
 	global $activities_template;
 
 	// Bail if not a POST action
@@ -287,7 +287,7 @@ function bp_legacy_theme_new_activity_comment() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_delete_activity() {
+function bp_template_pack_delete_activity() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -323,7 +323,7 @@ function bp_legacy_theme_delete_activity() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_delete_activity_comment() {
+function bp_template_pack_delete_activity_comment() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -360,7 +360,7 @@ function bp_legacy_theme_delete_activity_comment() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.6)
  */
-function bp_legacy_theme_spam_activity() {
+function bp_template_pack_spam_activity() {
 	global $bp;
 
 	// Bail if not a POST action
@@ -404,7 +404,7 @@ function bp_legacy_theme_spam_activity() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_mark_activity_favorite() {
+function bp_template_pack_mark_activity_favorite() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -443,7 +443,7 @@ function bp_legacy_theme_unmark_activity_favorite() {
  * @return string HTML
  * @since BuddyPress (1.5)
  */
-function bp_legacy_theme_get_single_activity_content() {
+function bp_template_pack_get_single_activity_content() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -473,7 +473,7 @@ function bp_legacy_theme_get_single_activity_content() {
  * @since BuddyPress (1.2)
  * @todo Audit return types
  */
-function bp_legacy_theme_ajax_invite_user() {
+function bp_template_pack_ajax_invite_user() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -522,7 +522,7 @@ function bp_legacy_theme_ajax_invite_user() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_addremove_friend() {
+function bp_template_pack_ajax_addremove_friend() {
 
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
@@ -575,7 +575,7 @@ function bp_legacy_theme_ajax_addremove_friend() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_accept_friendship() {
+function bp_template_pack_ajax_accept_friendship() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -594,7 +594,7 @@ function bp_legacy_theme_ajax_accept_friendship() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_reject_friendship() {
+function bp_template_pack_ajax_reject_friendship() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -613,7 +613,7 @@ function bp_legacy_theme_ajax_reject_friendship() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_joinleave_group() {
+function bp_template_pack_ajax_joinleave_group() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -668,7 +668,7 @@ function bp_legacy_theme_ajax_joinleave_group() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_close_notice() {
+function bp_template_pack_ajax_close_notice() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -693,7 +693,7 @@ function bp_legacy_theme_ajax_close_notice() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_messages_send_reply() {
+function bp_template_pack_ajax_messages_send_reply() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -749,7 +749,7 @@ function bp_legacy_theme_ajax_messages_send_reply() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_message_markunread() {
+function bp_template_pack_ajax_message_markunread() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -774,7 +774,7 @@ function bp_legacy_theme_ajax_message_markunread() {
  * @return mixed String on error, void on success
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_message_markread() {
+function bp_template_pack_ajax_message_markread() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -799,7 +799,7 @@ function bp_legacy_theme_ajax_message_markread() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_messages_delete() {
+function bp_template_pack_ajax_messages_delete() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
@@ -827,7 +827,7 @@ function bp_legacy_theme_ajax_messages_delete() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_legacy_theme_ajax_messages_autocomplete_results() {
+function bp_template_pack_ajax_messages_autocomplete_results() {
 
 	// Include everyone in the autocomplete, or just friends?
 	if ( bp_is_current_component( bp_get_messages_slug() ) )
