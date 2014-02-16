@@ -143,6 +143,9 @@
 #buddypress .activity-span{
 
 }
+#buddypress #activity-filter-select{
+	float: right;
+}
 /* 02b:  Activity > Post form
 -------------------------------------------------------------- */
 #buddypress #whats-new-avatar{
@@ -158,6 +161,7 @@
 }
 #buddypress #aw-whats-new-submit{
 	float: right;
+	margin: 10px 0 0 0;
 }
 #buddypress #whats-new-post-in-box{
 	float: left;
@@ -172,7 +176,7 @@
 
 }
 #buddypress #whats-new-form{
-	padding: 0 0 20px 0;
+	padding: 0 0 40px 0;
 }
 /* 02c:  Activity > Entry
 -------------------------------------------------------------- */
@@ -195,7 +199,7 @@
 #buddypress .activity-meta a{
 }
 #buddypress .activity-actions{
-
+	float: right;
 }
 #buddypress .item-list .activity-actions li{
 	display: inline;
@@ -229,6 +233,10 @@
 }
 #buddypress .ac-input{
 
+}
+#buddypress #activity-stream.item-list li{
+	float: none;
+	padding: 0 0 40px 0;
 }
 /* 02d:  Activity > Comments
 -------------------------------------------------------------- */
@@ -608,7 +616,9 @@
 
 }
 #buddypress .activity-greeting{
-
+	font-size: 120%;
+	font-weight: 700;
+	margin: 0 20px 0 80px;
 }
 /* 09:  Core widgets
 -------------------------------------------------------------- */
@@ -716,9 +726,20 @@ a.bp-title-button {
 }
 /* 13:  Navigation
 -------------------------------------------------------------- */
+#buddypress .item-list-tabs{
+	background: rgba(238, 238, 238, 0.4);
+	margin: 0 0 3px 0;
+	padding: 10px;
+}
+#buddypress #subnav.item-list-tabs{
+	background: rgba(238, 238, 238, 0.2);
+}
 #buddypress .item-list-tabs li{
+}
+#buddypress .item-list-tabs li a{
 	float: left;
-	margin: 0 3% 3% 0;
+	padding: 0 10px;
+	text-decoration: none;
 }
 #buddypress #nav-secondary{
 
