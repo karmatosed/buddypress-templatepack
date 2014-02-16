@@ -68,9 +68,8 @@
 	margin: 3% 0 0 0;
 }
 #buddypress .item-list li{
-	float: left;
 	list-style: none;
-	padding: 0 0 3% 0;
+	padding: 0 0 40px 0;
 }
 #buddypress .last{
 
@@ -82,7 +81,9 @@
 	font-weight: bold;
 }
 #buddypress .item-avatar{
-
+}
+#buddypress #item-header-avatar{
+	float: left;
 }
 #buddypress .item{
 
@@ -104,6 +105,10 @@
 }
 #buddypress .dir-search{
 
+}
+#buddypress #item-header-content{
+	float: right;
+	width: 72%;
 }
 /* 02:  Activity
 -------------------------------------------------------------- */
@@ -235,7 +240,6 @@
 
 }
 #buddypress #activity-stream.item-list li{
-	float: none;
 	padding: 0 0 40px 0;
 }
 /* 02d:  Activity > Comments
