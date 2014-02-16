@@ -56,6 +56,7 @@
 }
 #buddypress .search-directory{
 	float: right;
+	margin: 0 0 10px 0;
 }
 #buddypress img.wp-smiley {
 	border: none !important;
@@ -584,13 +585,13 @@
 #buddypress .messages-list {
 	float: left;
 	margin-right: 2%;
-	width: 28%;	
+	width: 28%;
 }
 #buddypress .messages-list ul {
 	padding-left:0;
 }
 #buddypress .messages-list ul li {
-	list-style: none;	
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
@@ -605,19 +606,27 @@
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
 #buddypress #message{
-
+	margin: 10px 0;
+	padding: 10px;
+}
+#buddypress #message p{
+	margin: 0;
+	padding: 0;
 }
 #buddypress .info{
-
+	background: #3388aa;
+	color: #fff;
 }
 #buddypress .warning{
-
+	background: #dd3333;
+	color: #fff;
 }
 #buddypress .notice{
-
+	background: #eeeebb;
 }
 #buddypress .success{
-
+	background: #88aa22;
+	color: #fff;
 }
 #buddypress .activity-greeting{
 	font-size: 120%;
@@ -760,7 +769,7 @@ a.bp-title-button {
 	font-size: 90%;
 	line-height: 1;
 	opacity: 0.5;
-	padding: 0 0 3% 0;
+	padding: 3% 0;
 }
 #buddypress .pagination-count{
 	float: left;
@@ -779,6 +788,9 @@ a.bp-title-button {
 }
 #buddypress #previous-steps{
 
+}
+#buddypress .page-numbers{
+	padding: 0 5px;
 }
 /* 13c: Navigation > Loading
 -------------------------------------------------------------- */
