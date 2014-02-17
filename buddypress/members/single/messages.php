@@ -28,6 +28,7 @@ switch ( bp_current_action() ) :
 	case 'inbox'   :
 	case 'sentbox' :
 	case 'view'    :
+	do_action( 'bp_before_member_messages_content' );
  ?>
 
 
@@ -37,8 +38,6 @@ switch ( bp_current_action() ) :
 
 				// View full message
 				case 'view' :
-
-					do_action( 'bp_before_member_messages_content' );
 
 					bp_get_template_part( 'members/single/messages/single' );
 
