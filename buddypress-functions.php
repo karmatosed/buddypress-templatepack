@@ -70,6 +70,36 @@ class BP_Templates extends BP_Theme_Compat {
 		// Run an action for third-party plugins to affect the template pack
 		do_action_ref_array( 'bp_theme_compat_actions', array( &$this ) );
 
+	/** Buttons ***********************************************************/
+
+	if ( ! is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		// Register buttons for the relevant component templates
+
+		// Friends button
+		if ( bp_is_active( 'friends' ) )
+			add_action( 'bp_member_header_actions',    'bp_add_friend_button',           5 );
+
+			// Activity button
+		if ( bp_is_active( 'activity' ) && bp_activity_do_mentions() )
+			add_action( 'bp_member_header_actions',    'bp_send_public_message_button',  20 );
+
+			// Messages button
+		if ( bp_is_active( 'messages' ) )
+			add_action( 'bp_member_header_actions',    'bp_send_private_message_button', 20 );
+
+			// Group buttons
+		if ( bp_is_active( 'groups' ) ) {
+			add_action( 'bp_group_header_actions',     'bp_group_join_button',           5 );
+			add_action( 'bp_group_header_actions',     'bp_group_new_topic_button',      20 );
+			add_action( 'bp_directory_groups_actions', 'bp_group_join_button' );
+		}
+
+			// Blog button
+		if ( bp_is_active( 'blogs' ) )
+			add_action( 'bp_directory_blogs_actions',  'bp_blogs_visit_blog_button' );
+
+	}
+
 	/** Ajax ************************************************************* */
 
 	$actions = array(
