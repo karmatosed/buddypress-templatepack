@@ -13,6 +13,8 @@
 
 		<?php do_action( 'bp_before_directory_blogs_content' ); ?>
 
+		<?php do_action( 'bp_blogs_create_button' ); ?>
+
 		<div id="blog-dir-search" class="dir-search" role="search">
 			<?php bp_directory_blogs_search_form(); ?>
 		</div>

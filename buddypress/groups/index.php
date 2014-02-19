@@ -10,6 +10,9 @@
 <div id="buddypress">
 
 	<?php do_action( 'bp_before_directory_groups' ); ?>
+
+	<?php do_action('bp_group_create_button'); ?>
+
 	<?php do_action( 'bp_before_directory_groups_content' ); ?>
 
 	<div id="search-groups" class="search-directory" role="search">

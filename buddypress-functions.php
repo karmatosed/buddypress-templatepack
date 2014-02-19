@@ -62,10 +62,10 @@ class BP_Templates extends BP_Theme_Compat {
 	 * @since BuddyPress (1.7)
 	 */
 	protected function setup_actions() {
-		add_action( 'bp_enqueue_scripts',   array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
-		add_action( 'bp_enqueue_scripts',   array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
-		add_action( 'widgets_init',         array( $this, 'widgets_init'           ) ); // Widgets		
-		add_filter( 'body_class',           array( $this, 'add_nojs_body_class'    ), 20, 1 );
+		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
+		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
+		add_action( 'widgets_init',           array( $this, 'widgets_init'           ) ); // Widgets		
+		add_filter( 'body_class',             array( $this, 'add_nojs_body_class'    ), 20, 1 );
 
 		// Run an action for third-party plugins to affect the template pack
 		do_action_ref_array( 'bp_theme_compat_actions', array( &$this ) );
@@ -99,6 +99,34 @@ class BP_Templates extends BP_Theme_Compat {
 			add_action( 'bp_directory_blogs_actions',  'bp_blogs_visit_blog_button' );
 
 	}
+
+	/**
+	* Remove Group create, blog create, buttons from h# 
+	* Add button to new do_action for template pack.
+	* See BP trac https://buddypress.trac.wordpress.org/ticket/5144
+	*/
+	add_filter('bp_theme_compat_show_create_button_in_title', '__return_false');
+
+	function group_create_button() {
+
+		if( bp_is_active( 'groups' ) && bp_user_can_create_groups()  ) {
+			echo '<a class="button group-create" href="' . trailingslashit( bp_get_root_domain() . '/' . bp_get_groups_root_slug() . '/create' ) . '">' . __( 'Create a Group', 'buddypress' ) . '</a>';
+		}
+
+	}	
+	add_action('bp_group_create_button', 'group_create_button' );
+		
+	function blog_create_button() {
+		$bp_blog_allowed_type = buddypress()->site_options['registration'];
+		$blog_signup_opts = array('blog', 'all'); // register user & site  'all' & logged_in only 'blog'
+		$bp_allow_blog_create = ( in_array( $bp_blog_allowed_type, $blog_signup_opts ) )? true : false ;
+
+		if( is_multisite() && is_user_logged_in() && $bp_allow_blog_create ) {
+			echo '<a class="button blog-create" href="' . trailingslashit( bp_get_root_domain() . '/' . bp_get_blogs_root_slug() . '/create' ) . '">' . __( 'Create a Site', 'buddypress' ) . '</a>';	
+		}
+
+	}		
+	add_action( 'bp_blogs_create_button', 'blog_create_button') ;
 
 	/** Ajax ************************************************************* */
 
