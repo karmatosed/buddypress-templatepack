@@ -12,9 +12,20 @@
 
 	<?php do_action( 'bp_before_group_home_content' ); ?>
 
-	<?php bp_get_template_part( 'groups/single/group-panel' ) ?>
+	<div id="item-header-avatar">
+	<a href="<?php bp_group_permalink(); ?>" title="<?php bp_group_name(); ?>">
+		<?php bp_group_avatar(); ?>
+	</a>
+	</div><!-- #item-header-avatar -->
 
-	<div id="group-profile" class="primary-column">
+	<nav id="group-nav" class="item-list-tabs no-ajax" role="navigation">
+		<ul>
+			<?php bp_get_options_nav(); ?>
+			<?php do_action( 'bp_group_options_nav' ); ?>
+		</ul>
+	</nav>
+
+	<div id="group-profile">
 		<?php bp_get_template_part( 'groups/single/group-header' ); ?>
 
 		<div id="group-body">

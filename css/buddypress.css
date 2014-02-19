@@ -56,6 +56,7 @@
 }
 #buddypress .search-directory{
 	float: right;
+	margin: 0 0 10px 0;
 }
 #buddypress img.wp-smiley {
 	border: none !important;
@@ -68,9 +69,8 @@
 	margin: 3% 0 0 0;
 }
 #buddypress .item-list li{
-	float: left;
 	list-style: none;
-	padding: 0 0 3% 0;
+	padding: 0 0 40px 0;
 }
 #buddypress .last{
 
@@ -82,7 +82,9 @@
 	font-weight: bold;
 }
 #buddypress .item-avatar{
-
+}
+#buddypress #item-header-avatar{
+	float: left;
 }
 #buddypress .item{
 
@@ -104,6 +106,10 @@
 }
 #buddypress .dir-search{
 
+}
+#buddypress #item-header-content{
+	float: right;
+	width: 72%;
 }
 /* 02:  Activity
 -------------------------------------------------------------- */
@@ -143,6 +149,9 @@
 #buddypress .activity-span{
 
 }
+#buddypress #activity-filter-select{
+	float: right;
+}
 /* 02b:  Activity > Post form
 -------------------------------------------------------------- */
 #buddypress #whats-new-avatar{
@@ -158,6 +167,7 @@
 }
 #buddypress #aw-whats-new-submit{
 	float: right;
+	margin: 10px 0 0 0;
 }
 #buddypress #whats-new-post-in-box{
 	float: left;
@@ -172,7 +182,7 @@
 
 }
 #buddypress #whats-new-form{
-	padding: 0 0 20px 0;
+	padding: 0 0 40px 0;
 }
 /* 02c:  Activity > Entry
 -------------------------------------------------------------- */
@@ -195,7 +205,7 @@
 #buddypress .activity-meta a{
 }
 #buddypress .activity-actions{
-
+	float: right;
 }
 #buddypress .item-list .activity-actions li{
 	display: inline;
@@ -229,6 +239,9 @@
 }
 #buddypress .ac-input{
 
+}
+#buddypress #activity-stream.item-list li{
+	padding: 0 0 40px 0;
 }
 /* 02d:  Activity > Comments
 -------------------------------------------------------------- */
@@ -572,13 +585,13 @@
 #buddypress .messages-list {
 	float: left;
 	margin-right: 2%;
-	width: 28%;	
+	width: 28%;
 }
 #buddypress .messages-list ul {
 	padding-left:0;
 }
 #buddypress .messages-list ul li {
-	list-style: none;	
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
@@ -593,22 +606,32 @@
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
 #buddypress #message{
-
+	margin: 10px 0;
+	padding: 10px;
+}
+#buddypress #message p{
+	margin: 0;
+	padding: 0;
 }
 #buddypress .info{
-
+	background: #3388aa;
+	color: #fff;
 }
 #buddypress .warning{
-
+	background: #dd3333;
+	color: #fff;
 }
 #buddypress .notice{
-
+	background: #eeeebb;
 }
 #buddypress .success{
-
+	background: #88aa22;
+	color: #fff;
 }
 #buddypress .activity-greeting{
-
+	font-size: 120%;
+	font-weight: 700;
+	margin: 0 20px 0 80px;
 }
 /* 09:  Core widgets
 -------------------------------------------------------------- */
@@ -716,9 +739,20 @@ a.bp-title-button {
 }
 /* 13:  Navigation
 -------------------------------------------------------------- */
+#buddypress .item-list-tabs{
+	background: rgba(238, 238, 238, 0.4);
+	margin: 0 0 3px 0;
+	padding: 10px;
+}
+#buddypress #subnav.item-list-tabs{
+	background: rgba(238, 238, 238, 0.2);
+}
 #buddypress .item-list-tabs li{
+}
+#buddypress .item-list-tabs li a{
 	float: left;
-	margin: 0 3% 3% 0;
+	padding: 0 10px;
+	text-decoration: none;
 }
 #buddypress #nav-secondary{
 
@@ -735,7 +769,7 @@ a.bp-title-button {
 	font-size: 90%;
 	line-height: 1;
 	opacity: 0.5;
-	padding: 0 0 3% 0;
+	padding: 3% 0;
 }
 #buddypress .pagination-count{
 	float: left;
@@ -754,6 +788,9 @@ a.bp-title-button {
 }
 #buddypress #previous-steps{
 
+}
+#buddypress .page-numbers{
+	padding: 0 5px;
 }
 /* 13c: Navigation > Loading
 -------------------------------------------------------------- */
