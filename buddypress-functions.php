@@ -89,44 +89,19 @@ class BP_Templates extends BP_Theme_Compat {
 
 			// Group buttons
 		if ( bp_is_active( 'groups' ) ) {
+			add_action( 'bp_before_directory_groups',  'bp_group_create_button' );
 			add_action( 'bp_group_header_actions',     'bp_group_join_button',           5 );
 			add_action( 'bp_group_header_actions',     'bp_group_new_topic_button',      20 );
 			add_action( 'bp_directory_groups_actions', 'bp_group_join_button' );
 		}
 
 			// Blog button
-		if ( bp_is_active( 'blogs' ) )
-			add_action( 'bp_directory_blogs_actions',  'bp_blogs_visit_blog_button' );
+		if ( bp_is_active( 'blogs' ) ) {
+			add_action( 'bp_before_directory_blogs_content', 'bp_blog_create_button' );
+			add_action( 'bp_directory_blogs_actions',   'bp_blogs_visit_blog_button' );
+		}
 
 	}
-
-	/**
-	* Remove Group create, blog create, buttons from h# 
-	* Add button to new do_action for template pack.
-	* See BP trac https://buddypress.trac.wordpress.org/ticket/5144
-	*/
-	add_filter('bp_theme_compat_show_create_button_in_title', '__return_false');
-
-	function group_create_button() {
-
-		if( bp_is_active( 'groups' ) && bp_user_can_create_groups()  ) {
-			echo '<a class="button group-create" href="' . trailingslashit( bp_get_root_domain() . '/' . bp_get_groups_root_slug() . '/create' ) . '">' . __( 'Create a Group', 'buddypress' ) . '</a>';
-		}
-
-	}	
-	add_action('bp_group_create_button', 'group_create_button' );
-		
-	function blog_create_button() {
-		$bp_blog_allowed_type = buddypress()->site_options['registration'];
-		$blog_signup_opts = array('blog', 'all'); // register user & site  'all' & logged_in only 'blog'
-		$bp_allow_blog_create = ( in_array( $bp_blog_allowed_type, $blog_signup_opts ) )? true : false ;
-
-		if( is_multisite() && is_user_logged_in() && $bp_allow_blog_create ) {
-			echo '<a class="button blog-create" href="' . trailingslashit( bp_get_root_domain() . '/' . bp_get_blogs_root_slug() . '/create' ) . '">' . __( 'Create a Site', 'buddypress' ) . '</a>';	
-		}
-
-	}		
-	add_action( 'bp_blogs_create_button', 'blog_create_button') ;
 
 	/** Ajax ************************************************************* */
 
