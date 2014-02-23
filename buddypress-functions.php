@@ -62,13 +62,46 @@ class BP_Templates extends BP_Theme_Compat {
 	 * @since BuddyPress (1.7)
 	 */
 	protected function setup_actions() {
-		add_action( 'bp_enqueue_scripts',   array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
-		add_action( 'bp_enqueue_scripts',   array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
-		add_action( 'widgets_init',         array( $this, 'widgets_init'           ) ); // Widgets		
-		add_filter( 'body_class',           array( $this, 'add_nojs_body_class'    ), 20, 1 );
+		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
+		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
+		add_action( 'widgets_init',           array( $this, 'widgets_init'           ) ); // Widgets		
+		add_filter( 'body_class',             array( $this, 'add_nojs_body_class'    ), 20, 1 );
 
 		// Run an action for third-party plugins to affect the template pack
 		do_action_ref_array( 'bp_theme_compat_actions', array( &$this ) );
+
+	/** Buttons ***********************************************************/
+
+	if ( ! is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		// Register buttons for the relevant component templates
+
+		// Friends button
+		if ( bp_is_active( 'friends' ) )
+			add_action( 'bp_member_header_actions',    'bp_add_friend_button',           5 );
+
+			// Activity button
+		if ( bp_is_active( 'activity' ) && bp_activity_do_mentions() )
+			add_action( 'bp_member_header_actions',    'bp_send_public_message_button',  20 );
+
+			// Messages button
+		if ( bp_is_active( 'messages' ) )
+			add_action( 'bp_member_header_actions',    'bp_send_private_message_button', 20 );
+
+			// Group buttons
+		if ( bp_is_active( 'groups' ) ) {
+			add_action( 'bp_before_directory_groups',  'bp_group_create_button' );
+			add_action( 'bp_group_header_actions',     'bp_group_join_button',           5 );
+			add_action( 'bp_group_header_actions',     'bp_group_new_topic_button',      20 );
+			add_action( 'bp_directory_groups_actions', 'bp_group_join_button' );
+		}
+
+			// Blog button
+		if ( bp_is_active( 'blogs' ) ) {
+			add_action( 'bp_before_directory_blogs_content', 'bp_blog_create_button' );
+			add_action( 'bp_directory_blogs_actions',   'bp_blogs_visit_blog_button' );
+		}
+
+	}
 
 	/** Ajax ************************************************************* */
 
