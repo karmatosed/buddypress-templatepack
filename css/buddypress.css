@@ -583,12 +583,12 @@
 	overflow: auto;
 }
 #buddypress .messages-list {
-	float: left;
-	margin-right: 2%;
-	width: 28%;
+
 }
 #buddypress .messages-list ul {
-	padding-left:0;
+	margin: 0;
+	padding: 0;
+	
 }
 #buddypress .messages-list ul li {
 	list-style: none;

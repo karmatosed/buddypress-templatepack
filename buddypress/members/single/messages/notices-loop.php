@@ -6,4 +6,3 @@
  * @subpackage Templatepack
  */
 ?>
-<!-- to come -->

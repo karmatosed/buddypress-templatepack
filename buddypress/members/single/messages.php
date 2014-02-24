@@ -1,25 +1,28 @@
 <?php
+
 /**
- * Member messages
+ * BuddyPress - Users Messages
  *
  * @package BuddyPress
- * @subpackage Templatepack
+ * @subpackage bp-legacy
  */
+
 ?>
-<nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
+
+<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 	<ul>
 
 		<?php bp_get_options_nav(); ?>
 
 	</ul>
-
-	<?php if ( bp_is_messages_inbox() || bp_is_messages_sentbox() ) : ?>
+	
+	<!--<?php //if ( bp_is_messages_inbox() || bp_is_messages_sentbox() ) : ?>
 
 		<div class="message-search"><?php bp_message_search_form(); ?></div>
 
-	<?php endif; ?>
+	<?php //endif; ?>-->
 
-</nav><!-- .item-list-tabs -->
+</div><!-- .item-list-tabs -->
 
 <?php
 switch ( bp_current_action() ) :
@@ -27,58 +30,35 @@ switch ( bp_current_action() ) :
 	// Inbox/Sentbox
 	case 'inbox'   :
 	case 'sentbox' :
-	case 'view'    :
-	do_action( 'bp_before_member_messages_content' );
- ?>
+		do_action( 'bp_before_member_messages_content' ); ?>
 
 
-			<?php bp_get_template_part( 'members/single/messages/messages-loop' ); ?>
+			<?php 
+			$var = bp_current_action();
+			echo 'bp_current_action = '; print_r($var);
+			
+			bp_get_template_part( 'members/single/messages/messages-loop' ); ?>
 
-			<?php switch ( bp_current_action() ) :
 
-				// View full message
-				case 'view' :
+		<?php do_action( 'bp_after_member_messages_content' );
+		break;
 
-					bp_get_template_part( 'members/single/messages/single' );
-
-					do_action( 'bp_after_member_messages_content' );
-
-				break;
-
-			// Compose new mesage or reply to
-			case 'compose' :
-
-				bp_get_template_part( 'members/single/messages/compose' );
-
-			break;
-
-			default:
-
-				bp_get_template_part( 'members/single/messages/compose' );
-
-			break;
-			endswitch;
-
+	// Single Message View
+	case 'view' :
+		bp_get_template_part( 'members/single/messages/single' );
 		break;
 
 	// Compose
 	case 'compose' :
-		do_action( 'bp_before_member_messages_content' ); ?>
-
-		<div class="messages">
-			<?php bp_get_template_part( 'members/single/messages/compose' );; ?>
-		</div><!-- .messages -->
-
-		<?php do_action( 'bp_after_member_messages_content' );
+		bp_get_template_part( 'members/single/messages/compose' );
 		break;
 
 	// Sitewide Notices
 	case 'notices' :
 		do_action( 'bp_before_member_messages_content' ); ?>
 
-		<div class="messages">
+
 			<?php bp_get_template_part( 'members/single/messages/notices-loop' );; ?>
-		</div><!-- .messages -->
 
 		<?php do_action( 'bp_after_member_messages_content' );
 		break;

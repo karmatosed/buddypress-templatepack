@@ -12,20 +12,19 @@
 
 <div class="messages-list">
 
-	<ul>
 
 	<?php while ( bp_message_threads() ) : bp_message_thread(); ?>
 
-		<li id="m-<?php bp_message_thread_id(); ?>" class="<?php bp_message_css_class(); ?><?php if ( bp_message_thread_has_unread() ) : ?> unread<?php else: ?> read<?php endif; ?>">
+		<div id="m-<?php bp_message_thread_id(); ?>" class="message-header <?php bp_message_css_class(); ?><?php if ( bp_message_thread_has_unread() ) : ?>unread<?php else: ?>read<?php endif; ?>">
 
 			<?php bp_message_thread_avatar(); ?>
 
 			<?php if( bp_message_thread_has_unread() ) : ?>
-			<span class="unread-num">
+			<!--<span class="unread-num">
 
-				<?php bp_message_thread_unread_count(); ?>
+				<?php bp_message_thread_unread_count(); ?> <?php _e( 'Unread', 'buddypress' ); ?>
 
-			</span>
+			</span>-->
 			<?php endif; ?>
 
 			<?php  if('sentbox' !== bp_current_action()): ?>
@@ -40,18 +39,20 @@
 
 			<a href="<?php bp_message_thread_view_link(); ?>"><?php bp_message_thread_subject(); ?></a>
 
-		<?php //message excerpt ?>
-		<div>
+		</div>
 
-			<?php bp_message_thread_excerpt(); ?>
+		<div class="message-content">
+
+		<span><a href="<?php bp_message_thread_view_link(); ?>"><?php bp_message_thread_subject(); ?></a></span>
+
+		<?php bp_message_thread_content();?>
 
 		</div>
 
-		</li>
 
 	<?php endwhile; ?>
 
-	</ul>
+
 
 </div><!-- / .messages-list -->
 
