@@ -29,11 +29,11 @@
 			<?php endif; ?>
 
 			<?php  if('sentbox' !== bp_current_action()): ?>
-			<span><?php _e( 'From', 'buddypress' ); ?> <?php bp_message_thread_from() ?></span>
+			<span><?php _e( 'From: ', 'buddypress' ); ?> <?php bp_message_thread_from() ?></span>
 			<?php else: ?>
-			<span><?php _e( 'To', 'buddypress' ); ?> <?php bp_message_thread_to() ;?></span>
+			<span><?php _e( 'To: ', 'buddypress' ); ?> <?php bp_message_thread_to() ;?></span>
 			<?php endif; ?>
-			<a href="<?php bp_message_thread_view_link(); ?>"><?php bp_message_thread_subject(); ?></a>	
+			<?php bp_message_thread_subject(); ?>
 		</div>
 
 		<div class="message-content">
