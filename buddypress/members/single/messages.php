@@ -10,17 +10,17 @@
 ?>
 
 <div class="item-list-tabs no-ajax" id="subnav" role="navigation">
-	<ul>
+	<ul class="messages-nav">
 
 		<?php bp_get_options_nav(); ?>
 
 	</ul>
 	
-	<!--<?php //if ( bp_is_messages_inbox() || bp_is_messages_sentbox() ) : ?>
+	<!--<?php if ( bp_is_messages_inbox() || bp_is_messages_sentbox() ) : ?>
 
 		<div class="message-search"><?php bp_message_search_form(); ?></div>
 
-	<?php //endif; ?>-->
+	<?php endif; ?>-->
 
 </div><!-- .item-list-tabs -->
 
@@ -34,8 +34,6 @@ switch ( bp_current_action() ) :
 
 
 			<?php 
-			$var = bp_current_action();
-			echo 'bp_current_action = '; print_r($var);
 			
 			bp_get_template_part( 'members/single/messages/messages-loop' ); ?>
 

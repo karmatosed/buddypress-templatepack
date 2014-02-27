@@ -4,45 +4,59 @@
 #buddypress .item-list li{
 	clear: both;
 }
+
 #buddypress .item-list li li{
 	clear: none;
 }
+
 #buddypress .buddypress-pagination{
 	overflow: hidden;
 }
+
 #buddypress .activity-meta{
 	overflow: hidden;
 }
+
 #buddypress .message-content {
 	width: 60%;
-	border: 1px solid pink;
 	float:right;
 }
 
 .messages #buddypress .item-list-tabs {
 	overflow: hidden;
 }
+
+.messages #buddypress .item-list-tabs .messages-nav li a {
+	float: left;
+	padding: 0 10px;
+	text-decoration: none;
+}
+
+#buddypress .messages-nav li {
+	border-right: 1px solid #777;
+}
+
+#buddypress .messages-nav li:last-child {
+	border-right: none;
+}
+
 .messages #buddypress .messages-list {
 	overflow: hidden;
-	border: 1px solid blue;
 }
 
 #buddypress .message-header {
 	float: left;
 	width: 28%;
+	margin-right: 5%;
 }
+
 #buddypress .messages-list ul li {
 	overflow: hidden;
-	border: 1px solid orange;
 }
 
 #buddypress .messages-list img.avatar {
 	float: left;
 	margin-right: 2%;
-}
-
-#buddypress .messages-content-wrap form {
-	border: 1px solid green;
 }
 
 #buddypress .messages-list span,
@@ -52,16 +66,10 @@
 
 #buddypress .message-search {
 	margin: 2% 0;
-	border: 1px solid yellow;
 	float: left;
 }
 
-#buddypress .message-content {
-	
-}
-
 .messages #buddypress #item-body .item-list-tabs ul {
-	border: 1px solid violet;
 	padding: 1% 0 1% 0;
 	float: right;
 }
@@ -70,11 +78,15 @@
 	float: left;
 	padding: 1% 0;
 }
-.messages #buddypress label {
-	display: block;
+
+.message-wrap {
+	overflow: hidden;
+	margin-bottom: 2em;
 }
 
-.messages #buddypress input.message-subject,
-.messages #buddypress textarea.compose-message-content {
-	width: 60%;
+.1 {
+	visibility: visible;
+}
+.hide {
+	display: none;
 }
