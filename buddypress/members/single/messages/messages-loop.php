@@ -43,7 +43,7 @@
 		<?php //message excerpt ?>
 		<div>
 
-			<?php bp_message_thread_excerpt(); ?>
+			<?php //bp_message_thread_content(); ?>
 
 		</div>
 
