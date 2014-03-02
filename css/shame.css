@@ -84,6 +84,17 @@
 	margin-bottom: 2em;
 }
 
+#buddypress textarea,
+#buddypress input#subject.message-subject,
+#buddypress ul.acfb-holder li,
+#buddypress input#send-to-input {
+	width: 100%;
+	margin-bottom: 2%;
+}
+
+#buddypress input#send-notice {
+	margin: 0 0 3% 0;
+}
 .hide {
 	display: none;
 }
