@@ -40,7 +40,7 @@
 
 		<div class="message-content">
 		<div class="show-<?php bp_message_thread_id(); ?>">
-		<strong><?php bp_message_thread_last_post_date(); ?><?php echo _(' - Click to Read More');?></strong>
+		<strong><?php bp_message_thread_subject(); ?> - <?php bp_message_thread_last_post_date(); ?></strong>
 		</div>
 		
 		<div id="content-<?php bp_message_thread_id(); ?>" class="<?php echo $class;?>">
