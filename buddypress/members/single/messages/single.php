@@ -25,11 +25,11 @@
 * on the assumption the first iteration of threads is the last received
 */
 if( 'inbox' == bp_current_action() ) :
-	while ( bp_message_threads() ) : bp_message_thread(); 
+	while ( bp_message_threads() ) : bp_message_thread();
 		$last_message_id = bp_get_message_thread_id();
 		break;
 	endwhile;
-	$last_message = '&thread_id=' . $last_message_id ;	
+	$last_message = '&thread_id=' . $last_message_id ;
 else:
 		$last_message_id = '';
 		$last_message = '';

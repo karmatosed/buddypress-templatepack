@@ -31,11 +31,10 @@ switch ( bp_current_action() ) :
 
 				do_action( 'bp_before_member_messages_content' );
 
-			 bp_get_template_part( 'members/single/messages/messages-loop' ); 
+			 bp_get_template_part( 'members/single/messages/messages-loop' );
 			 bp_get_template_part( 'members/single/messages/single' );
 
 				do_action( 'bp_after_member_messages_content' );
-	
 	break;
 
 	// Compose new mesage or reply to

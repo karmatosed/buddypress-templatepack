@@ -673,8 +673,8 @@
 #buddypress .confirm{
 
 }
-#buddypress .form-buddypress{
-
+#buddypress .standard-form{
+	padding: 20px 0;
 }
 #buddypress .selected{
 
@@ -685,7 +685,18 @@
 #buddypress .form-search{
 
 }
-
+#buddypress .standard-form label{
+	clear: both;
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+}
+#buddypress .standard-form input{
+	display: block;
+}
+#buddypress .standard-form .form-block{
+	clear: both;
+}
 /* 11: Buttons and clicks
 -------------------------------------------------------------- */
 #buddypress button,
