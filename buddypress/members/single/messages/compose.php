@@ -21,11 +21,11 @@
 	</ul>
 
 	<?php if ( bp_current_user_can( 'bp_moderate' ) ) : ?>
-		<input type="checkbox" id="send-notice" name="send-notice" value="1" /> <?php _e( "This is a notice to all users.", "buddypress" ); ?>
+		<input type="checkbox" id="send-notice" name="send-notice" value="1" /> <?php _e( "This is a notice to all users.", "buddypress" ); ?><br />
 	<?php endif; ?>
 
 	<label for="subject"><?php _e( 'Subject', 'buddypress' ); ?></label>
-	<input type="text" name="subject" id="subject" class="message-subject" value="<?php bp_messages_subject_value(); ?>" />
+	<input type="text" name="subject" id="subject" class="message-subject" value="<?php bp_messages_subject_value(); ?>" /><br />
 
 	<label for="content"><?php _e( 'Message', 'buddypress' ); ?></label>
 	<textarea name="content" id="message_content" class="compose-message-content" rows="15"><?php bp_messages_content_value(); ?></textarea>

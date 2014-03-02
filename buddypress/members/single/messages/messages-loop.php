@@ -13,11 +13,13 @@
 
 <div class="messages-list">
 
-	<?php $i=0; while ( bp_message_threads() ) : bp_message_thread(); $i++;
+	<?php 	$i=0; 
+			while ( bp_message_threads() ) : bp_message_thread(); 
+			$i++;
 		if ($i < 2) {
 			$class = "show";
 			} else {
-				$class = "hide";
+			$class = "hide";
 		}?>
 
 		<div class="message-wrap">
@@ -50,7 +52,7 @@
 <script>
 	jQuery(document).ready(function($) {
   		$(".show-<?php bp_message_thread_id(); ?>").click(function(){
-    	$("#content-<?php bp_message_thread_id(); ?>").toggle( 1000 );
+    	$("#content-<?php bp_message_thread_id(); ?>").toggle( 500 );
 		});
 	});
 </script>
