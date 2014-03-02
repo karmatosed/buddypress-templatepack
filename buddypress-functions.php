@@ -242,6 +242,11 @@ class BP_Templates extends BP_Theme_Compat {
 
 	}
 
+	function loadCompose() {
+		xmlhttp.open("GET","compose.php?q="+str,true);
+		xmlhttp.send();
+	}
+
 	/**
 	 * Registers widget areas
 	 *

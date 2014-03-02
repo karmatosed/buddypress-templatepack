@@ -1,6 +1,6 @@
 <?php
 /**
- * Member messages compose
+ * Member messages compose-message
  *
  * @package BuddyPress
  * @subpackage Templatepack
@@ -24,11 +24,11 @@
 		<input type="checkbox" id="send-notice" name="send-notice" value="1" /> <?php _e( "This is a notice to all users.", "buddypress" ); ?><br />
 	<?php endif; ?>
 
-	<label for="subject"><?php _e( 'Subject', 'buddypress' ); ?></label><br />
+	<label for="subject"><?php _e( 'Subject', 'buddypress' ); ?></label>
 	<input type="text" name="subject" id="subject" class="message-subject" value="<?php bp_messages_subject_value(); ?>" /><br />
 
 	<label for="content"><?php _e( 'Message', 'buddypress' ); ?></label>
-	<textarea name="content" id="message_content" class="compose-message-content" rows="15" cols="300"><?php bp_messages_content_value(); ?></textarea>
+	<textarea name="content" id="message_content" class="compose-message-content" rows="15"><?php bp_messages_content_value(); ?></textarea>
 
 	<input type="hidden" name="send_to_usernames" id="send-to-usernames" value="<?php bp_message_get_recipient_usernames(); ?>" class="<?php bp_message_get_recipient_usernames(); ?>" />
 

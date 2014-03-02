@@ -11,6 +11,8 @@
 
 <?php if ( bp_has_message_threads( bp_ajax_querystring( 'messages' ) ) ) : ?>
 
+	<button>Compose</button>
+
 <div class="messages-list">
 
 	<?php 	$i=0; 
@@ -32,15 +34,17 @@
 
 			<?php  if('sentbox' !== bp_current_action()): ?>
 			<span><?php _e( 'From: ', 'buddypress' ); ?> <?php bp_message_thread_from() ?></span>
-			<?php else: ?>
-			<span><?php _e( 'To: ', 'buddypress' ); ?> <?php bp_message_thread_to() ;?></span>
 			<?php endif; ?>
 			<?php bp_message_thread_subject(); ?>
 		</div>
 
 		<div class="message-content">
 		<div class="show-<?php bp_message_thread_id(); ?>">
+<<<<<<< Updated upstream
 		<strong><?php bp_message_thread_subject(); ?> - <?php bp_message_thread_last_post_date(); ?></strong>
+=======
+		<?php bp_message_thread_last_post_date(); ?>
+>>>>>>> Stashed changes
 		</div>
 		
 		<div id="content-<?php bp_message_thread_id(); ?>" class="<?php echo $class;?>">
@@ -55,6 +59,13 @@
     	$("#content-<?php bp_message_thread_id(); ?>").toggle( 500 );
 		});
 	});
+</script>
+<script>
+	jQuery(document).ready(function($) {
+		$("button").click(function(){
+  $(".message-wrap").load("http://local.wordpress.dev/buddypress/compose-message");
+});
+});
 </script>
 <?php endwhile; ?>
 </div><!-- / .messages-list -->
