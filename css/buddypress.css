@@ -78,6 +78,12 @@
 	float: right;
 	width: 72%;
 }
+#buddypress #item-info h3{
+	margin: 10px 0;
+}
+#buddypress #item-info{
+	margin-bottom: 10px;
+}
 #buddypress .item-list-tabs li.last{
 	padding: 10px 10px 0 0;
 }
@@ -153,6 +159,13 @@
 -------------------------------------------------------------- */
 /* 03:  Members
 -------------------------------------------------------------- */
+#buddypress #members-list li .activity{
+	display: block;
+	font-size: 90%;
+}
+#buddypress #members-list li .action{
+	padding: 10px 0;
+}
 /* 03b: Member > Profile
 -------------------------------------------------------------- */
 /* 03c: Member > Directory
@@ -328,7 +341,9 @@
 #buddypress div.generic-button a,
 #buddypress .comment-reply-link,
 a.bp-title-button {
+	background: rgba(238, 238, 238, 0.4);
 	cursor: pointer;
+	margin: 0 5px 0 0;
 	outline: none;
 	padding: 5px 10px;
 	text-align: center;
@@ -344,6 +359,7 @@ a.bp-title-button {
 #buddypress ul.button-nav li.current a,
 #buddypress div.generic-button a:hover,
 #buddypress .comment-reply-link:hover {
+	background: rgba(238, 238, 238, 0.8);
 	outline: none;
 	text-decoration: none;
 }
