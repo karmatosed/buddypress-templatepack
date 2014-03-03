@@ -22,12 +22,6 @@
 	float:right;
 }
 
-.messages #buddypress button {
-	position: absolute;
-	top:325px;
-
-}
-
 .messages #buddypress .item-list-tabs {
 	overflow: hidden;
 }
@@ -85,16 +79,9 @@
 	padding: 1% 0;
 }
 
-#buddypress textarea,
-#buddypress input#subject.message-subject,
-#buddypress ul.acfb-holder li,
-#buddypress input#send-to-input {
-	width: 100%;
-	margin-bottom: 2%;
-}
-
-#buddypress input#send-notice {
-	margin: 0 0 3% 0;
+.message-wrap {
+	overflow: hidden;
+	margin-bottom: 2em;
 }
 
 #buddypress textarea,
