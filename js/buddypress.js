@@ -1092,7 +1092,18 @@ jq(document).ready(function() {
         return false;
     });
 
-    /** Private Messaging ******************************************/
+    /** Private Messaging ******************************************/		
+
+				jq('.show-reply-form').click(function(){
+						jq('.message-reply-form').fadeIn(800);
+						jq('.show-reply-form').fadeOut(800);
+						return false;
+   	});
+				jq('.close-reply-form').click(function(){
+						jq('.message-reply-form').fadeOut(800);
+						jq('.show-reply-form').fadeIn(800);
+						return false;
+   	});
 
     /** Message search*/
     jq('.message-search').on('click', function(event) {

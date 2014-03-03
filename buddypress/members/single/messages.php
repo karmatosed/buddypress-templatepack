@@ -7,7 +7,7 @@
  */
 ?>
 <nav id="subnav" class="item-list-tabs no-ajax" role="navigation">
-	<ul>
+	<ul class="messages-nav">
 
 		<?php bp_get_options_nav(); ?>
 
@@ -27,15 +27,20 @@ switch ( bp_current_action() ) :
 	// Inbox/Sentbox
 	case 'inbox'   :
 	case 'sentbox' :
-	case 'view' :
 
 				do_action( 'bp_before_member_messages_content' );
 
 			 bp_get_template_part( 'members/single/messages/messages-loop' ); 
-			 bp_get_template_part( 'members/single/messages/single' );
 
 				do_action( 'bp_after_member_messages_content' );
 	
+	break;
+
+	// view full thread
+	case 'view' :
+
+			bp_get_template_part( 'members/single/messages/single' );
+
 	break;
 
 	// Compose new mesage or reply to

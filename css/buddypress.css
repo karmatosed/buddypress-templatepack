@@ -583,9 +583,9 @@
 	overflow: auto;
 }
 #buddypress .messages-list {
-	float: left;
+/*	float: left;
 	margin-right: 2%;
-	width: 28%;
+	width: 28%;*/
 }
 #buddypress .messages-list ul {
 	padding-left:0;
@@ -603,6 +603,15 @@
 	padding-left: 1%;
 	width: 69%;
 }
+/** Messages reply form - inbox **/
+.message-reply-form {
+	display: none;
+}
+#buddypress .message-reply-form form .message-content {
+	float: none;
+	width: auto;
+}
+	
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
 #buddypress #message{
