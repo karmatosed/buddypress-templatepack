@@ -579,6 +579,18 @@
 -------------------------------------------------------------- */
 /* 07:  Messages
 -------------------------------------------------------------- */
+#buddypress .messages-sidebar {
+	width: 200px;
+	float: left;
+}
+#buddypress .messages-main {
+	padding-left: 230px;
+}
+/* Overriding shame.css styles - bbg */
+#buddypress .messages-sidebar .message-header {
+	width: 100%;
+	float: none;
+}
 #buddypress .messages-wrap{
 	overflow: auto;
 }
@@ -598,10 +610,8 @@
 #buddypress .messages-list ul li a {
 	font-size: 75%;
 }
-#buddypress .messages-content-wrap {
-	float: left;
-	padding-left: 1%;
-	width: 69%;
+#buddypress .messages-main h3 {
+	clear: right;
 }
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
