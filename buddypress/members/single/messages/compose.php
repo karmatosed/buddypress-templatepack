@@ -48,4 +48,11 @@
 	<?php wp_nonce_field( 'messages_send_message' ); ?>
 </form>
 
+<!-- remove paragraph elements below -->
+
+<p>Compose messages</p>
+<p>This is dummy text (temporary), for the 'compose' template file. Compose.php is set in 'messages.php' as the default item to show on mesages top level, for want of something better to show.</p>
+<p>Options ? we could remove submenu leaving access only by returning to top level messages or we can re-include the include for compose so the link works then we'll navigate to a view for just the compose  elements without the message thread list; so in effect 'Compose' will appear as a default screen on main messages untill you select a message thread to view or it can be accessed via submenu link.</p>
+
+
 </div>

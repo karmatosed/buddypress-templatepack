@@ -423,7 +423,7 @@ function bp_template_pack_mark_activity_favorite() {
  * @return string HTML
  * @since BuddyPress (1.2)
  */
-function bp_template_pack_unmark_activity_favorite() {
+function bp_legacy_theme_unmark_activity_favorite() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
