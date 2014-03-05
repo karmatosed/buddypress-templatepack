@@ -11,7 +11,7 @@
 
 <?php if ( bp_has_blogs( bp_ajax_querystring( 'blogs' ) ) ) : ?>
 
-	<div class="pagination">
+	<div id="pagination-top" class="pagination">
 
 		<div class="pagination-count">
 			<?php bp_blogs_pagination_count(); ?>
@@ -53,7 +53,7 @@
 
 	<?php bp_blog_hidden_fields(); ?>
 
-	<div class="pagination">
+	<div id="pagination-bottom" class="pagination">
 		<div class="pagination-count">
 			<?php bp_blogs_pagination_count(); ?>
 		</div>
@@ -65,7 +65,7 @@
 
 <?php else: ?>
 
-	<div id="message" class="info">
+	<div id="message" class="message-info">
 		<p><?php _e( 'Sorry, there were no sites found.', 'buddypress' ); ?></p>
 	</div>
 
