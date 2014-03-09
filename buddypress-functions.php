@@ -64,7 +64,7 @@ class BP_Templates extends BP_Theme_Compat {
 	protected function setup_actions() {
 		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
 		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
-		add_action( 'widgets_init',           array( $this, 'widgets_init'           ) ); // Widgets		
+		add_action( 'widgets_init',           array( $this, 'widgets_init'           ) ); // Widgets
 		add_filter( 'body_class',             array( $this, 'add_nojs_body_class'    ), 20, 1 );
 
 		// Run an action for third-party plugins to affect the template pack

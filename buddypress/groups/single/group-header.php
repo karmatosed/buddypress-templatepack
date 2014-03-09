@@ -45,9 +45,9 @@
 
  				do_action( 'bp_after_group_menu_mods' );
 
-			endif;
-
-		endif; ?>
+			endif; ?>
+		</div>
+		<?php endif; ?>
 
 	</div>
 

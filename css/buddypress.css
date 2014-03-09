@@ -85,10 +85,16 @@
 #buddypress .item-list-tabs li.last{
  	padding: 10px 10px 0 0;
 }
+#buddypress .dir-search{
+	float: right;
+	padding: 0 0 5px 0;
+}
 /* 02:  Activity
 -------------------------------------------------------------- */
-#buddypress #activity-filter-select{
+#buddypress #activity-filter-select,
+#buddypress li.last.filter{
 	float: right;
+	padding: 5px;
 }
 #buddypress .activity-greeting{
 	margin-left: 80px;
@@ -133,8 +139,7 @@
 	margin: 0 0 0 70px;
 }
 #buddypress .activity-content p:last-child,
-#buddypress .activity-header p:last-child
-{
+#buddypress .activity-header p:last-child{
  	margin: 0 0 10px 0;
  	padding: 0;
 }
@@ -298,6 +303,29 @@
 	padding-left: 1%;
 	width: 69%;
 }
+#buddypress #message{
+ 	margin: 10px 0;
+ 	padding: 10px;
+}
+#buddypress #message p{
+ 	margin: 0;
+ 	padding: 0;
+}
+#buddypress .info{
+ 	background: #3388aa;
+ 	color: #fff;
+}
+#buddypress .warning{
+ 	background: #dd3333;
+ 	color: #fff;
+}
+#buddypress .notice{
+ 	background: #eeeebb;
+}
+#buddypress .success{
+ 	background: #88aa22;
+ 	color: #fff;
+}
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
 #buddypress table.profile-fields {
@@ -421,6 +449,11 @@
 }
 #buddypress .standard-form .form-block{
  	clear: both;
+}
+#buddypress #item-buttons .generic-button{
+	display: inline-block;
+	float: left;
+	margin: 5px 5px 0 0;
 }
 /* 11: Buttons and clicks
 -------------------------------------------------------------- */

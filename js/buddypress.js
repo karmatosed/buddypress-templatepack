@@ -628,7 +628,7 @@ jq(document).ready(function() {
             return false;
         }
 
-        // Canceling an activity comment	
+        // Canceling an activity comment    
         if (target.hasClass('ac-reply-cancel')) {
             jq(target).closest('.ac-form').slideUp(200);
             return false;
@@ -1954,6 +1954,7 @@ eval(function(p, a, c, k, e, d) {
             d[e(c)] = k[c] || e(c)
         }
         k = [
+
             function(e) {
                 return d[e]
             }
