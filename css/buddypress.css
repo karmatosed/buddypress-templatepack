@@ -162,7 +162,10 @@
 }
 /* 02d:  Activity > Comments
 -------------------------------------------------------------- */
-
+#buddypress div.activity-comments form.ac-form {
+	display: none;
+	padding: 10px;
+}
 /* 03:  Members
 -------------------------------------------------------------- */
 #buddypress #members-list li .activity{
@@ -171,6 +174,29 @@
 }
 #buddypress #members-list li .action{
  	padding: 10px 0;
+}
+#buddypress div.activity-comments form .ac-textarea {
+ 	background: rgba(0, 0, 0, 0.02);
+	margin-bottom: 10px;
+	padding: 10px;
+}
+#buddypress div.activity-comments form textarea {
+	background: transparent;
+	box-shadow: none;
+	outline: none;
+	font-family: inherit;
+	font-size: 100%;
+	height: 60px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+#buddypress div.activity-comments form div.ac-reply-avatar {
+	float: left;
+}
+#buddypress div.activity-comments form div.ac-reply-content {
+	margin-left: 50px;
+	padding-left: 10px;
 }
 /* 03b: Member > Profile
 -------------------------------------------------------------- */
@@ -350,6 +376,10 @@
 	text-align: center;
 	width: 40px;
 }
+#buddypress .message-metadata img{
+	float: left;
+	margin: 0 10px 0 0;
+}
 /* 09:  Core widgets
 -------------------------------------------------------------- */
 /* 10:  Forms
@@ -433,7 +463,6 @@ a.bp-title-button {
 #buddypress .item-list-tabs{
 	background: rgba(238, 238, 238, 0.6);
 	margin: 0 0 3px 0;
-	padding: 10px;
 }
 #buddypress #subnav.item-list-tabs{
 	background: rgba(238, 238, 238, 0.4);
