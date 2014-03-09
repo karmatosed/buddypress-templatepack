@@ -14,11 +14,11 @@
 				<?php bp_activity_avatar( 'type=thumb' ); ?>
 			</a>
 		</div>
+		<?php bp_activity_action(); ?>
 	</div>
 	<div class="activity-body">
 
 		<div class="activity-content">
-			<?php bp_activity_action(); ?>
 			<?php if ( bp_activity_has_content() ) : ?>
 				<?php bp_activity_content_body(); ?>
 			<?php endif; ?>
@@ -28,9 +28,14 @@
 		<div class="activity-meta">
 			<?php if ( is_user_logged_in() ) : ?>
 				<ul class="activity-actions">
+					<?php if ( bp_get_activity_type() == 'activity_comment' ) : ?>
+ 						<li>
+ 							<a href="<?php bp_activity_thread_permalink(); ?>" class="button view bp-secondary-action" title="<?php _e( 'View Conversation', 'buddypress' ); ?>"><?php _e( 'View Conversation', 'buddypress' ); ?></a>
+ 						</li>
+ 					<?php endif; ?>
 					<?php if ( bp_activity_can_comment() ) : ?>
 						<li>
-							<a href="<?php bp_activity_comment_link(); ?>" id="acomment-comment-<?php bp_activity_id(); ?>" class="button acomment-reply has-count"><?php printf( __( '<span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
+							<a href="<?php bp_activity_comment_link(); ?>" id="acomment-comment-<?php bp_activity_id(); ?>" class="button acomment-reply has-count"><?php printf( __( '<span>Comment %s </span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
 						</li>
 					<?php endif; ?>
 					<?php if ( bp_activity_can_favorite() ) : ?>
