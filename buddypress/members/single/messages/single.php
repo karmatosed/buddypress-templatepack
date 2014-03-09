@@ -5,168 +5,93 @@
  * @package BuddyPress
  * @subpackage Templatepack
  */
-
-/**
-* Messages single view or top level inbox
-*
-* Template re-worked to use conditionals to check whether 'inbox' or 'view'
-* & present a single cut down  message view for for message default screen
-* or full message thread view for 'view'
-*
-* This is an interim approach to move the templates toward the wireframe impression
-* requiring adjustments as & when we determine the exact screen flow we want. ~hnla
-*/
-
-/** test case stuff only! */
-
-/*
-* hackyness: to fetch the last message thread id
-* run bp_message_threads() grab message id and break out of the loop
-* on the assumption the first iteration of threads is the last received
-*/
-if( 'inbox' == bp_current_action() ) :
-	while ( bp_message_threads() ) : bp_message_thread(); 
-		$last_message_id = bp_get_message_thread_id();
-		break;
-	endwhile;
-	$last_message = '&thread_id=' . $last_message_id ;	
-else:
-		$last_message_id = '';
-		$last_message = '';
-endif; 
 ?>
+<div id="message-thread" role="main">
 
-<?php do_action( 'bp_before_message_thread_content' ); ?>
+	<?php do_action( 'bp_before_message_thread_content' ); ?>
 
-<?php if ( bp_thread_has_messages( $last_message ) ) : ?>
+	<?php if ( bp_thread_has_messages() ) : ?>
 
-<div class="messages-content-wrap">
+		<h3 id="message-subject"><?php bp_the_thread_subject(); ?></h3>
 
-		<?php // h#? h1, h2, h3 ?>
+		<p id="message-recipients">
+			<span class="highlight">
 
-	<?php if( 'view' == bp_current_action() ): ?>
+				<?php if ( !bp_get_the_thread_recipients() ) : ?>
 
-		<h3><?php bp_the_thread_subject(); ?></h3>
+					<?php _e( 'You are alone in this conversation.', 'buddypress' ); ?>
 
-	<?php else: ?>
+				<?php else : ?>
 
-		<h3><a href="<?php bp_message_thread_view_link(); ?>" title="<?php _e('view the full conversation', 'budypress'); ?>"><?php bp_the_thread_subject(); ?></a></h3>
+					<?php printf( __( 'Conversation between %s and you.', 'buddypress' ), bp_get_the_thread_recipients() ); ?>
 
-	<?php endif; ?>
+				<?php endif; ?>
 
-		<?php /**  message thread details ************/ ?>
+			</span>
 
-		<?php if( 'view' == bp_current_action() ) : ?>
-			<p>
-				<span>
-					<?php if ( !bp_get_the_thread_recipients() ) : ?>
+			<a class="button confirm" href="<?php bp_the_thread_delete_link(); ?>" title="<?php _e( "Delete Message", "buddypress" ); ?>"><?php _e( 'Delete', 'buddypress' ); ?></a> &nbsp;
+		</p>
 
-						<?php _e( 'You are alone in this conversation.', 'buddypress' ); ?>
+		<?php do_action( 'bp_before_message_thread_list' ); ?>
+
+		<?php while ( bp_thread_messages() ) : bp_thread_the_message(); ?>
+
+			<div class="message-box <?php bp_the_thread_message_alt_class(); ?>">
+
+				<div class="message-metadata">
+
+					<?php do_action( 'bp_before_message_meta' ); ?>
+
+					<?php bp_the_thread_message_sender_avatar( 'type=thumb&width=30&height=30' ); ?>
+
+					<?php if ( bp_get_the_thread_message_sender_link() ) : ?>
+
+						<strong><a href="<?php bp_the_thread_message_sender_link(); ?>" title="<?php bp_the_thread_message_sender_name(); ?>"><?php bp_the_thread_message_sender_name(); ?></a></strong>
 
 					<?php else : ?>
 
-						<?php printf( __( 'Conversation between %s and you.', 'buddypress' ), bp_get_the_thread_recipients() ); ?>
+						<strong><?php bp_the_thread_message_sender_name(); ?></strong>
 
 					<?php endif; ?>
-				</span>
 
-			<span>
-				<a class="button confirm" href="<?php bp_the_thread_delete_link(); ?>" title="<?php _e( 'Delete Message', 'buddypress' ); ?>"><?php _e( 'Delete', 'buddypress' ); ?></a>
-			</span>
-		</p>
+					<span class="activity"><?php bp_the_thread_message_time_since(); ?></span>
 
-	<?php endif; ?>
+					<?php do_action( 'bp_after_message_meta' ); ?>
 
-		<?php /**  end message details ************/ ?>
+				</div><!-- .message-metadata -->
 
+				<?php do_action( 'bp_before_message_content' ); ?>
 
-	<?php do_action( 'bp_before_message_thread_list' ); ?>
+				<div class="message-content">
 
-	<?php while ( bp_thread_messages() ) : bp_thread_the_message(); ?>
+					<?php bp_the_thread_message_content(); ?>
 
-	<article class="<?php bp_the_thread_message_alt_class(); ?>">
+				</div><!-- .message-content -->
 
-		<?php /** message metadata ****************/ ?>
+				<?php do_action( 'bp_after_message_content' ); ?>
 
-		<?php if( 'view' == bp_current_action() ) : ?>
+				<div class="clear"></div>
 
-		<header>
+			</div><!-- .message-box -->
 
-			<?php do_action( 'bp_before_message_meta' ); ?>
+		<?php endwhile; ?>
 
-				<p>
+		<?php do_action( 'bp_after_message_thread_list' ); ?>
 
-					<span>
-					<?php bp_the_thread_message_sender_avatar( 'type=thumb&width=30&height=30' ); ?>
-					</span>
-
-					<span>
-
-						<?php if ( bp_get_the_thread_message_sender_link() ) : ?>
-
-							<a href="<?php bp_the_thread_message_sender_link(); ?>" title="<?php bp_the_thread_message_sender_name(); ?>"><?php bp_the_thread_message_sender_name(); ?></a>
-
-						<?php else : ?>
-
-							<?php bp_the_thread_message_sender_name(); ?>
-
-						<?php endif; ?>
-
-					</span>
-
-					<span>
-
-						<?php bp_the_thread_message_time_since(); ?>
-
-					</span>
-
-				</p>
-
-				<?php do_action( 'bp_after_message_meta' ); ?>
-
-			</header>
-
-		<?php endif; ?>
-
-		<?php /** end message metadata ************/ ?>
-
-		<?php do_action( 'bp_before_message_content' ); ?>
-
-		<div class="message-content">
-
-			<?php bp_the_thread_message_content(); ?>
-
-		</div>
-
-		<?php do_action( 'bp_after_message_content' ); ?>
-
-	</article>
-<?php 
-	if('inbox' == bp_current_action() )
-	break; 
-?>
-<?php endwhile; ?>
-
-<?php /**
-						Here be the reply form, this needs some work
-						and is copied here with only basic revisions to markup with some div bloat removed
-						but may need to be put.
-						The classes are carried over from existing form as likely necessary?
-						*/ ?>
+		<?php do_action( 'bp_before_message_thread_reply' ); ?>
 
 		<form id="send-reply" action="<?php bp_messages_form_action(); ?>" method="post" class="standard-form">
 
+			<div class="message-box">
 
 				<div class="message-metadata">
 
 					<?php do_action( 'bp_before_message_meta' ); ?>
 
 					<div class="avatar-box">
-
 						<?php bp_loggedin_user_avatar( 'type=thumb&height=30&width=30' ); ?>
 
-						<span><?php _e( 'Send a Reply', 'buddypress' ); ?></span>
-
+						<strong><?php _e( 'Send a Reply', 'buddypress' ); ?></strong>
 					</div>
 
 					<?php do_action( 'bp_after_message_meta' ); ?>
@@ -191,8 +116,14 @@ endif;
 
 				</div><!-- .message-content -->
 
+			</div><!-- .message-box -->
+
 		</form><!-- #send-reply -->
 
-</div><!-- / .messages-content-wrap -->
+		<?php do_action( 'bp_after_message_thread_reply' ); ?>
 
-<?php endif; ?>
+	<?php endif; ?>
+
+	<?php do_action( 'bp_after_message_thread_content' ); ?>
+
+</div>
