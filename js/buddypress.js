@@ -734,8 +734,10 @@ jq(document).ready(function() {
 
         if (target.hasClass('button'))
             return true;
+	
+	var $pagination_parent = target.closest( '.pagination' );
 
-        if (target.parent().parent().hasClass('pagination') && !target.parent().parent().hasClass('no-ajax')) {
+        if ( $pagination_parent.length && ! $pagination_parent.hasClass('no-ajax')) {
             if (target.hasClass('dots') || target.hasClass('current'))
                 return false;
 
@@ -748,7 +750,7 @@ jq(document).ready(function() {
             var css_id = el.attr('id').split('-');
             var object = css_id[0];
             var search_terms = false;
-            var pagination_id = jq(target).closest('.pagination-links').attr('id');
+            var pagination_id = $pagination_parent.attr('id');
 
             if (jq('div.dir-search input').length)
                 search_terms = jq('.dir-search input').val();

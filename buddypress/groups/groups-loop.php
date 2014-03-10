@@ -9,7 +9,7 @@
 <?php do_action( 'bp_before_groups_loop' ); ?>
 <?php if ( bp_has_groups( bp_ajax_querystring( 'groups' ) ) ) : ?>
 
-	<div class="pagination">
+	<div class="pagination" id="pagination-top">
 		<div class="pagination-count">
 			<?php bp_groups_pagination_count(); ?>
 		</div>
@@ -45,7 +45,7 @@
 
 	<?php do_action( 'bp_after_directory_groups_list' ); ?>
 
-	<div class="pagination">
+	<div class="pagination" id="pagination-bottom">
 		<div class="pagination-count">
 			<?php bp_groups_pagination_count(); ?>
 		</div>
