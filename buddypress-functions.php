@@ -4,19 +4,11 @@
  *
  * @package BuddyPress
  * @subpackage BuddyPress Templates
- * @since BuddyPress (1.7)
- *
- * Code and format borrowed from Turtleshell : props @djPaul, @r-a-y
+ * @since BuddyPress Templates (1.0)
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
-
-// Temporary: add a version number to footer so people can find out what release they're using
-function templatepack_version_number() {
-	echo "\n\n<!-- templates: alpha 1 -->\n\n";
-}
-add_action( 'wp_footer', 'templatepack_version_number' );
 
 if ( ! class_exists( 'BP_Templates' ) ) :
 
@@ -24,14 +16,14 @@ if ( ! class_exists( 'BP_Templates' ) ) :
  * Loads the BuddyPress template pack
  * See @link BP_Theme_Compat() for more.
  *
- * @since buddypress  (1.7)
+ * @since BuddyPress Templates (1.0)
  */
 class BP_Templates extends BP_Theme_Compat {
 
 	/**
 	 * Constructor
 	 *
-	 * @since BuddyPress templates (1.0)
+	 * @since BuddyPress Templates (1.0)
 	 */
 	public function __construct() {
 
@@ -45,7 +37,7 @@ class BP_Templates extends BP_Theme_Compat {
 	 * You'll want to customize the values in here, so they match whatever your
 	 * needs are.
 	 *
-	 * @since BuddyPress (1.7)
+	 * @since BuddyPress Templates (1.0)
 	 */
 	protected function setup_globals() {
 		$bp            = buddypress();
@@ -59,13 +51,14 @@ class BP_Templates extends BP_Theme_Compat {
 	/**
 	 * Hooks into required actions and filters to set up the template pack
 	 *
-	 * @since BuddyPress (1.7)
+	 * @since BuddyPress Templates (1.0)
 	 */
 	protected function setup_actions() {
 		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
 		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
 		add_action( 'widgets_init',           array( $this, 'widgets_init'           ) ); // Widgets
 		add_filter( 'body_class',             array( $this, 'add_nojs_body_class'    ), 20, 1 );
+		add_action( 'bp_head',                array( $this, 'head_scripts'     ) ); // Output some extra JS in the <head>
 
 		// Run an action for third-party plugins to affect the template pack
 		do_action_ref_array( 'bp_theme_compat_actions', array( &$this ) );
@@ -163,7 +156,7 @@ class BP_Templates extends BP_Theme_Compat {
 	/**
 	 * Enqueue template pack CSS
 	 *
-	 * @since BuddyPress (1.7)
+	 * @since BuddyPress Templates (1.0)
 	 */
 	public function enqueue_styles() {
 		// LTR or RTL
@@ -196,7 +189,7 @@ class BP_Templates extends BP_Theme_Compat {
 	/**
 	 * Enqueue template pack javascript
 	 *
-	 * @since BuddyPress (1.7)
+	 * @since BuddyPress Templates (1.0)
 	 */
 	public function enqueue_scripts() {
 		// LTR or RTL
@@ -239,13 +232,17 @@ class BP_Templates extends BP_Theme_Compat {
 		);
 		wp_localize_script( $handle, 'BP_DTheme', $params );
 
+		// Maybe enqueue comment reply JS
+		if ( is_singular() && bp_is_blog_page() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 
 	}
 
 	/**
 	 * Registers widget areas
 	 *
-	 * @since BuddyPress (1.7)
+	 * @since BuddyPress Templates (1.0)
 	 */
 	public function widgets_init() {
 		register_sidebar( array(
@@ -253,6 +250,23 @@ class BP_Templates extends BP_Theme_Compat {
 			'id'          => 'bp-member-profile-widgets',
 			'name'        => __( '(BuddyPress) Member Profile', 'buddypress' ),
 		) );
+	}
+
+	/**
+	 * Put some scripts in the header, like AJAX url for wp-lists
+	 *
+	 * @since BuddyPress (1.7)
+	 */
+	public function head_scripts() {
+	?>
+
+		<script type="text/javascript" charset="utf-8">
+			/* <![CDATA[ */
+			var ajaxurl = '<?php echo bp_core_ajax_url(); ?>';
+			/* ]]> */
+		</script>
+
+	<?php
 	}
 
 	/**
@@ -264,7 +278,7 @@ class BP_Templates extends BP_Theme_Compat {
 	 *
 	 * The no-js class is removed by the JavaScript created in buddypress.js.
 	 *
-	 * @since BuddyPress (1.7)
+	 * @since BuddyPress Templates (1.0)
 	 */
 	public function add_nojs_body_class( $classes ) {
 		if ( ! in_array( 'no-js', $classes ) )
@@ -276,4 +290,5 @@ class BP_Templates extends BP_Theme_Compat {
 new BP_Templates();
 endif;
 
+// Include our Ajax functions
 include( plugin_dir_path(__FILE__) . 'buddypress-ajax.php' );
