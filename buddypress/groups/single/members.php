@@ -18,7 +18,7 @@
 
 	</nav>
 
-	<div id="pagination-top" class="pagination no-ajax">
+	<div id="pagination-top" class="pagination">
 
 		<div class="pagination-count">
 
@@ -72,7 +72,7 @@
 
 	<?php do_action( 'bp_after_group_members_list' ); ?>
 
-	<div id="pagination-bottom" class="pagination no-ajax">
+	<div id="pagination-bottom" class="pagination">
 
 		<div class="pagination-count">
 
