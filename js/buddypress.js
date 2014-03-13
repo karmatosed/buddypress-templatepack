@@ -211,7 +211,8 @@ jq(document).ready(function() {
         if (target.hasClass('fav') || target.hasClass('unfav')) {
             var type = target.hasClass('fav') ? 'fav' : 'unfav';
             var parent = target.closest('.activity-item');
-            var parent_id = parent.attr('id').substr(9, parent.attr('id').length);
+            var parent_id = parent.attr('id').split('-');
+            parent_id = parent_id[2];
 
             target.addClass('loading');
 
