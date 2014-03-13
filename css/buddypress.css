@@ -506,7 +506,7 @@ a.bp-title-button {
 /* 13:  Navigation
 -------------------------------------------------------------- */
 #buddypress .item-list-tabs{
-	background: rgba(238, 238, 238, 0.6);
+	background: rgba(238, 238, 238, 0.8);
 	margin: 0 0 3px 0;
 }
 #buddypress #subnav.item-list-tabs{
