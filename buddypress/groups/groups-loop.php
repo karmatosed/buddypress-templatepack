@@ -25,7 +25,7 @@
 		<?php while ( bp_groups() ) : bp_the_group(); ?>
 			<li <?php bp_group_class(); ?>>
 				<div class="group-avatar">
-					<a href="<?php bp_group_permalink(); ?>"><?php bp_group_avatar( 'type=thumb&width=124&height=124' ); ?></a>
+					<a href="<?php bp_group_permalink(); ?>"><?php bp_group_avatar( 'type=full&width=124&height=124' ); ?></a>
 				</div>
 				<div class="group-content">
 					<div class="group-title"><a href="<?php bp_group_permalink(); ?>"><?php bp_group_name(); ?></a></div>
