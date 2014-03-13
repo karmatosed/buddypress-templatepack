@@ -362,8 +362,8 @@ jq(document).ready(function() {
         var a_id = link_id[3];
         var type = link_id[0]; /* activity or acomment */
 
-        var inner_class = type == 'acomment' ? 'acomment-content' : 'activity-inner';
-        var a_inner = jq('#' + type + '-' + a_id + ' .' + inner_class + ':first');
+        var inner_class = type == 'acomment' ? 'acomment-content' : 'activity-content';
+        var a_inner = jq('#bp-' + type + '-' + a_id + ' .' + inner_class + ':first');
         jq(target).addClass('loading');
 
         jq.post(ajaxurl, {
