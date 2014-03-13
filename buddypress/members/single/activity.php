@@ -63,7 +63,7 @@ if ( is_user_logged_in() && bp_is_my_profile() && ( !bp_current_action() || bp_i
 
 do_action( 'bp_after_member_activity_post_form' );
 do_action( 'bp_before_member_activity_content' ); ?>
-<div id="member-activity">
+<div id="member-activity" class="activity">
 	<?php bp_get_template_part( 'activity/activity-loop' ) ?>
 </div><!-- end #member-activity -->
 <?php do_action( 'bp_after_member_activity_content' ); ?>
