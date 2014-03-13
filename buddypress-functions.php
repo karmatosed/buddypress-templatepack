@@ -21,14 +21,15 @@ if ( ! class_exists( 'BP_Templates' ) ) :
 class BP_Templates extends BP_Theme_Compat {
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 *
 	 * @since BuddyPress Templates (1.0)
+	 *
+	 * @uses BP_Templates::setup_globals()
+	 * @uses BP_Templates::setup_actions()
 	 */
 	public function __construct() {
-
-		$this->setup_globals();
-		$this->setup_actions();
+		parent::start();
 	}
 
 	/**
