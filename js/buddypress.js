@@ -265,7 +265,9 @@ jq(document).ready(function() {
         /* Delete activity stream items */
         if (target.hasClass('delete-activity')) {
             var li = target.closest('#activity-stream > li');
-            var id = li.attr('id').substr(9, li.attr('id').length);
+            var id = li.attr('id').split('-');
+            id = id[2];
+
             var link_href = target.attr('href');
             var nonce = link_href.split('_wpnonce=');
 
