@@ -162,7 +162,7 @@ jq(document).ready(function() {
     });
 
     /* List tabs event delegation */
-    jq('div.activity-type-tabs').on('click', function(event) {
+    jq('nav.activity-type-tabs').on('click', function(event) {
         var target = jq(event.target).parent();
 
         if (event.target.nodeName == 'STRONG' || event.target.nodeName == 'SPAN')
@@ -686,7 +686,7 @@ jq(document).ready(function() {
     /**** Tabs and Filters ****************************************************/
 
     /* When a navigation tab is clicked - e.g. | All Groups | My Groups | */
-    jq('div.item-list-tabs').on('click', function(event) {
+    jq('nav.item-list-tabs').on('click', function(event) {
         if (jq(this).hasClass('no-ajax'))
             return;
 
