@@ -415,7 +415,6 @@
 }
 #buddypress table.notification-settings .yes,
 #buddypress table.notification-settings .no {
-	text-align: center;
 	width: 40px;
 }
 #buddypress .message-metadata img{
@@ -560,6 +559,9 @@
 #buddypress .wp-editor-wrap input[type=button],
 #buddypress .wp-editor-wrap input[type=reset] {
 	padding: 0 10px 1px;
+}
+#buddypress .standard-form #submit{
+	margin-top: 20px;
 }
 /* 11: Buttons and clicks
 -------------------------------------------------------------- */
