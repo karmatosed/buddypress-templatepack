@@ -113,8 +113,9 @@
 	padding: 0 0 20px 20px;
 }
 #buddypress #whats-new-textarea textarea{
+	height: 20px;
 	padding: 5px;
-	width: 100%;
+	width: 98%;
 }
 #buddypress #aw-whats-new-submit{
 	float: right;
@@ -129,12 +130,28 @@
 #buddypress #whats-new-form{
 	padding: 40px 0;
 }
+body.no-js #buddypress form#whats-new-form textarea {
+	height: 50px;
+}
+#buddypress form#whats-new-form #whats-new-options select {
+	max-width: 200px;
+	margin-top: 12px;
+}
+#buddypress form#whats-new-form #whats-new-submit {
+	float: right;
+}
+#buddypress #whats-new-options {
+	overflow: auto;
+	height: 0;
+}
+body.no-js #buddypress #whats-new-options {
+	height: auto;
+}
 /* 02c:  Activity > Entry
 -------------------------------------------------------------- */
 #buddypress .activity-header img{
 	float: left;
 	margin: 0 2% 0 0;
-	width: 60px;
 }
 #buddypress .activity-body{
 	margin: 0 0 0 60px;
