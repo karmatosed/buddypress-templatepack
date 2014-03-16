@@ -36,7 +36,8 @@
 #buddypress .dir-list,
 #buddypress .item-list,
 #buddypress .button-nav,
-#buddypress .item-list-tabs ul{
+#buddypress .item-list-tabs ul,
+#buddypress .buddypress-widget ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -44,7 +45,8 @@
 #buddypress .item-list li,
 #buddypress .item-list-tabs li,
 #buddypress .dir-list li,
-#buddypress .button-nav li{
+#buddypress .button-nav li,
+#buddypress .buddypress-widget li{
 	margin: 0;
 	padding: 0;
 }
@@ -424,28 +426,30 @@
 -------------------------------------------------------------- */
 /* 10:  Forms
 -------------------------------------------------------------- */
-#buddypress .form-buddypress textarea,
-#buddypress .form-buddypress input[type=text],
-#buddypress .form-buddypress input[type=text],
-#buddypress .form-buddypress input[type=color],
-#buddypress .form-buddypress input[type=date],
-#buddypress .form-buddypress input[type=datetime],
-#buddypress .form-buddypress input[type=datetime-local],
-#buddypress .form-buddypress input[type=email],
-#buddypress .form-buddypress input[type=month],
-#buddypress .form-buddypress input[type=number],
-#buddypress .form-buddypress input[type=range],
-#buddypress .form-buddypress input[type=search],
-#buddypress .form-buddypress input[type=tel],
-#buddypress .form-buddypress input[type=time],
-#buddypress .form-buddypress input[type=url],
-#buddypress .form-buddypress input[type=week],
-#buddypress .form-buddypress select,
-#buddypress .form-buddypress input[type=password],
+#buddypress .standard-form textarea,
+#buddypress .standard-form input[type=text],
+#buddypress .standard-form input[type=text],
+#buddypress .standard-form input[type=color],
+#buddypress .standard-form input[type=date],
+#buddypress .standard-form input[type=datetime],
+#buddypress .standard-form input[type=datetime-local],
+#buddypress .standard-form input[type=email],
+#buddypress .standard-form input[type=month],
+#buddypress .standard-form input[type=number],
+#buddypress .standard-form input[type=range],
+#buddypress .standard-form input[type=search],
+#buddypress .standard-form input[type=tel],
+#buddypress .standard-form input[type=time],
+#buddypress .standard-form input[type=url],
+#buddypress .standard-form input[type=week],
+#buddypress .standard-form select,
+#buddypress .standard-form input[type=password],
 #buddypress .form-search input[type=search],
 #buddypress .form-search input[type=text] {
 	font: inherit;
-	padding: 5px;
+}
+#buddypress #submit{
+	margin-top: 20px 0;
 }
 #buddypress .standard-form{
  	padding: 20px 0;
@@ -456,9 +460,6 @@
  	font-weight: 700;
  	padding: 10px;
 }
-#buddypress .standard-form input{
- 	display: block;
-}
 #buddypress .standard-form .form-block{
  	clear: both;
 }
@@ -466,6 +467,15 @@
 	display: inline-block;
 	float: left;
 	margin: 5px 5px 0 0;
+}
+#buddypress .standard-from input[type=radio]{
+	float: left;
+}
+#buddypress #settings-form input{
+	display: block;
+}
+#buddypress .button-nav li{
+	float: left;
 }
 /* 11: Buttons and clicks
 -------------------------------------------------------------- */
@@ -519,8 +529,9 @@ a.bp-title-button {
   	text-decoration: none;
 }
 #buddypress .item-list-tabs li.current a,
-#buddypress .item-list-tabs li.selected a{
- 	background: rgba(255, 255, 255, 0.4);
+#buddypress .item-list-tabs li.selected a,
+#buddypress .item-list-tabs li.current {
+ 	background: rgba(255, 255, 255, 0.6);
  	font-weight: 700;
 }
 /* 13b: Navigation > Pagination

@@ -12,7 +12,7 @@
 
 	<div id="register-page" class="page">
 
-		<form action="" name="signup_form" id="signup_form" class="form-buddypress" method="post" enctype="multipart/form-data">
+		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 
 		<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
 			<?php do_action( 'template_notices' ); ?>

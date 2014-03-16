@@ -8,7 +8,7 @@
 ?>
 <?php do_action( 'bp_before_member_settings_template' ); ?>
 
-<form action="<?php echo bp_displayed_user_domain() . bp_get_settings_slug() . '/general'; ?>" method="post" class="buddypess-form" id="settings-form">
+<form action="<?php echo bp_displayed_user_domain() . bp_get_settings_slug() . '/general'; ?>" method="post" class="standard-form" id="settings-form">
 
 	<?php if ( !is_super_admin() ) : ?>
 

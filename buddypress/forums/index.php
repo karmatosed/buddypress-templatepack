@@ -72,7 +72,7 @@
 
 			<?php if ( bp_is_active( 'groups' ) && bp_has_groups( 'user_id=' . bp_loggedin_user_id() . '&type=alphabetical&max=100&per_page=100' ) ) : ?>
 
-				<form action="" method="post" id="form-topic-form" class="form-buddypress">
+				<form action="" method="post" id="form-topic-form" class="standard-form">
 
 					<?php do_action( 'groups_forum_new_topic_before' ); ?>
 
