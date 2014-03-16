@@ -635,6 +635,22 @@ a.bp-title-button {
 #buddypress .page-numbers{
 	padding: 0 5px;
 }
+#buddypress .item-list-tabs ul li.selected a span,
+#buddypress .item-list-tabs ul li.current a span {
+	background-color: #fff;
+}
+#buddypress .item-list-tabs ul li a span {
+	background: #eee;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	color: #999;
+	display: inline;
+	font-size: 70%;
+	margin-left: 2px;
+	padding: 3px 6px;
+	text-align: center;
+	vertical-align: middle;
+}
 /* 13c: Navigation > Loading
 -------------------------------------------------------------- */
 #buddypress a.loading,
