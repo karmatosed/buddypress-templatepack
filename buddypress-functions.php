@@ -95,6 +95,9 @@ class BP_Templates extends BP_Theme_Compat {
 			add_action( 'bp_directory_blogs_actions',   'bp_blogs_visit_blog_button' );
 		}
 
+			// Specific Script to include in JS dependencies
+		add_filter( 'bp_core_get_js_dependencies', array( $this, 'js_dependencies' ), 10, 1 );
+
 	}
 
 	/** Ajax ************************************************************* */
@@ -212,11 +215,11 @@ class BP_Templates extends BP_Theme_Compat {
 			$handle   = 'bp-templatepack-js';
 		}
 
-		wp_enqueue_script( $handle, $location . $file, array( 'jquery', 'hoverIntent', ), $this->version );
+		wp_enqueue_script( $handle, $location . $file, bp_core_get_js_dependencies(), $this->version );
 
 		// Add words that we need to use in JS to the end of the page
 		// so they can be translated and still used.
-		$params = array(
+		$params = apply_filters( 'bp_core_get_js_strings', array(
 			'accepted'            => __( 'Accepted', 'buddypress' ),
 			'close'               => __( 'Close', 'buddypress' ),
 			'comments'            => __( 'comments', 'buddypress' ),
@@ -230,7 +233,7 @@ class BP_Templates extends BP_Theme_Compat {
 			'show_x_comments'     => __( 'Show all %d comments', 'buddypress' ),
 			'unsaved_changes'     => __( 'Your profile has unsaved changes. If you leave the page, the changes will be lost.', 'buddypress' ),
 			'view'                => __( 'View', 'buddypress' ),
-		);
+		) );
 		wp_localize_script( $handle, 'BP_DTheme', $params );
 
 		// Maybe enqueue comment reply JS
@@ -238,6 +241,16 @@ class BP_Templates extends BP_Theme_Compat {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+	}
+
+	/**
+	 * Since 2.0 it's possible to filter bp_core_get_js_dependencies
+	 * to add specific js depedencies 
+	 */
+	public function js_dependencies( $deps = array() ) {
+		$deps[] = 'hoverIntent';
+
+		return $deps;
 	}
 
 	/**
