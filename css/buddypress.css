@@ -448,9 +448,6 @@
 #buddypress .form-search input[type=text] {
 	font: inherit;
 }
-#buddypress #submit{
-	margin-top: 20px 0;
-}
 #buddypress .standard-form{
  	padding: 20px 0;
 }
@@ -476,6 +473,93 @@
 }
 #buddypress .button-nav li{
 	float: left;
+}
+#buddypress .standard-form #basic-details-section input[type=password],
+#buddypress .standard-form #blog-details-section input#signup_blog_url {
+	width: 35%;
+}
+#buddypress .standard-form#signup_form input[type=text],
+#buddypress .standard-form#signup_form textarea,
+#buddypress .form-allowed-tags,
+#buddypress #commentform input[type=text],
+#buddypress #commentform textarea {
+	width: 90%;
+}
+#buddypress .standard-form input[type=text] {
+	width: 75%;
+}
+#buddypress .standard-form#signup_form div.submit {
+	float: right;
+}
+#buddypress div#signup-avatar img {
+	margin: 0 15px 10px 0;
+}
+#buddypress .standard-form textarea {
+	width: 75%;
+	height: 120px;
+}
+#buddypress .standard-form textarea#message_content {
+	height: 200px;
+}
+#buddypress .standard-form#send-reply textarea {
+	width: 97.5%;
+}
+#buddypress .standard-form p.description {
+	font-size: 80%;
+	margin: 5px 0;
+}
+#buddypress .standard-form div.submit {
+	clear: both;
+	padding: 15px 0 0 0;
+}
+#buddypress .standard-form #basic-details-section,
+#buddypress .standard-form #blog-details-section,
+#buddypress .standard-form #profile-details-section {
+	float: left;
+	width: 48%;
+}
+#buddypress .standard-form #profile-details-section {
+	float: right;
+}
+#buddypress .standard-form #blog-details-section {
+	clear: left;
+}
+#buddypress form#send-invite-form {
+	margin-top: 20px;
+}
+#buddypress div#invite-list {
+	background: rgba(238, 238, 238, 0.4);
+	height: 400px;
+	margin: 0 0 10px;
+	overflow: auto;
+	padding: 5px;
+	width: 160px;
+}
+#buddypress form.standard-form .left-menu {
+	float: left;
+}
+#buddypress form.standard-form .left-menu #invite-list ul{
+	margin:1%;
+	list-style: none;
+}
+#buddypress form.standard-form .left-menu #invite-list ul li {
+	margin:0 0 0 1%;
+}
+#buddypress form.standard-form .main-column {
+	margin-left: 190px;
+}
+#buddypress form.standard-form .main-column ul#friend-list {
+	clear:none;
+}
+#buddypress form.standard-form .main-column ul#friend-list h4 {
+	clear:none;
+}
+#buddypress .wp-editor-wrap a.button,
+#buddypress .wp-editor-wrap button,
+#buddypress .wp-editor-wrap input[type=submit],
+#buddypress .wp-editor-wrap input[type=button],
+#buddypress .wp-editor-wrap input[type=reset] {
+	padding: 0 10px 1px;
 }
 /* 11: Buttons and clicks
 -------------------------------------------------------------- */
