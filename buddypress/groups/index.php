@@ -48,7 +48,7 @@
 		</nav>
 
 
-		<div id="groups-directory" class="groups item-list">
+		<div id="groups-dir-list" class="groups item-list">
 			<?php bp_get_template_part( 'groups/groups-loop' ); ?>
 		</div><!-- end #group-directory -->
 

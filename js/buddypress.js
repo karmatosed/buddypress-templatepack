@@ -1123,7 +1123,7 @@ jq(document).ready(function() {
         }
     });
 
-    jq('#groups-directory').on('click', '.group-button a', function() {
+    jq('#groups-dir-list').on('click', '.group-button a', function() {
         var gid = jq(this).parent().attr('id');
         gid = gid.split('-');
         gid = gid[1];
