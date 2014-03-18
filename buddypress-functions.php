@@ -100,6 +100,14 @@ class BP_Templates extends BP_Theme_Compat {
 
 	}
 
+	/** Notices ***********************************************************/
+
+	// Only hook the 'sitewide_notices' overlay if the Sitewide
+	// Notices widget is not in use (to avoid duplicate content).
+	if ( bp_is_active( 'messages' ) && ! is_active_widget( false, false, 'bp_messages_sitewide_notices_widget', true ) ) {
+		add_action( 'wp_footer', array( $this, 'sitewide_notices' ), 9999 );
+	}
+
 	/** Ajax ************************************************************* */
 
 	$actions = array(
@@ -298,6 +306,26 @@ class BP_Templates extends BP_Theme_Compat {
 		if ( ! in_array( 'no-js', $classes ) )
 			$classes[] = 'no-js';
 		return array_unique( $classes );
+	}
+
+	/**
+	 * Outputs sitewide notices markup in the footer.
+	 *
+	 * @since BuddyPress (1.7)
+	 *
+	 * @see https://buddypress.trac.wordpress.org/ticket/4802
+	 */
+	public function sitewide_notices() {
+		// Do not show notices if user is not logged in
+		if ( ! is_user_logged_in() )
+			return;
+
+		// add a class to determine if the admin bar is on or not
+		$class = did_action( 'admin_bar_menu' ) ? 'admin-bar-on' : 'admin-bar-off';
+
+		echo '<div id="sitewide-notice" class="' . $class . '">';
+		bp_message_get_notices();
+		echo '</div>';
 	}
 
 }
