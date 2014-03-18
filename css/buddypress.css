@@ -357,6 +357,9 @@ body.no-js #buddypress #whats-new-options {
  	background: #88aa22;
  	color: #fff;
 }
+#sitewide-notice {
+		clear: both;
+}
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
 #buddypress table.profile-fields {
