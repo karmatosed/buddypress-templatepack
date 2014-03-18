@@ -106,6 +106,10 @@ class BP_Templates extends BP_Theme_Compat {
 	// Notices widget is not in use (to avoid duplicate content).
 	if ( bp_is_active( 'messages' ) && ! is_active_widget( false, false, 'bp_messages_sitewide_notices_widget', true ) ) {
 		add_action( 'bp_after_member_header', array( $this, 'sitewide_notices' ), 9999 );
+
+		// If uesr is admin add a message to the message compose screen to inform about the widget
+		if( current_user_can( 'manage_options' ) )
+			add_action('bp_before_messages_compose_content', array($this, 'notices_admin_message') );
 	}
 
 	/** Ajax ************************************************************* */
@@ -309,7 +313,7 @@ class BP_Templates extends BP_Theme_Compat {
 	}
 
 	/**
-	 * Outputs sitewide notices markup in the footer.
+	 * Outputs sitewide notices markup in the members header & adds admin message to compose screen.
 	 *
 	 * @since BuddyPress (1.7)
 	 *
@@ -328,6 +332,10 @@ class BP_Templates extends BP_Theme_Compat {
 		echo '</div>';
 	}
 
+	public function notices_admin_message() {
+		echo	'<p class="notice info">' . __('Admin currently sitewide notices are displaying in your members account screens only, you can use the sitewide widget to show notices in your themes sidebars if you prefer.', 'buddypress') . '</p>';
+		return;
+	}
 }
 new BP_Templates();
 endif;
