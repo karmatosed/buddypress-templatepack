@@ -24,5 +24,29 @@ function templatepack_kill_legacy_js_and_css() {
 }
 add_action( 'wp', 'templatepack_kill_legacy_js_and_css', 999 );
 
-if ( ! defined( 'BP_DEFAULT_COMPONENT' ) )
-	define( 'BP_DEFAULT_COMPONENT', 'profile' );
+// Defines profile as default component, but not in global scope
+function templatepack_define_profile_as_default() {
+	/**
+	 * We need to check BP_DEFAULT_COMPONENT is not defined to something else
+	 * and most important that xprofile is not deactivated by Admin.
+	 */ 
+	if ( ! defined( 'BP_DEFAULT_COMPONENT' ) && bp_is_active( 'xprofile' ) ) {
+		define( 'BP_DEFAULT_COMPONENT', 'profile' );
+
+		// Now let's edit BP nav so that Profile is the first tab of the member's nav
+		add_action( 'bp_xprofile_setup_nav', 'templatepack_maybe_change_nav_position' );
+	}
+}
+add_action( 'bp_loaded', 'templatepack_define_profile_as_default' );
+
+/**
+ * Profile is default component so let's make it the first tab of xprofile nav
+ */
+function templatepack_maybe_change_nav_position() {
+	$bp = buddypress();
+
+	if ( defined( 'BP_DEFAULT_COMPONENT' ) && 'profile' == BP_DEFAULT_COMPONENT )
+		$bp->bp_nav['profile']['position'] = 1;
+}
+
+
