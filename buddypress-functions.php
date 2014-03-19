@@ -55,6 +55,9 @@ class BP_Templates extends BP_Theme_Compat {
 	 * @since BuddyPress Templates (1.0)
 	 */
 	protected function setup_actions() {
+		// Template Output
+		add_filter( 'bp_get_activity_action_pre_meta', array( $this, 'secondary_avatars' ), 10, 2 );
+
 		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_styles'         ) ); // Enqueue theme CSS
 		add_action( 'bp_enqueue_scripts',     array( $this, 'enqueue_scripts'        ) ); // Enqueue theme JS
 		add_action( 'widgets_init',           array( $this, 'widgets_init'           ) ); // Widgets
@@ -335,6 +338,32 @@ class BP_Templates extends BP_Theme_Compat {
 	public function notices_admin_message() {
 		echo	'<p class="notice info">' . __('Admin currently sitewide notices are displaying in your members account screens only, you can use the sitewide widget to show notices in your themes sidebars if you prefer.', 'buddypress') . '</p>';
 		return;
+	}
+
+	/**
+	 * Add secondary avatar image to this activity stream's record, if supported.
+	 *
+	 * @since BuddyPress (1.7)
+	 *
+	 * @param string $action The text of this activity
+	 * @param BP_Activity_Activity $activity Activity object
+	 * @package BuddyPress Theme
+	 * @return string
+	 */
+	function secondary_avatars( $action, $activity ) {
+		switch ( $activity->component ) {
+			case 'groups' :
+			case 'friends' :
+				// Only insert avatar if one exists
+				if ( $secondary_avatar = bp_get_activity_secondary_avatar() ) {
+					$reverse_content = strrev( $action );
+					$position        = strpos( $reverse_content, 'a<' );
+					$action          = substr_replace( $action, $secondary_avatar, -$position - 2, 0 );
+				}
+				break;
+		}
+
+		return $action;
 	}
 }
 new BP_Templates();

@@ -74,6 +74,10 @@
 #buddypress #item-header-avatar{
 	float: left;
 }
+#buddypress .activity-list .activity-header p img.avatar {
+	float: none !important;
+	margin: 0 5px -3px 0 !important;
+}
 #buddypress #item-header-content{
 	float: right;
 	width: 72%;
