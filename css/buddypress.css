@@ -608,6 +608,10 @@ body.no-js #buddypress #whats-new-options {
 #buddypress .standard-form #submit{
 	margin-top: 20px;
 }
+#buddypress .editfield{
+	clear: both;
+	padding-top: 20px;
+}
 /* 11: Buttons and clicks
 -------------------------------------------------------------- */
 #buddypress button,
@@ -637,7 +641,8 @@ a.bp-title-button {
 #buddypress ul.button-nav li.current a,
 #buddypress div.generic-button a:hover,
 #buddypress .comment-reply-link:hover {
-	background: rgba(238, 238, 238, 0.8);
+	background: rgba(1, 1, 1, 0.4);
+	color: rgba(255, 255, 255, 1);
 	outline: none;
 	text-decoration: none;
 }
@@ -652,6 +657,7 @@ a.bp-title-button {
 }
 #buddypress #subnav.item-list-tabs{
 	background: rgba(238, 238, 238, 0.4);
+	padding-top: 1px;
 }
 #buddypress .item-list-tabs li a{
  	background: rgba(238, 238, 238, 0.2);
@@ -662,7 +668,8 @@ a.bp-title-button {
 #buddypress .item-list-tabs li.current a,
 #buddypress .item-list-tabs li.selected a,
 #buddypress .item-list-tabs li.current {
- 	background: rgba(255, 255, 255, 0.6);
+	background: rgba(1, 1, 1, 0.4);
+	color: rgba(255, 255, 255, 1);
  	font-weight: 700;
 }
 /* 13b: Navigation > Pagination
@@ -684,7 +691,8 @@ a.bp-title-button {
 }
 #buddypress .item-list-tabs ul li.selected a span,
 #buddypress .item-list-tabs ul li.current a span {
-	background-color: #fff;
+	background: rgba(1, 1, 1, 0.4);
+	color: rgba(255, 255, 255, 1);
 }
 #buddypress .item-list-tabs ul li a span {
 	background: #eee;
