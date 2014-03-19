@@ -294,20 +294,20 @@ body.no-js #buddypress #whats-new-options {
 
 /* 06:  Blogs
 -------------------------------------------------------------- */
+#buddypress #blogs-list {position: relative;}
+#buddypress  .blog-button.visit {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 5em;
+}
 /* 06b: Blog > Directory
 -------------------------------------------------------------- */
 #buddypress #blogs-dir-list .item-avatar{
 	float: left;
 	margin: 0 10px 0 0;
 }
-#buddypress #blogs-dir-list li{
-	position: relative;
-}
-#buddypress #blogs-dir-list .action{
-	position: absolute;
-	right: 0;
-	top: 0;
-}
+
 /* 07:  Messages
 -------------------------------------------------------------- */
 #buddypress .messages-wrap{
