@@ -357,8 +357,12 @@ body.no-js #buddypress #whats-new-options {
  	background: #88aa22;
  	color: #fff;
 }
-#sitewide-notice {
+#buddypress #sitewide-notice {
 		clear: both;
+}
+#buddypress #search-message-form{
+	padding: 5px 0 0 0;
+	float: right;
 }
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
@@ -395,7 +399,6 @@ body.no-js #buddypress #whats-new-options {
 #buddypress table.wp-profile-fields tr td.label,
 #buddypress table.messages-notices tr td.label,
 #buddypress table.forum tr td.label {
-	border-right: 1px solid #ccc;
 	font-weight: bold;
 	width: 25%;
 }
@@ -415,7 +418,7 @@ body.no-js #buddypress #whats-new-options {
 #buddypress table.wp-profile-fields tr.alt td,
 #buddypress table.messages-notices tr.alt td,
 #buddypress table.forum tr.alt td {
-	background: rgba(0, 0, 0, 0.04);
+	background: rgba(0, 0, 0, 0.01);
 }
 #buddypress table.notification-settings {
 	margin-bottom: 20px;
