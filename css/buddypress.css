@@ -199,6 +199,10 @@ body.no-js #buddypress #whats-new-options {
 #buddypress #members-list li .action{
  	padding: 10px 0;
 }
+#buddypress #members-list .button{
+	display: table;
+	margin-bottom: 5px;
+}
 #buddypress div.activity-comments form .ac-textarea {
  	background: rgba(0, 0, 0, 0.02);
 	margin-bottom: 10px;
@@ -221,6 +225,9 @@ body.no-js #buddypress #whats-new-options {
 #buddypress div.activity-comments form div.ac-reply-content {
 	margin-left: 50px;
 	padding-left: 10px;
+}
+#buddypress #item-nav{
+	margin-top: 20px;
 }
 /* 03b: Member > Profile
 -------------------------------------------------------------- */
@@ -274,12 +281,14 @@ body.no-js #buddypress #whats-new-options {
 }
 /* 04c: Group > Profile
 -------------------------------------------------------------- */
-#buddypress #group-admins{
+#buddypress #group-admins,
+#buddypress #group-mods {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-#buddypress #group-admins li{
+#buddypress #group-admins li,
+#buddypress #group-mods li{
 	margin: 0;
 	padding: 0;
 }

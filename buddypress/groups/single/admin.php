@@ -260,9 +260,7 @@
 					<li class="<?php bp_group_member_css_class(); ?>">
 						<?php bp_group_member_avatar_mini(); ?>
 
-						<h5>
-							<?php bp_group_member_link(); ?>
-
+						<h5><?php bp_group_member_link(); ?></h5>
 							<?php if ( bp_get_group_member_is_banned() ) _e( '(banned)', 'buddypress' ); ?>
 
 							<?php if ( bp_get_group_member_is_banned() ) : ?>
@@ -280,8 +278,6 @@
 								<a href="<?php bp_group_member_remove_link(); ?>" class="button confirm" title="<?php _e( 'Remove this member', 'buddypress' ); ?>"><?php _e( 'Remove from group', 'buddypress' ); ?></a>
 
 								<?php do_action( 'bp_group_manage_members_admin_item' ); ?>
-
-						</h5>
 					</li>
 
 				<?php endwhile; ?>
