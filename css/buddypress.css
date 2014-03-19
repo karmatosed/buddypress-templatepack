@@ -351,11 +351,18 @@ body.no-js #buddypress #whats-new-options {
  	margin: 0;
  	padding: 0;
 }
-#buddypress .info{
+#buddypress .error{
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	width: 100%;
+}
+#buddypress .info,
+#buddypress .bp-template-notice {
  	background: #3388aa;
  	color: #fff;
 }
-#buddypress .warning{
+#buddypress .warning,
+#buddypress .error {
  	background: #dd3333;
  	color: #fff;
 }
@@ -372,6 +379,9 @@ body.no-js #buddypress #whats-new-options {
 #buddypress #search-message-form{
 	padding: 5px 0 0 0;
 	float: right;
+}
+#buddypress .message-content textarea{
+	margin-top: 20px;
 }
 /* 08:  Notifications and notices
 -------------------------------------------------------------- */
@@ -486,7 +496,7 @@ body.no-js #buddypress #whats-new-options {
  	clear: both;
  	display: block;
  	font-weight: 700;
- 	padding: 10px;
+ 	padding: 10px 0;
 }
 #buddypress .standard-form .form-block{
  	clear: both;
@@ -559,12 +569,11 @@ body.no-js #buddypress #whats-new-options {
 	margin-top: 20px;
 }
 #buddypress div#invite-list {
-	background: rgba(238, 238, 238, 0.4);
+	background: rgba(238, 238, 238, 0.2);
 	height: 400px;
 	margin: 0 0 10px;
 	overflow: auto;
 	padding: 5px;
-	width: 160px;
 }
 #buddypress form.standard-form .left-menu {
 	float: left;
