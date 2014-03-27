@@ -124,7 +124,9 @@ class BP_Templates extends BP_Theme_Compat {
 		'forums_filter'   => 'bp_template_pack_object_template_loader',
 		'groups_filter'   => 'bp_template_pack_object_template_loader',
 		'members_filter'  => 'bp_template_pack_object_template_loader',
-		'messages_filter' => 'bp_template_pack_messages_template_loader',
+		'messages_filter' => 'bp_template_pack_messages_template_loader,
+		'invite_filter'   => 'bp_template_pack_invite_template_loader',
+		'requests_filter' => 'bp_template_pack_requests_template_loader',
 
 		// Friends
 		'accept_friendship' => 'bp_template_pack_ajax_accept_friendship',
@@ -289,7 +291,7 @@ class BP_Templates extends BP_Theme_Compat {
 	public function head_scripts() {
 	?>
 
-		<script type="text/javascript" charset="utf-8">
+		<script type="text/javascript">
 			/* <![CDATA[ */
 			var ajaxurl = '<?php echo bp_core_ajax_url(); ?>';
 			/* ]]> */

@@ -150,6 +150,26 @@ function bp_template_pack_messages_template_loader() {
 }
 
 /**
+ * Load group invitations loop to handle pagination requests sent via AJAX.
+ *
+ * @since BuddyPress (2.0.0)
+ */
+function bp_template_pack_invite_template_loader() {
+	bp_get_template_part( 'groups/single/invites-loop' );
+	exit();
+}
+
+/**
+ * Load group membership requests loop to handle pagination requests sent via AJAX.
+ *
+ * @since BuddyPress (2.0.0)
+ */
+function bp_template_pack_requests_template_loader() {
+	bp_get_template_part( 'groups/single/requests-loop' );
+	exit();
+}
+
+/**
  * Load the activity loop template when activity is requested via AJAX,
  *
  * @return string JSON object containing 'contents' (output of the template loop
